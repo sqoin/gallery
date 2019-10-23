@@ -4,14 +4,14 @@
 		<div class="modal-card ">
 			<header class="modal-card-head">
 				<p class="modal-card-title ">{{ modalTitle }}</p>
-				<button class="delete" aria-label="close" @click="closeModal(false)"></button>
+				<button class="delete" aria-label="close" @click="closeModal(false),deleteFromCart()"></button>
 			</header>
 			<section class="modal-card-body">
 				<div v-if="!isCheckoutSection">
 					<div class="box" v-for="product in products" :key="product.id">
 						<button class="is-pulled-right button is-warning is-inverted" @click="removeFromCart(product.id)">{{ removeLabel }}</button>
-						<p>{{ product.title }}  {{ product.quantity > 0 ?  ` - Quantity: ${product.quantity}` : ''}}</p>
-						<p>{{ product.price }} &dollar;</p>
+						<p>{{ product.title }} </p>
+						<p>{{ product.price }} &euro;</p>
 					</div>
 					<div v-if="products.length === 0">
 						<p>{{ cartEmptyLabel }}</p>
@@ -86,9 +86,13 @@ export default {
 	},
 
 	methods: {
+		deleteFromCart(){
+			this.$store.commit('deleteFromCart');
+
+		},
 		closeModal (reloadPage) {
 			this.$store.commit('showCheckoutModal', false);
-
+	
 			if (reloadPage) {
 				window.location.reload();
 			}
@@ -112,7 +116,8 @@ export default {
 		},
 		onPrevBtn () {
 			this.isCheckoutSection = false;
-		}
+		},
+		
 	}
 }
 </script>
