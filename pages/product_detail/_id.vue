@@ -1,0 +1,167 @@
+<template>
+  
+        <article class="tile is-child notification ">
+            <h2 class="title is-4">  {{ product.title }}
+               
+             </h2>
+             
+         <div class="columns is-vcentered">
+  <div class="column is-8">
+    <p class="bd-notification is-primary"><figure class="image is-4by3">
+                 <img slot="image" :src="product.image"  alt="Card image cap"/>
+              </figure></p>
+  </div>
+  <div class="column has-text-centered">
+    <p class="bd-notification is-primary"><div class="card-content__price ">
+            <span class="title is-3"><strong>{{ product.price }}&dollar;</strong></span>
+          </div>
+          <div class="card-content__btn ">
+          <button class="button is-small" :title="removeFromFavouriteLabel" v-show="product.isFavourite" @click="removeFromFavourite(product.id)">
+                  <span class="icon is-small">
+                   <i class="fa fa-heart" ></i>
+                  </span>
+               </button>
+               <button class="button is-small" :title="addToFavouriteLabel" v-show="!product.isFavourite" @click="saveToFavorite(product.id)">
+                <span class="icon is-small">
+                  <i class="fa fa-heart-o" style="color:red"></i>
+                </span>
+               </button>
+            <button class="button is-warning" v-if="!isAddedBtn" @click="addToCart(product.id)">{{ addToCartLabel }}</button>
+            <button class="button is-succes" v-if="isAddedBtn" @click="removeFromCart(product.id)">{{ removeFromCartLabel }}</button>
+          </div></p>
+  </div>
+</div>
+        </article>
+ 
+     
+    <!--<div class="card  column">
+        
+        <div class="card-content column ">
+          <div class="card-content__title">
+         <img
+          slot="image"
+         
+          :src="product.image"
+          alt="Card image cap"
+           
+        />
+            <h2 class="title is-4">  {{ product.title }}
+              <button class="button is-small" :title="removeFromFavouriteLabel" v-show="product.isFavourite" @click="removeFromFavourite(product.id)">
+                <span class="icon is-small">
+                  <i class="fa fa-heart" ></i>
+                </span>
+              </button>
+              <button class="button is-small" :title="addToFavouriteLabel" v-show="!product.isFavourite" @click="saveToFavorite(product.id)">
+                <span class="icon is-small">
+                  <i class="fa fa-heart-o" style="color:red"></i>
+                </span>
+              </button>
+            </h2>
+          </div>
+         
+         
+           
+          </div>
+          <div class="card-content__price is-pulled-left">
+            <span class="title is-3"><strong>{{ product.price }}&dollar;</strong></span>
+          </div>
+          <div class="card-content__btn is-pulled-right">
+            <button class="button is-warning" v-if="!isAddedBtn" @click="addToCart(product.id)">{{ addToCartLabel }}</button>
+            <button class="button is-succes" v-if="isAddedBtn" @click="removeFromCart(product.id)">{{ removeFromCartLabel }}</button>
+          </div>
+      </div>
+    </div>-->
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'product_detail-id',
+
+  validate ({ params }) {
+    return /^\d+$/.test(params.id)
+  },
+  
+  data () {
+    return {
+      addToCartLabel: 'Add to cart',
+      removeFromCartLabel: 'Remove from cart',
+      addToFavouriteLabel: 'Add to favourite',
+      removeFromFavouriteLabel: 'Remove from favourite',
+      product: {},
+      selected: 1,
+      quantityArray: []
+    };
+  },
+
+  mounted () {
+    this.product = this.$store.getters.getProductById(this.$route.params.id);
+    this.selected = this.product.quantity;
+
+    for (let i = 1; i <= 20; i++) {
+      this.quantityArray.push(i);
+    }
+  },
+
+  computed: {
+    isAddedBtn () {
+      return this.product.isAddedBtn;
+    }
+  },
+
+  methods: {
+    addToCart (id) {
+      let data = {
+        id: id,
+        status: true
+      }
+      this.$store.commit('addToCart', id);
+      this.$store.commit('setAddedBtn', data);
+    },
+    removeFromCart (id) {
+      let data = {
+        id: id,
+        status: false
+      }
+      this.$store.commit('removeFromCart', id);
+      this.$store.commit('setAddedBtn', data);
+    },
+    onSelectQuantity (id) {
+      let data = {
+        id: id,
+        quantity: this.selected
+      }
+      this.$store.commit('quantity', data);
+    },
+    saveToFavorite (id) {
+      let isUserLogged = this.$store.state.userInfo.isLoggedIn;
+
+      if (isUserLogged) {
+        this.$store.commit('addToFavourite', id);
+      } else {
+        this.$store.commit('showLoginModal', true);
+      }
+    },
+    removeFromFavourite (id) {
+      this.$store.commit('removeFromFavourite', id);
+    }
+  }
+};
+</script>
+
+<style lang="scss" scoped>
+  .card-content {
+    
+
+    &__text {
+      margin: 15px 0;
+    }
+    &__reviews {
+      
+      display: inline-block;
+      width: 100%;
+      margin-bottom: 10px;
+    }
+  }
+</style>
+
