@@ -279,6 +279,14 @@ export const mutations = {
       }
     });
   },
+  deleteFromCart: (state)=>{
+    state.products.forEach(el =>{
+      el.isAddedToCart = false;
+    }
+
+    )
+
+  },
   removeFromCart: (state, id) => {
     state.products.forEach(el => {
       if (id === el.id) {

@@ -20,13 +20,13 @@
        </span>
      </md-button>
             <md-button class="card-footer-item is-hovered"> {{product.price}} &dollar;</md-button>
-          <md-button  :title="addToFavouriteLabel" v-show="!product.isFavourite" @click="saveToFavorite(product.id)">
+        <md-button  :title="addToFavouriteLabel" v-show="!product.isFavourite" @click="saveToFavorite(product.id)">
               <span class="icon is-small">
               <i class="fa fa-heart-o"></i>
             </span>
           </md-button>
           
-            <md-button class="card-footer-item btn btn-outline-warning" v-if="!product.isAddedToCart" @click="addToCart(product.id)">{{ addToCartLabel }}</md-button>
+            <md-button class="card-footer-item btn btn-outline-warning" v-if="!product.isAddedToCart" @click="showCheckoutModal(),addToCart(product.id)" >{{ addToCartLabel }}</md-button>
             <md-button  class="btn btn-outline-success" v-if="product.isAddedToCart" @click="removeFromCart(product.id, false)">{{ removeFromCartLabel }}</md-button>
           
           
@@ -68,7 +68,8 @@ export default {
       addToFavouriteLabel: 'Add',
       removeFromFavouriteLabel: 'Remove',
       selected: 1,
-      quantityArray: []
+      quantityArray: [],
+      
     }
   },
 
@@ -123,7 +124,11 @@ export default {
         quantity: this.selected
       }
       this.$store.commit('quantity', data);
-    }
+    },showCheckoutModal () {
+        
+        this.$store.commit('showCheckoutModal', true);
+      
+      }
   }
 }
 </script>
