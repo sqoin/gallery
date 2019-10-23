@@ -28,6 +28,7 @@ nuxt generate
 
 ```
 
+
 ___
 ___
 
