@@ -9,20 +9,20 @@
 			<section class="modal-card-body">
 				<div v-if="!isCheckoutSection">
 					<div class="box" v-for="product in products" :key="product.id">
-						<button class="is-pulled-right button is-warning is-inverted" @click="removeFromCart(product.id)">{{ removeLabel }}</button>
+				<!--		<button class="is-pulled-right button is-warning is-inverted" @click="removeFromCart(product.id)">{{ removeLabel }}</button> -->
 						<p>{{ product.title }} </p>
 						<p>{{ product.price }} &euro;</p>
 					</div>
-					<div v-if="products.length === 0">
+				<div v-if="products.length === 0">
 						<p>{{ cartEmptyLabel }}</p>
-					</div>
+					</div> 
 				</div>
-				<div v-if="isCheckoutSection">
+					<div v-if="isCheckoutSection">
 					<p>You bought it :)</p>
-				</div>
+				</div> 
 			</section>
 			<footer class="modal-card-foot">
-				<button v-show="products.length > 0 && !isCheckoutSection" class="button is-success" @click="onNextBtn">{{ buyLabel }}</button>
+				<button v-show="products.length > 0 && !isCheckoutSection" class="button is-success" @click="onNextBtn(),addToShoppingList(id)">{{ buyLabel }}</button>
 				<button v-if="isCheckoutSection" class="button is-success" @click="closeModal(true)">{{ closeLabel }}</button>
 			</footer>
 		</div>
@@ -96,9 +96,7 @@ export default {
 		closeModal (reloadPage) {
 			this.$store.commit('showCheckoutModal', false);
 	
-			if (reloadPage) {
-				window.location.reload();
-			}
+		
 		},
 		removeFromCart (id) {
 			let data = {
@@ -110,8 +108,20 @@ export default {
 		},
 		onNextBtn () {
 			if (this.isUserLoggedIn) {
-				this.isCheckoutSection = true;
-				window.open("https://sqoin.exchange");
+
+				let totalProducts = this.products.length,
+						productsAdded = this.$store.getters.productsAdded;
+		productsAdded.forEach(product => {
+		console.log("test "+product.price + product.id)
+		this.isCheckoutSection = true;
+		var successUrl =window.location;
+				
+		window.open('http://localhost:8081/#/send?successUrl='+decodeURIComponent(successUrl)+'&amount='+product.price+'&product='+product.id);
+				
+			
+		});		
+				
+
 			} else {
 				this.$store.commit('showCheckoutModal', false);
 				this.$store.commit('showLoginModal', true);
@@ -120,6 +130,14 @@ export default {
 		onPrevBtn () {
 			this.isCheckoutSection = false;
 		},
+		addToShoppingList (id) {
+      let data = {
+        id: id,
+        status: true
+      }
+      this.$store.commit('addToShoppingList', id);
+     
+    },
 		
 	}
 }

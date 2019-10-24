@@ -32,9 +32,8 @@
   </div>
 </div>
         </article>
- 
-     
-    
+
+
   </div>
 </template>
 

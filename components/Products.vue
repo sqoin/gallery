@@ -10,6 +10,7 @@
           alt="Card image cap"
            
         />
+        
    </figure>
   </div>
   <div class="card-footer is-centered">
@@ -27,7 +28,7 @@
           </md-button>
           
             <md-button class="card-footer-item btn btn-outline-warning" v-if="!product.isAddedToCart" @click="showCheckoutModal(),addToCart(product.id)" >{{ addToCartLabel }}</md-button>
-            <md-button  class="btn btn-outline-success" v-if="product.isAddedToCart" @click="removeFromCart(product.id, false)">{{ removeFromCartLabel }}</md-button>
+           <md-button  class="btn btn-outline-success" v-if="product.isAddedToCart" @click="removeFromCart(product.id, false)">{{ removeFromCartLabel }}</md-button> 
           
           
        
@@ -59,6 +60,7 @@
 export default {
   name: 'products',
   props: ['product'],
+   name: 'Direction',
 
   data () {
     return {
@@ -134,6 +136,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.avatar{
+ border: 2px solid red;
+}
+
+
  .details {
     cursor: pointer;
     position: absolute;
