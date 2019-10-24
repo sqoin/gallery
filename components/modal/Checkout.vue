@@ -107,8 +107,18 @@ export default {
 		},
 		onNextBtn () {
 			if (this.isUserLoggedIn) {
-				this.isCheckoutSection = true;
-				window.open("https://sqoin.exchange");
+				let totalProducts = this.products.length,
+						productsAdded = this.$store.getters.productsAdded;
+		productsAdded.forEach(product => {
+		console.log("test "+product.price + product.id)
+		this.isCheckoutSection = true;
+		var successUrl =window.location;
+				
+		window.open('http://localhost:8081/#/send?successUrl='+decodeURIComponent(successUrl)+'&amount='+product.price+'&product='+product.id);
+				
+			
+		});		
+				
 			} else {
 				this.$store.commit('showCheckoutModal', false);
 				this.$store.commit('showLoginModal', true);
