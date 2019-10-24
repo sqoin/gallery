@@ -29,6 +29,11 @@
 				<nuxt-link class="navbar-item" :to="{ name: 'user-wishlist' }">
 					{{ wishlistLabel }}
 				</nuxt-link>
+
+              <nuxt-link class="navbar-item" :to="{ name: 'user-shoppinglist-shoppinglist' }">
+					{{ Shoppinglist }}
+				</nuxt-link>
+
 				<hr class="navbar-divider">
 				<a class="navbar-item" @click="logout">
 					{{ logoutLabel }}
@@ -45,6 +50,7 @@ export default {
 	name: 'VmMenu',
 	data () {
 		return {
+			Shoppinglist: 'Shopping List',
 			wishlistLabel: 'Wishlist',
 			logoutLabel: 'Log out',
 			loginLabel: 'Log in',

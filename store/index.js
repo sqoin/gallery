@@ -272,6 +272,13 @@ export const mutations = {
       }
     });
   },
+  addToShoppingList: (state, id) => {
+    state.products.forEach(el => {
+      if (id === el.id) {
+        el.addToShoppingList = true;
+      }
+    });
+  },
   setAddedBtn: (state, data) => {
     state.products.forEach(el => {
       if (data.id === el.id) {
