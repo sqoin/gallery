@@ -1,6 +1,6 @@
 <template>
   
-        <article class="tile is-child notification ">
+        <article class="tile is-child notification has-text-warning">
             <h2 class="title is-4">  {{ product.title }}
                
              </h2>
