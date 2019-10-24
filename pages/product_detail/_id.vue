@@ -1,5 +1,5 @@
 <template>
-  
+  <div class ="container">
         <article class="tile is-child notification has-text-warning">
             <h2 class="title is-4">  {{ product.title }}
                
@@ -26,51 +26,15 @@
                   <i class="fa fa-heart-o" style="color:red"></i>
                 </span>
                </button>
-            <button class="button is-warning" v-if="!isAddedBtn" @click="addToCart(product.id)">{{ addToCartLabel }}</button>
-            <button class="button is-succes" v-if="isAddedBtn" @click="removeFromCart(product.id)">{{ removeFromCartLabel }}</button>
+            <button class="btn btn-warning" v-if="!isAddedBtn" @click="addToCart(product.id)">{{ addToCartLabel }}</button>
+            <button class="btn btn-success" v-if="isAddedBtn" @click="removeFromCart(product.id)">{{ removeFromCartLabel }}</button>
           </div></p>
   </div>
 </div>
         </article>
  
      
-    <!--<div class="card  column">
-        
-        <div class="card-content column ">
-          <div class="card-content__title">
-         <img
-          slot="image"
-         
-          :src="product.image"
-          alt="Card image cap"
-           
-        />
-            <h2 class="title is-4">  {{ product.title }}
-              <button class="button is-small" :title="removeFromFavouriteLabel" v-show="product.isFavourite" @click="removeFromFavourite(product.id)">
-                <span class="icon is-small">
-                  <i class="fa fa-heart" ></i>
-                </span>
-              </button>
-              <button class="button is-small" :title="addToFavouriteLabel" v-show="!product.isFavourite" @click="saveToFavorite(product.id)">
-                <span class="icon is-small">
-                  <i class="fa fa-heart-o" style="color:red"></i>
-                </span>
-              </button>
-            </h2>
-          </div>
-         
-         
-           
-          </div>
-          <div class="card-content__price is-pulled-left">
-            <span class="title is-3"><strong>{{ product.price }}&dollar;</strong></span>
-          </div>
-          <div class="card-content__btn is-pulled-right">
-            <button class="button is-warning" v-if="!isAddedBtn" @click="addToCart(product.id)">{{ addToCartLabel }}</button>
-            <button class="button is-succes" v-if="isAddedBtn" @click="removeFromCart(product.id)">{{ removeFromCartLabel }}</button>
-          </div>
-      </div>
-    </div>-->
+    
   </div>
 </template>
 
@@ -84,8 +48,8 @@ export default {
   
   data () {
     return {
-      addToCartLabel: 'Add to cart',
-      removeFromCartLabel: 'Remove from cart',
+      addToCartLabel: 'Buy',
+      removeFromCartLabel: 'Remove',
       addToFavouriteLabel: 'Add to favourite',
       removeFromFavouriteLabel: 'Remove from favourite',
       product: {},
@@ -156,12 +120,7 @@ export default {
     &__text {
       margin: 15px 0;
     }
-    &__reviews {
-      
-      display: inline-block;
-      width: 100%;
-      margin-bottom: 10px;
-    }
+   
   }
 </style>
 
