@@ -65,7 +65,7 @@ module.exports = {
   /*
   ** Global CSS
   */
-  css: [
+  css: ['@/assets/main.css',
     {
       src: 'bulma/bulma.sass',
       lang: 'sass'
@@ -97,5 +97,14 @@ module.exports = {
   */
   axios: {
     // See https://github.com/nuxt-community/axios-module#options
+  },
+  layoutTransition: {
+    name: "layout",
+    mode: ""
+  },
+  /* Page Transitions */
+  pageTransition: {
+    name: "default",
+    mode: ""
   }
 }

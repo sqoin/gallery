@@ -1,5 +1,6 @@
 <template>
-  <div>
+
+  <div class ="container">
     <article class="tile is-child notification has-text-warning">
       <h2 class="title is-4">{{ product.title }}</h2>
 
@@ -54,6 +55,7 @@
         </div>
       </div>
     </article>
+
   </div>
 </template>
 
@@ -67,10 +69,12 @@ export default {
 
   data() {
     return {
+
       addToCartLabel: "Buy",
       removeFromCartLabel: "paid",
       addToFavouriteLabel: "Add to favourite",
       removeFromFavouriteLabel: "Remove from favourite",
+
       product: {},
       selected: 1,
       quantityArray: []
@@ -136,15 +140,16 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.card-content {
-  &__text {
-    margin: 15px 0;
+
+  .card-content {
+    
+
+    &__text {
+      margin: 15px 0;
+    }
+   
+
   }
-  &__reviews {
-    display: inline-block;
-    width: 100%;
-    margin-bottom: 10px;
-  }
-}
+
 </style>
 

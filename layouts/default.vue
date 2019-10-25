@@ -2,11 +2,15 @@
   <div>
     <VmHeader></VmHeader>
     <main>
+    
       <nuxt/>
+      
       <VmLoginModal></VmLoginModal>
       <VmRegistrationModal></VmRegistrationModal>
       <VmCheckoutModal></VmCheckoutModal>
+      
     </main>
+     
     <VmFooter></VmFooter>
   </div>
 </template>
@@ -17,12 +21,14 @@ import VmFooter from '@/components/footer/Footer';
 import VmLoginModal from '@/components/modal/Login';
 import VmRegistrationModal from '@/components/modal/Registration';
 import VmCheckoutModal from '@/components/modal/Checkout';
+import VmProductsList from '@/components/products_list/ProductsListContainer';
 
 export default {
   components: {
     VmHeader,
     VmFooter,
     VmLoginModal,
+    VmProductsList,
     VmRegistrationModal,
     VmCheckoutModal
   }
@@ -63,4 +69,15 @@ export default {
   .el-container:nth-child(7) .el-aside {
     line-height: 320px;
   }
+  .page-enter-active,
+.page-leave-active {
+  transition-property: opacity;
+  transition-timing-function: ease-in-out;
+  transition-duration: 5000ms;
+}
+
+.page-enter,
+.page-leave-to {
+  opacity: 0;
+}
 </style>

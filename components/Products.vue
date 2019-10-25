@@ -1,5 +1,9 @@
 <template>
+
   <div class="card">
+
+<div class="card" data-aos="flip-up" data-aos-duration="infinte">
+
     <div class="card-image">
       <figure class="image is-3by2">
         <img slot="image" :src="product.image" alt="Card image cap" />

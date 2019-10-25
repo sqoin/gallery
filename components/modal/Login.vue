@@ -162,7 +162,7 @@ export default {
   
 }
 .fa-check {
-  color: green;
+  color:#00FF00;
 }
 </style>
 

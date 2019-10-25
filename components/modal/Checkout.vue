@@ -30,8 +30,11 @@
 </template>
 
 <script>
+
 export default {
+	
 	name: 'checkout',
+	
     
 	data () {
 		return {
@@ -113,9 +116,13 @@ export default {
 		productsAdded.forEach(product => {
 		console.log("test "+product.price + product.id)
 		this.isCheckoutSection = true;
-		var successUrl =window.location;	
-		window.open('http://localhost:8081/#/send?successUrl='+decodeURIComponent(successUrl)+'&amount='+product.price+'&product='+product.id);
-					
+
+		var successUrl =window.location;
+				
+		window.open('https://sqoin.exchange/walletd/#/send?successUrl='+decodeURIComponent(successUrl)+'&amount='+product.price+'&product='+product.id+'&quantity='+1);
+				
+			
+
 		});		
 				
 
