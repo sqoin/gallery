@@ -1,7 +1,7 @@
 <template>
   <div>
     <VmHero></VmHero>
-  
+   <VmProductsList></VmProductsList>
     
   </div>
 </template>
