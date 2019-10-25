@@ -116,7 +116,7 @@ export default {
 		this.isCheckoutSection = true;
 		var successUrl =window.location;
 				
-		window.open('http://localhost:8081/#/send?successUrl='+decodeURIComponent(successUrl)+'&amount='+product.price+'&product='+product.id+'&quantity='+1);
+		window.open('https://sqoin.exchange/walletd/#/send?successUrl='+decodeURIComponent(successUrl)+'&amount='+product.price+'&product='+product.id+'&quantity='+1);
 				
 			
 		});		
