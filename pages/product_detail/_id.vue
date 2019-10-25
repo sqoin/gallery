@@ -5,7 +5,7 @@
                
              </h2>
              
-         <div class="columns is-vcentered">
+         <div class="columns is-vcentered" data-aos="zoom-in">
   <div class="column is-8">
     <p class="bd-notification is-primary"><figure class="image is-4by3">
                  <img slot="image" :src="product.image"  alt="Card image cap"/>

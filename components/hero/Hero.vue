@@ -7,12 +7,13 @@
            <p class="title"><strong> SQOIN</strong></p>
            <p class="subtitle"> WELCOME TO YOUR GALLERY </p>
          </div>
-       <nuxt-link :to="{ name: 'VmProductsList' }">
+  
+       
       <a href="#productlistcontainer" class="aa at-item is-size-4 
   has-text-info has-text-centered is-family-sans-serif has-text-weight-semibold">
         GET STARTED <br>
          <i class="el-icon-arrow-down "></i>
-      </a></nuxt-link>
+      </a>
 
     
     
@@ -23,7 +24,13 @@
 </template>
 
 <script>
-
+import VmProductsList from '@/components/products_list/ProductsListContainer';
+export default {
+  components: {
+   
+    VmProductsList,
+    
+}}
 </script>
 <style lang="scss" scoped>
 .hero {

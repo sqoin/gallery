@@ -1,5 +1,5 @@
 <template>
-<div >
+<div id="productlistcontainer" data-aos="flip-up" data-aos-duration="2000">
       
   <div class="columns is-gapless is-multiline is-centered"  >
    

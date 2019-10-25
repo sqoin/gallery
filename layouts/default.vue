@@ -4,7 +4,7 @@
     <main>
     
       <nuxt/>
-      <VmProductsList></VmProductsList>
+      
       <VmLoginModal></VmLoginModal>
       <VmRegistrationModal></VmRegistrationModal>
       <VmCheckoutModal></VmCheckoutModal>
