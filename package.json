@@ -16,7 +16,8 @@
     "vuejs",
     "theme",
     "responsive",
-    "nuxtjs"
+    "nuxtjs",
+    "material-design"
   ],
   "license": "MIT",
   "dependencies": {

@@ -92,6 +92,8 @@ export default {
 		},
 		closeModal (reloadPage) {
 			this.$store.commit('showCheckoutModal', false);
+			this.isCheckoutSection = true;
+			
 	
 		
 		},
@@ -111,11 +113,9 @@ export default {
 		productsAdded.forEach(product => {
 		console.log("test "+product.price + product.id)
 		this.isCheckoutSection = true;
-		var successUrl =window.location;
-				
+		var successUrl =window.location;	
 		window.open('http://localhost:8081/#/send?successUrl='+decodeURIComponent(successUrl)+'&amount='+product.price+'&product='+product.id);
-				
-			
+					
 		});		
 				
 
@@ -125,7 +125,7 @@ export default {
 			}
 		},
 		onPrevBtn () {
-			this.isCheckoutSection = false;
+		this.isCheckoutSection = false;
 		},
 		addToShoppingList (id) {
       let data = {
