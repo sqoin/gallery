@@ -6,33 +6,119 @@
           <img slot="image" :src="product.image" alt="Card image cap" />
 
      
-         <md-button class="profil  md-raised" @click="showDialog = true">Profil</md-button>
+         <md-button class="profil  md-raised" @click="showDialog = true">Follow</md-button>
          
         </figure>
 
        <md-dialog :md-active.sync="showDialog" >
-      <md-dialog-title>Preferences</md-dialog-title>
+      <md-dialog-title>Photographe Profil <md-icon>favorite</md-icon><md-icon>camera_alt</md-icon></md-dialog-title>
 
       <md-tabs md-dynamic-height>
         <md-tab md-label="General">
-          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ullam mollitia dolorum dolores quae commodi impedit possimus qui, atque at voluptates cupiditate. Neque quae culpa suscipit praesentium inventore ducimus ipsa aut.</p>
+          <div class="box">
+  <article class="media">
+    <div class="media-left">
+      <figure class="image is-64x64">
+        <img src="http://www.vanessavercel.fr/wp-content/uploads/2014/03/Vanessa-Vercel1.jpg" alt="Image">
+      </figure>
+    </div>
+    <div class="media-content">
+      <div class="content">
+        <p>
+          <strong>Lara Smith</strong> <small>@Larasmith</small> <small>31m</small>
+          <br>
+         Rien n’est plus simple et immédiat qu’une photo de profil pour montrer qui vous êtes. En un regard, vous levez une partie du voile sur votre personnalité. A condition que votre photo soit réussie)
+        </p>
+      </div>
+      <nav class="level is-mobile">
+        <div class="level-left">
+          <a class="level-item" aria-label="reply">
+            <span class="icon is-small">
+              <i class="fas fa-reply" aria-hidden="true"></i>
+            </span>
+          </a>
+          <a class="level-item" aria-label="retweet">
+            <span class="icon is-small">
+              <i class="fas fa-retweet" aria-hidden="true"></i>
+            </span>
+          </a>
+          <a class="level-item" aria-label="like">
+            <span class="icon is-small">
+              <i class="fas fa-heart" aria-hidden="true"></i>
+            </span>
+          </a>
+        </div>
+      </nav>
+    </div>
+  </article>
+</div>
          
         </md-tab>
 
         <md-tab md-label="Activity">
-          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ullam mollitia dolorum dolores quae commodi impedit possimus qui, atque at voluptates cupiditate. Neque quae culpa suscipit praesentium inventore ducimus ipsa aut.</p>
+          <div class="tile is-ancestor">
+  <div class="tile is-vertical is-8">
+    <div class="tile">
+      <div class="tile is-parent is-vertical">
+        <article class="tile is-child notification is-primary">
+          <p class="title">Vertical...</p>
+          <p class="subtitle">Top tile</p>
+        </article>
+        <article class="tile is-child notification is-warning">
+          <p class="title">...tiles</p>
+          <p class="subtitle">Bottom tile</p>
+        </article>
+      </div>
+      <div class="tile is-parent">
+        <article class="tile is-child notification is-info">
+          <p class="title">Middle tile</p>
+          <p class="subtitle">With an image</p>
+          <figure class="image is-4by3">
+            <img src="https://www.ouest-france.fr/sites/default/files/styles/image-640x360-p/public/2017/05/31/quentin-un-photographe-passionne-par-la-nature.jpg?itok=u5K-hqPZ">
+          </figure>
+        </article>
+      </div>
+    </div>
+    <div class="tile is-parent">
+      <article class="tile is-child notification is-danger">
+        <p class="title">Wide tile</p>
+        <p class="subtitle">Aligned with the right tile</p>
+        <div class="content">
+          <!-- Content -->
+        </div>
+      </article>
+    </div>
+  </div>
+  <div class="tile is-parent">
+    <article class="tile is-child notification is-success">
+      <div class="content">
+        <p class="title">Tall tile</p>
+        <p class="subtitle">With even more content</p>
+        <div class="content">
+          <!-- Content -->
+        </div>
+      </div>
+    </article>
+  </div>
+</div>
           
         </md-tab>
 
-        <md-tab md-label="Account">
-          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ullam mollitia dolorum dolores quae commodi impedit possimus qui, atque at voluptates cupiditate. Neque quae culpa suscipit praesentium inventore ducimus ipsa aut.</p>
-          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ullam mollitia dolorum dolores quae commodi impedit possimus qui, atque at voluptates cupiditate. Neque quae culpa suscipit praesentium inventore ducimus ipsa aut.</p>
-        </md-tab>
+     <!--   <md-tab md-label="Account">
+          
+
+
+
+
+
+
+          
+        </md-tab>-->
       </md-tabs>
 
       <md-dialog-actions>
         <md-button class="md-primary" @click="showDialog = false">Close</md-button>
-        <md-button class="md-primary" @click="showDialog = false">Save</md-button>
+       
       </md-dialog-actions>
     </md-dialog>
 
@@ -73,8 +159,7 @@
           v-if="product.isAddedToCart"
           @click="removeFromCart(product.id, false)"
         >{{ removeFromCartLabel }}</md-button> 
-      </div>
-
+      
 
       <nuxt-link
         class="details"
@@ -92,7 +177,8 @@
       }"
 
     ></nuxt-link>
- </div></div></div>
+ </div></div>
+
 
 </template>
 <script>
@@ -183,7 +269,7 @@ export default {
   z-index: 1;
 
   &:hover {
-    border: 1px solid orange;
+    border: 1px solid ;
      
    
   }
@@ -195,11 +281,11 @@ export default {
   position: absolute;
   
   width: 80%;
-  height: 80%;
+  height: 20%;
   left: 10%;
   top: 10%;
-  border-bottom: 1px solid #FFF;
-  border-top: 1px solid #FFF;
+ // border-bottom: 1px solid #FFF;
+  //border-top: 1px solid #FFF;
   -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
   transition: opacity 0.35s, transform 0.35s;
   -webkit-transform: scale(0,1);
@@ -220,6 +306,7 @@ export default {
   position: relative;
   -webkit-transition: all 0.35s;
   transition: all 0.35s;
+  
 }
 
 .card:hover image {
@@ -228,22 +315,7 @@ export default {
   -webkit-filter: brightness(0.6);
 }
 
-.card h2 {
-  text-transform: uppercase;
-  text-align: center;
-  position: relative;
-  font-size: 17px;
-  background-color: transparent;
-  color: #FFF;
-  padding: 1em 0;
-  opacity: 0;
-  filter: alpha(opacity=0);
-  -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
-  transition: opacity 0.35s, transform 0.35s;
-  -webkit-transform: translate3d(0,-100%,0);
-  transform: translate3d(0,-100%,0);
 
-}
 
 .profil{
  display:none;
@@ -254,18 +326,10 @@ export default {
 .card:hover .profil{
   
   display:block;
-  bottom: 5%;
-color: red;
+  bottom: 20%;
+color: orange;
  }
 
-
-
-.card:hover a, .card:hover p, .card:hover h2 {
-  opacity: 1;
-  filter: alpha(opacity=100);
-  -webkit-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
-}
 
 </style>
 
