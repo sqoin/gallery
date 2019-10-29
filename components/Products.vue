@@ -1,23 +1,13 @@
 <template>
-
-  <div class="card">
-
-<div class="card" data-aos="flip-up" data-aos-duration="infinte">
+<div class="card">
 
     <div class="card-image">
       <figure class="image is-3by2">
-        <img slot="image" :src="product.image" alt="Card image cap" />
-
-
-
-         <md-avatar class="avatar">
-     <a href="https://www.google.com">  <img src="https://vuematerial.io/assets/examples/avatar.png" alt="Avatar"></a>
-
-    
-    </md-avatar>
+        <img slot="image" :src="product.image" alt="Card image cap" />      
 
       </figure>
-    </div>
+   
+  
     <div class="card-footer is-centered">
       <md-button
         class="card-footer-item"
@@ -29,7 +19,7 @@
           <i class="fa fa-heart"></i>
         </span>
       </md-button>
-      <md-button class="card-footer-item is-hovered">{{product.price}} &dollar;</md-button>
+      <md-button class="card-footer-item">{{product.price}} &dollar;</md-button>
       <md-button
         :title="addToFavouriteLabel"
         v-show="!product.isFavourite"
@@ -45,13 +35,14 @@
         v-if="!product.isAddedToCart"
         @click="showCheckoutModal(),addToCart(product.id)"
       >{{ addToCartLabel }}</md-button>
-     <b-badge
-        
+     
+      <md-button  
         class="btn btn-outline-success"
         v-if="product.isAddedToCart"
         @click="removeFromCart(product.id, false)"
-      >{{ removeFromCartLabel }}</b-badge>
-    </div>
+      >{{ removeFromCartLabel }}</md-button>
+     
+   
     <nuxt-link
       class="details"
       :to="{
@@ -67,13 +58,8 @@
         }
       }"
     ></nuxt-link>
-  </div>
+ </div></div></div>
 </template>
-
-
-
-
-
 <script>
 export default {
   name: "products Direction",
@@ -84,7 +70,7 @@ export default {
     return {
       addToCartLabel: "Buy ",
       viewDetailsLabel: "Details",
-      removeFromCartLabel: "paid",
+      removeFromCartLabel: "Paid",
       addToFavouriteLabel: "Add",
       removeFromFavouriteLabel: "Remove",
       selected: 1,
@@ -152,10 +138,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.avatar {
- 
 
-}
 
 
 .details {
@@ -170,6 +153,69 @@ export default {
   &:hover {
     border: 1px solid orange;
   }
+}
+
+
+.card-footer {
+  position: absolute;
+  
+  width: 80%;
+  height: 80%;
+  left: 10%;
+  top: 10%;
+  border-bottom: 1px solid #FFF;
+  border-top: 1px solid #FFF;
+  -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+  transition: opacity 0.35s, transform 0.35s;
+  -webkit-transform: scale(0,1);
+  -ms-transform: scale(0,1);
+  transform: scale(0,1);
+}
+
+.card:hover .card-footer {
+  opacity: 1;
+  filter: alpha(opacity=100);
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+}
+
+.card image {
+  display: block;
+  position: relative;
+  -webkit-transition: all 0.35s;
+  transition: all 0.35s;
+}
+
+.card:hover image {
+  filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="linear" slope="0.6" /><feFuncG type="linear" slope="0.6" /><feFuncB type="linear" slope="0.6" /></feComponentTransfer></filter></svg>#filter');
+  filter: brightness(0.6);
+  -webkit-filter: brightness(0.6);
+}
+
+.card h2 {
+  text-transform: uppercase;
+  text-align: center;
+  position: relative;
+  font-size: 17px;
+  background-color: transparent;
+  color: #FFF;
+  padding: 1em 0;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+  transition: opacity 0.35s, transform 0.35s;
+  -webkit-transform: translate3d(0,-100%,0);
+  transform: translate3d(0,-100%,0);
+}
+
+
+
+.card:hover a, .card:hover p, .card:hover h2 {
+  opacity: 1;
+  filter: alpha(opacity=100);
+  -webkit-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
 }
 </style>
 

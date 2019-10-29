@@ -1,14 +1,147 @@
-<template>
-<div>
-  <h1>Shopping List</h1>
+<template >
+		
 	
-</div>
+			
+			<section >
+				<div v-if="!isCheckoutSection">
+					<div class="box" v-for="product in products" :key="product.id">
+				
+						<p>{{ product.title }} </p>
+						<p>{{ product.price }} &euro;</p>
+					</div>
+				<div v-if="products.length === 0">
+						<p>{{ cartEmptyLabel }}</p>
+					</div> 
+				</div>
+					<div v-if="isCheckoutSection">
+					<p>You bought it :)</p>
+				</div> 
+			</section>
+
+	
+	
+    
+  
 </template>
 
 <script>
 
-</script>
+export default {
+	
+	name: 'checkout',
+	
+    
+	data () {
+		return {
+			
+			removeLabel: 'Remove from cart',
+			cartEmptyLabel: 'Your cart is empty',
+			closeLabel: 'Close',
+			isCheckoutSection: false
+		}
+	},
 
+	computed: {
+			products () {
+				return this.$store.getters.productsAdded;
+			},
+			openModal () {
+				if (this.$store.getters.isCheckoutModalOpen) {
+					return true;
+				} else {
+					return false;
+				}
+			},
+			buyLabel () {
+				let totalProducts = this.products.length,
+						productsAdded = this.$store.getters.productsAdded,
+						pricesArray = [],
+						productLabel = '',
+						finalPrice = '',
+						quantity = 1;
+
+				productsAdded.forEach(product => {
+
+					if (product.quantity >= 1) {
+						quantity = product.quantity;
+					}
+
+					pricesArray.push((product.price * quantity)); // get the price of every product added and multiply quantity
+				});
+
+				finalPrice = pricesArray.reduce((a, b) => a + b, 0); // sum the prices
+				
+				if (totalProducts > 1) { // set plural or singular
+					productLabel = 'products';
+				} else {
+					productLabel = 'product';
+				}
+				return `Buy ${totalProducts} ${productLabel} at ${finalPrice}€`;
+		},
+		isUserLoggedIn () {
+			return this.$store.getters.isUserLoggedIn;
+		}
+	},
+
+	methods: {
+		deleteFromCart(){
+			this.$store.commit('deleteFromCart');
+
+		},
+		closeModal (reloadPage) {
+			this.$store.commit('showCheckoutModal', false);
+			this.isCheckoutSection = true;
+			
+	
+		
+		},
+		removeFromCart (id) {
+			let data = {
+					id: id,
+					status: false
+			}
+			this.$store.commit('removeFromCart', id);
+			this.$store.commit('setAddedBtn', data);
+		},
+		onNextBtn () {
+			if (this.isUserLoggedIn) {
+
+				let totalProducts = this.products.length,
+						productsAdded = this.$store.getters.productsAdded;
+		productsAdded.forEach(product => {
+		console.log("test "+product.price + product.id)
+		this.isCheckoutSection = true;
+
+		var successUrl =window.location;
+				
+		window.open('https://sqoin.exchange/walletd/#/send?successUrl='+decodeURIComponent(successUrl)+'&amount='+product.price+'&product='+product.id+'&quantity='+1);
+				
+			
+
+		});		
+				
+
+			} else {
+				this.$store.commit('showCheckoutModal', false);
+				this.$store.commit('showLoginModal', true);
+			}
+		},
+		onPrevBtn () {
+		this.isCheckoutSection = false;
+		},
+		addToShoppingList (id) {
+      let data = {
+        id: id,
+        status: true
+      }
+      this.$store.commit('addToShoppingList', id);
+     
+    },
+		
+	}
+}
+</script>
 <style>
+
 
 </style>
