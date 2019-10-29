@@ -13,6 +13,7 @@ export const state = () => ({
       isAddedToCart: false,
       isAddedBtn: false,
       isFavourite: false,
+    
       quantity: 1
     },
     {
@@ -27,6 +28,7 @@ export const state = () => ({
       isAddedBtn: false,
       isFavourite: false,
       quantity: 1
+     
     },
     {
       id: 3,

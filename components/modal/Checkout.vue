@@ -56,6 +56,7 @@ export default {
 				} else {
 					return false;
 				}
+				
 			},
 			buyLabel () {
 				let totalProducts = this.products.length,
@@ -82,6 +83,7 @@ export default {
 					productLabel = 'product';
 				}
 				return `Buy ${totalProducts} ${productLabel} at ${finalPrice}€`;
+				
 		},
 		isUserLoggedIn () {
 			return this.$store.getters.isUserLoggedIn;
@@ -91,13 +93,16 @@ export default {
 	methods: {
 		deleteFromCart(){
 			this.$store.commit('deleteFromCart');
+			   
 
 		},
 		closeModal (reloadPage) {
+
 			this.$store.commit('showCheckoutModal', false);
-			this.isCheckoutSection = true;
-			
-	
+			this.isCheckoutSection = false;
+			this.$store.commit('deleteFromCart');
+			 
+
 		
 		},
 		removeFromCart (id) {
@@ -105,7 +110,7 @@ export default {
 					id: id,
 					status: false
 			}
-			this.$store.commit('removeFromCart', id);
+			this.$storestore.commit('removeFromCart', id);
 			this.$store.commit('setAddedBtn', data);
 		},
 		onNextBtn () {
@@ -116,10 +121,11 @@ export default {
 		productsAdded.forEach(product => {
 		console.log("test "+product.price + product.id)
 		this.isCheckoutSection = true;
-
+	    this.isAddedToCart= false;
+      
 		var successUrl =window.location;
 				
-		window.open('https://sqoin.exchange/walletd/#/send?successUrl='+decodeURIComponent(successUrl)+'&amount='+product.price+'&product='+product.id+'&quantity='+1);
+		window.open('https://sqoin.exchange/walletd/#/send?successUrl='+decodeURIComponent(successUrl)+'&amount='+product.price+'&product='+product.id+'&quantity='+1+'&IPNHandler='+"https://sqoin.exchange/api/handleTransaction");
 				
 			
 
@@ -139,7 +145,8 @@ export default {
         id: id,
         status: true
       }
-      this.$store.commit('addToShoppingList', id);
+	  this.$store.commit('addToShoppingList', id);
+	 
      
     },
 		

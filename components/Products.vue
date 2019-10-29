@@ -1,51 +1,84 @@
 <template>
-<div class="card">
 
-    <div class="card-image">
-      <figure class="image is-3by2">
-        <img slot="image" :src="product.image" alt="Card image cap" />      
+    <div class="card" >
+      <div class="card-image">
+        <figure class="image is-3by2">
+          <img slot="image" :src="product.image" alt="Card image cap" />
 
-      </figure>
-   
-  
-    <div class="card-footer is-centered">
-      <md-button
-        class="card-footer-item"
-        :title="removeFromFavouriteLabel"
-        v-show="product.isFavourite"
-        @click="removeFromFavourite(product.id)"
-      >
-        <span class="icon is-small">
-          <i class="fa fa-heart"></i>
-        </span>
-      </md-button>
-      <md-button class="card-footer-item">{{product.price}} &dollar;</md-button>
-      <md-button
-        :title="addToFavouriteLabel"
-        v-show="!product.isFavourite"
-        @click="saveToFavorite(product.id)"
-      >
-        <span class="icon is-small">
-          <i class="fa fa-heart-o"></i>
-        </span>
-      </md-button>
-
-      <md-button 
-        class="card-footer-item btn btn-outline-warning"
-        v-if="!product.isAddedToCart"
-        @click="showCheckoutModal(),addToCart(product.id)"
-      >{{ addToCartLabel }}</md-button>
      
-      <md-button  
-        class="btn btn-outline-success"
-        v-if="product.isAddedToCart"
-        @click="removeFromCart(product.id, false)"
-      >{{ removeFromCartLabel }}</md-button>
-     
-   
-    <nuxt-link
-      class="details"
-      :to="{
+         <md-button class="profil  md-raised" @click="showDialog = true">Profil</md-button>
+         
+        </figure>
+
+       <md-dialog :md-active.sync="showDialog" >
+      <md-dialog-title>Preferences</md-dialog-title>
+
+      <md-tabs md-dynamic-height>
+        <md-tab md-label="General">
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ullam mollitia dolorum dolores quae commodi impedit possimus qui, atque at voluptates cupiditate. Neque quae culpa suscipit praesentium inventore ducimus ipsa aut.</p>
+         
+        </md-tab>
+
+        <md-tab md-label="Activity">
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ullam mollitia dolorum dolores quae commodi impedit possimus qui, atque at voluptates cupiditate. Neque quae culpa suscipit praesentium inventore ducimus ipsa aut.</p>
+          
+        </md-tab>
+
+        <md-tab md-label="Account">
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ullam mollitia dolorum dolores quae commodi impedit possimus qui, atque at voluptates cupiditate. Neque quae culpa suscipit praesentium inventore ducimus ipsa aut.</p>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ullam mollitia dolorum dolores quae commodi impedit possimus qui, atque at voluptates cupiditate. Neque quae culpa suscipit praesentium inventore ducimus ipsa aut.</p>
+        </md-tab>
+      </md-tabs>
+
+      <md-dialog-actions>
+        <md-button class="md-primary" @click="showDialog = false">Close</md-button>
+        <md-button class="md-primary" @click="showDialog = false">Save</md-button>
+      </md-dialog-actions>
+    </md-dialog>
+
+
+
+
+      </div>
+      <div class="card-footer is-centered">
+        <md-button
+          class="card-footer-item"
+          :title="removeFromFavouriteLabel"
+          v-show="product.isFavourite"
+          @click="removeFromFavourite(product.id)"
+        >
+          <span class="icon is-small">
+            <i class="fa fa-heart"></i>
+          </span>
+        </md-button>
+        <md-button class="card-footer-item is-hovered">{{product.price}} &dollar;</md-button>
+        <md-button
+          :title="addToFavouriteLabel"
+          v-show="!product.isFavourite"
+          @click="saveToFavorite(product.id)"
+        >
+          <span class="icon is-small">
+            <i class="fa fa-heart-o"></i>
+          </span>
+        </md-button>
+
+        <md-button
+          class="card-footer-item btn btn-outline-warning"
+          v-if="!product.isAddedToCart"
+          @click="showCheckoutModal(),addToCart(product.id)"
+        >{{ addToCartLabel }}</md-button>
+        
+    <md-button
+          class="btn btn-outline-success"
+          v-if="product.isAddedToCart"
+          @click="removeFromCart(product.id, false)"
+        >{{ removeFromCartLabel }}</md-button> 
+      </div>
+
+
+      <nuxt-link
+        class="details"
+        :to="{
         name: 'product_detail-id',
         params: {
           id: product.id,
@@ -57,14 +90,15 @@
           isAddedBtn: product.isAddedBtn
         }
       }"
+
     ></nuxt-link>
  </div></div></div>
+
 </template>
 <script>
 export default {
-  name: "products Direction",
+  name: "products Direction DialogCustom",
   props: ["product"],
- 
 
   data() {
     return {
@@ -74,6 +108,7 @@ export default {
       addToFavouriteLabel: "Add",
       removeFromFavouriteLabel: "Remove",
       selected: 1,
+       showDialog: false,
       quantityArray: []
     };
   },
@@ -138,9 +173,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
-
-
 .details {
   cursor: pointer;
   position: absolute;
@@ -152,8 +184,11 @@ export default {
 
   &:hover {
     border: 1px solid orange;
+     
+   
   }
 }
+
 
 
 .card-footer {
@@ -207,7 +242,21 @@ export default {
   transition: opacity 0.35s, transform 0.35s;
   -webkit-transform: translate3d(0,-100%,0);
   transform: translate3d(0,-100%,0);
+
 }
+
+.profil{
+ display:none;
+	position:absolute;
+ 
+}
+
+.card:hover .profil{
+  
+  display:block;
+  bottom: 5%;
+color: red;
+ }
 
 
 
@@ -217,6 +266,7 @@ export default {
   -webkit-transform: translate3d(0,0,0);
   transform: translate3d(0,0,0);
 }
+
 </style>
 
 
