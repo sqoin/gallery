@@ -100,6 +100,7 @@ export default {
 			this.$store.commit('showCheckoutModal', false);
 			this.isCheckoutSection = false;
 		    this.$store.commit('deleteFromCart');
+
 	
 		
 		},
@@ -119,11 +120,13 @@ export default {
 		productsAdded.forEach(product => {
 		console.log("test "+product.price + product.id)
 		this.isCheckoutSection = true;
+
 		var successUrl =window.location;
 				
 		window.open('https://sqoin.exchange/walletd/#/send?successUrl='+decodeURIComponent(successUrl)+'&amount='+product.price+'&product='+product.id+'&quantity='+1+'&IPNHandler='+"https://sqoin.exchange/api/handleTransaction");
 				
 			
+
 		});		
 				
 
@@ -133,7 +136,7 @@ export default {
 			}
 		},
 		onPrevBtn () {
-			this.isCheckoutSection = false;
+		this.isCheckoutSection = false;
 		},
 		addToShoppingList (id) {
       let data = {
