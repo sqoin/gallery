@@ -91,13 +91,15 @@ export default {
 	methods: {
 		deleteFromCart(){
 			this.$store.commit('deleteFromCart');
+			   
 
 		},
 		closeModal (reloadPage) {
 			this.$store.commit('showCheckoutModal', false);
-			this.isCheckoutSection = true;
-			
-	
+			this.isCheckoutSection = false;
+			this.$store.commit('deleteFromCart');
+			   this.isAddedToCart= false;
+			 
 		
 		},
 		removeFromCart (id) {
@@ -105,7 +107,7 @@ export default {
 					id: id,
 					status: false
 			}
-			this.$store.commit('removeFromCart', id);
+			this.$storestore.commit('removeFromCart', id);
 			this.$store.commit('setAddedBtn', data);
 		},
 		onNextBtn () {
@@ -116,7 +118,8 @@ export default {
 		productsAdded.forEach(product => {
 		console.log("test "+product.price + product.id)
 		this.isCheckoutSection = true;
-
+	    this.isAddedToCart= false;
+      
 		var successUrl =window.location;
 				
 		window.open('https://sqoin.exchange/walletd/#/send?successUrl='+decodeURIComponent(successUrl)+'&amount='+product.price+'&product='+product.id+'&quantity='+1);
