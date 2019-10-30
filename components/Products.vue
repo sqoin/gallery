@@ -1,15 +1,20 @@
 <template>
 
+
     <md-card md-with-hover >
     
+
+ 
       <div class="card-image">
       
         <figure class="image is-3by2">
           <img slot="image" :src="product.image" alt="Card image cap" />
 
-         
-         <md-button class="profil  md-raised" @click="showDialog = true">Follow</md-button>
-         
+                
+             
+          <img class="profil is-rounded md-raised" @click="showDialog = true" src="http://www.vanessavercel.fr/wp-content/uploads/2014/03/Vanessa-Vercel1.jpg" alt="Image">
+        
+
         </figure>
 
        <md-dialog :md-active.sync="showDialog" >
@@ -102,7 +107,10 @@
           
         </div></md-tab>
 
-     
+
+
+        </md-tab>
+
       </md-tabs>
 
       <md-dialog-actions>
@@ -148,7 +156,10 @@
           v-if="product.isAddedToCart"
           @click="removeFromCart(product.id, false)"
         >{{ removeFromCartLabel }}</md-button> 
-      <nuxt-link
+
+
+     <nuxt-link
+
         class="details"
         :to="{
         name: 'product_detail-id',
@@ -165,8 +176,16 @@
 
     ></nuxt-link>
 
+
       
  </div></md-card>
+
+ 
+
+
+     
+ 
+
 
 
 </template>
@@ -270,8 +289,12 @@ export default {
   height: 20%;
   left: 10%;
   top: 10%;
+
   //border-bottom: 1px solid #FFF;
   //border-top: 1px solid #FFF;
+
+
+
   -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
   transition: opacity 0.35s, transform 0.35s;
   -webkit-transform: scale(0,1);
@@ -303,6 +326,10 @@ export default {
 .profil{
  display:none;
 	position:absolute;
+  max-width: 50px;
+    max-height: 50px;
+    /* top: initial; */
+    margin-top: 50%;
  
 }
 .card:hover .profil{
