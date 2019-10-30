@@ -6,7 +6,7 @@
           <img slot="image" :src="product.image" alt="Card image cap" />
 
      
-         <md-button class="profil  md-raised" @click="showDialog = true">Profil</md-button>
+         <md-button class="profil  md-raised" @click="showDialog = true">profil</md-button>
          
         </figure>
 
@@ -73,8 +73,7 @@
           v-if="product.isAddedToCart"
           @click="removeFromCart(product.id, false)"
         >{{ removeFromCartLabel }}</md-button> 
-      </div>
-
+     
 
       <nuxt-link
         class="details"
@@ -92,7 +91,9 @@
       }"
 
     ></nuxt-link>
- </div></div></div>
+     </div>
+
+ </div>
 
 </template>
 <script>

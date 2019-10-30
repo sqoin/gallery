@@ -1,7 +1,7 @@
 <template>
   <div class="section">
     <h3 class="title">{{ pageTitle }}</h3>
-    <div class="columns is-centered is-multiline">
+    <div class="column is-centered is-multiline">
       <div class="card  is-one-quarter" v-for="product in productsInWishlist" :key="product.id">
         <VmProductsList :product="product"></VmProductsList>
       </div>
