@@ -1,16 +1,14 @@
 <template>
 
     <div class="card" >
+       
       <div class="card-image">
         <figure class="image is-3by2">
           <img slot="image" :src="product.image" alt="Card image cap" />
-
-     
-
-
-         <md-button class="profil  md-raised" @click="showDialog = true">Follow</md-button>
-
-         
+                
+             
+          <img class="profil is-rounded md-raised" @click="showDialog = true" src="http://www.vanessavercel.fr/wp-content/uploads/2014/03/Vanessa-Vercel1.jpg" alt="Image">
+        
         </figure>
 
        <md-dialog :md-active.sync="showDialog" >
@@ -37,17 +35,17 @@
         <div class="level-left">
           <a class="level-item" aria-label="reply">
             <span class="icon is-small">
-              <i class="fas fa-reply" aria-hidden="true"></i>
+              <i class="fa fa-reply" aria-hidden="true"></i>
             </span>
           </a>
           <a class="level-item" aria-label="retweet">
             <span class="icon is-small">
-              <i class="fas fa-retweet" aria-hidden="true"></i>
+              <i class="fa fa-retweet" aria-hidden="true"></i>
             </span>
           </a>
           <a class="level-item" aria-label="like">
             <span class="icon is-small">
-              <i class="fas fa-heart" aria-hidden="true"></i>
+              <i class="fa fa-heart" aria-hidden="true"></i>
             </span>
           </a>
         </div>
@@ -110,11 +108,6 @@
      <!--   <md-tab md-label="Account">
           
 
-
-
-
-
-
           
         </md-tab>-->
       </md-tabs>
@@ -163,10 +156,7 @@
           @click="removeFromCart(product.id, false)"
         >{{ removeFromCartLabel }}</md-button> 
 
-      
-
-
-      <nuxt-link
+     <nuxt-link
         class="details"
         :to="{
         name: 'product_detail-id',
@@ -182,7 +172,10 @@
       }"
 
     ></nuxt-link>
+ 
 
+
+     
  </div></div>
 
 
@@ -291,8 +284,7 @@ export default {
   height: 20%;
   left: 10%;
   top: 10%;
- // border-bottom: 1px solid #FFF;
-  //border-top: 1px solid #FFF;
+
   -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
   transition: opacity 0.35s, transform 0.35s;
   -webkit-transform: scale(0,1);
@@ -327,6 +319,10 @@ export default {
 .profil{
  display:none;
 	position:absolute;
+  max-width: 50px;
+    max-height: 50px;
+    /* top: initial; */
+    margin-top: 50%;
  
 }
 
