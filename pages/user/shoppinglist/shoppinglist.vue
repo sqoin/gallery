@@ -1,9 +1,6 @@
 
 <template >
-		
-	
-			
-			<section >
+					<section >
 				<div v-if="!isCheckoutSection">
 					<div class="box" v-for="product in products" :key="product.id">
 				
@@ -30,9 +27,7 @@
 
 export default {
 	
-	name: 'checkout',
-	
-    
+
 	data () {
 		return {
 			

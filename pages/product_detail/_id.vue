@@ -7,9 +7,11 @@
       <div class="columns is-vcentered">
         <div class="column is-8">
           <span class="bd-notification is-primary">
+           <md-card md-with-hover>
             <figure class="image is-4by3">
               <img slot="image" :src="product.image" alt="Card image cap" />
             </figure>
+            </md-card>
           </span>
         </div>
         <div class="column has-text-centered">
@@ -47,10 +49,10 @@
               @click="showCheckoutModal(),addToCart(product.id)"
             >{{ addToCartLabel }}</md-button>
 
-            <b-badge
+            <md-button
               class="btn btn-outline-success"
               v-if="product.isAddedToCart"
-            >{{ removeFromCartLabel }}</b-badge>
+            >{{ removeFromCartLabel }}</md-button>
           </div>
         </div>
       </div>

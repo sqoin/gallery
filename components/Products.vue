@@ -1,11 +1,13 @@
 <template>
 
-    <div class="card" >
+    <md-card md-with-hover >
+    
       <div class="card-image">
+      
         <figure class="image is-3by2">
           <img slot="image" :src="product.image" alt="Card image cap" />
 
-     
+         
          <md-button class="profil  md-raised" @click="showDialog = true">Follow</md-button>
          
         </figure>
@@ -13,7 +15,8 @@
        <md-dialog :md-active.sync="showDialog" >
       <md-dialog-title>Photographe Profil <md-icon>favorite</md-icon><md-icon>camera_alt</md-icon></md-dialog-title>
 
-      <md-tabs md-dynamic-height>
+      <md-tabs md-dynamic-height >
+      
         <md-tab md-label="General">
           <div class="box">
   <article class="media">
@@ -25,7 +28,7 @@
     <div class="media-content">
       <div class="content">
         <p>
-          <strong>Lara Smith</strong> <small>@Larasmith</small> <small>31m</small>
+          <strong>Lara Smith</strong> <small>@Larasmith</small> 
           <br>
          Rien n’est plus simple et immédiat qu’une photo de profil pour montrer qui vous êtes. En un regard, vous levez une partie du voile sur votre personnalité. A condition que votre photo soit réussie)
         </p>
@@ -34,17 +37,17 @@
         <div class="level-left">
           <a class="level-item" aria-label="reply">
             <span class="icon is-small">
-              <i class="fas fa-reply" aria-hidden="true"></i>
+              <i class="fa fa-reply" aria-hidden="true"></i>
             </span>
           </a>
           <a class="level-item" aria-label="retweet">
             <span class="icon is-small">
-              <i class="fas fa-retweet" aria-hidden="true"></i>
+              <i class="fa fa-retweet" aria-hidden="true"></i>
             </span>
           </a>
           <a class="level-item" aria-label="like">
             <span class="icon is-small">
-              <i class="fas fa-heart" aria-hidden="true"></i>
+              <i class="fa fa-heart" aria-hidden="true"></i>
             </span>
           </a>
         </div>
@@ -55,14 +58,17 @@
          
         </md-tab>
 
-        <md-tab md-label="Activity">
+        <md-tab md-label="Activity" >
+
           <div class="tile is-ancestor">
   <div class="tile is-vertical is-8">
     <div class="tile">
       <div class="tile is-parent is-vertical">
         <article class="tile is-child notification is-primary">
-          <p class="title">Vertical...</p>
-          <p class="subtitle">Top tile</p>
+          <p class="title">Nature...</p>
+          <figure class="image is-5by4">
+            <img src="https://images.pexels.com/photos/814499/pexels-photo-814499.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
+          </figure>
         </article>
         <article class="tile is-child notification is-warning">
           <p class="title">...tiles</p>
@@ -70,24 +76,16 @@
         </article>
       </div>
       <div class="tile is-parent">
-        <article class="tile is-child notification is-info">
-          <p class="title">Middle tile</p>
+        <article class="tile is-child notification">
+         
           <p class="subtitle">With an image</p>
-          <figure class="image is-4by3">
+          <figure class="image is-5by4">
             <img src="https://www.ouest-france.fr/sites/default/files/styles/image-640x360-p/public/2017/05/31/quentin-un-photographe-passionne-par-la-nature.jpg?itok=u5K-hqPZ">
           </figure>
         </article>
       </div>
     </div>
-    <div class="tile is-parent">
-      <article class="tile is-child notification is-danger">
-        <p class="title">Wide tile</p>
-        <p class="subtitle">Aligned with the right tile</p>
-        <div class="content">
-          <!-- Content -->
-        </div>
-      </article>
-    </div>
+    
   </div>
   <div class="tile is-parent">
     <article class="tile is-child notification is-success">
@@ -100,20 +98,11 @@
       </div>
     </article>
   </div>
-</div>
-          
-        </md-tab>
-
-     <!--   <md-tab md-label="Account">
-          
-
-
-
-
-
 
           
-        </md-tab>-->
+        </div></md-tab>
+
+     
       </md-tabs>
 
       <md-dialog-actions>
@@ -159,8 +148,6 @@
           v-if="product.isAddedToCart"
           @click="removeFromCart(product.id, false)"
         >{{ removeFromCartLabel }}</md-button> 
-      
-
       <nuxt-link
         class="details"
         :to="{
@@ -177,7 +164,9 @@
       }"
 
     ></nuxt-link>
- </div></div>
+
+      
+ </div></md-card>
 
 
 </template>
@@ -269,22 +258,19 @@ export default {
   z-index: 1;
 
   &:hover {
-    border: 1px solid ;
+   border: 1px solid ;
      
    
   }
 }
 
-
-
 .card-footer {
   position: absolute;
-  
-  width: 80%;
+    width: 80%;
   height: 20%;
   left: 10%;
   top: 10%;
- // border-bottom: 1px solid #FFF;
+  //border-bottom: 1px solid #FFF;
   //border-top: 1px solid #FFF;
   -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
   transition: opacity 0.35s, transform 0.35s;
@@ -314,23 +300,20 @@ export default {
   filter: brightness(0.6);
   -webkit-filter: brightness(0.6);
 }
-
-
-
 .profil{
  display:none;
 	position:absolute;
  
 }
-
 .card:hover .profil{
   
   display:block;
   bottom: 20%;
-color: orange;
+ color: orange;
  }
-
-
+ .md-dialog {
+    max-width: 900px;
+  }
 </style>
 
 

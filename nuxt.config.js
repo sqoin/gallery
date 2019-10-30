@@ -70,6 +70,7 @@ module.exports = {
       src: 'bulma/bulma.sass',
       lang: 'sass'
     },
+    { src: 'font-awesome/scss/font-awesome.scss', lang: 'scss' },
     { src: "@/assets/custom-bootstrap", lang: "scss" },
     { src: 'vue-material/dist/vue-material.min.css', lang: 'css' },
     { src: '@/assets/theme.scss', lang: 'scss' } 
@@ -90,7 +91,8 @@ module.exports = {
 	
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
-    '@nuxtjs/font-awesome'
+    '@nuxtjs/font-awesome',
+    
   ],
   /*
   ** Axios module configuration
