@@ -29,10 +29,10 @@
 				<nuxt-link class="navbar-item" :to="{ name: 'user-wishlist' }">
 					{{ wishlistLabel }}
 				</nuxt-link>
-
-              <nuxt-link class="navbar-item" :to="{ name: 'user-shoppinglist-shoppinglist' }">
-					{{ Shoppinglist }}
+				<nuxt-link class="navbar-item" :to="{ name: 'user-achats-achats' }">
+					{{ purchasedLabel }}
 				</nuxt-link>
+              
 
 				<hr class="navbar-divider">
 				<a class="navbar-item" @click="logout">
@@ -52,6 +52,7 @@ export default {
 		return {
 			Shoppinglist: 'Shopping List',
 			wishlistLabel: 'Wishlist',
+			purchasedLabel: 'Purchased' ,
 			logoutLabel: 'Log out',
 			loginLabel: 'Log in',
 			signupLabel: 'Sign up'
@@ -78,7 +79,7 @@ export default {
 			this.$store.commit('isUserLoggedIn', false);
 			this.$store.commit('isUserSignedUp', false);
 			this.$store.commit('removeProductsFromFavourite');
-
+			this.$store.commit('logout');
 			// redirect to homepage
 			this.$router.push({ name: 'index' });
 		},
@@ -87,6 +88,12 @@ export default {
 		},
 		showSignupModal () {
 			this.$store.commit('showSignupModal', true);
+		}
+	},
+	mounted() {
+		if (localStorage.getItem("info")) {
+		var localData=JSON.parse(localStorage.getItem("info"));
+		this.$store.commit('setLoginDataFromLocalStorage',localData);
 		}
 	}
 }

@@ -13,8 +13,10 @@ export const state = () => ({
       isAddedToCart: false,
       isAddedBtn: false,
       isFavourite: false,
+      quantity: 1,
+      isPurchased: false,
+      owner: 1
     
-      quantity: 1
     },
     {
       id: 2,
@@ -27,8 +29,9 @@ export const state = () => ({
       isAddedToCart: false,
       isAddedBtn: false,
       isFavourite: false,
-      quantity: 1
-     
+      quantity: 1,
+      isPurchased: false,
+      owner: 1
     },
     {
       id: 3,
@@ -41,7 +44,9 @@ export const state = () => ({
       isAddedToCart: false,
       isAddedBtn: false,
       isFavourite: false,
-      quantity: 1
+      isPurchased: false,
+      quantity: 1,
+      owner: 2
     },
     {
       id: 4,
@@ -54,7 +59,9 @@ export const state = () => ({
       isAddedToCart: false,
       isAddedBtn: false,
       isFavourite: false,
-      quantity: 1
+      isPurchased: false,
+      quantity: 1,
+      owner: 3
     },
     {
       id: 5,
@@ -67,7 +74,9 @@ export const state = () => ({
       isAddedToCart: false,
       isAddedBtn: false,
       isFavourite: false,
-      quantity: 1
+      isPurchased: false,
+      quantity: 1,
+      owner: 1
     },
     {
       id: 6,
@@ -80,7 +89,9 @@ export const state = () => ({
       isAddedToCart: false,
       isAddedBtn: false,
       isFavourite: false,
-      quantity: 1
+      isPurchased: false,
+      quantity: 1,
+      owner: 1
     },
     {
       id: 7,
@@ -93,7 +104,9 @@ export const state = () => ({
       isAddedToCart: false,
       isAddedBtn: false,
       isFavourite: false,
-      quantity: 1
+      isPurchased: false,
+      quantity: 1,
+      owner: 2
     },
     
     {
@@ -107,7 +120,9 @@ export const state = () => ({
       isAddedToCart: false,
       isAddedBtn: false,
       isFavourite: false,
-      quantity: 1
+      isPurchased: false,
+      quantity: 1,
+      owner: 3
     },
     {
       id: 9,
@@ -120,7 +135,9 @@ export const state = () => ({
       isAddedToCart: false,
       isAddedBtn: false,
       isFavourite: false,
-      quantity: 1
+      isPurchased: false,
+      quantity: 1,
+      owner: 2
     },
     {
       id: 10,
@@ -133,7 +150,9 @@ export const state = () => ({
       isAddedToCart: false,
       isAddedBtn: false,
       isFavourite: false,
-      quantity: 1
+      isPurchased: false,
+      quantity: 1,
+      owner: 1
     },
     {
       id: 11,
@@ -146,7 +165,9 @@ export const state = () => ({
       isAddedToCart: false,
       isAddedBtn: false,
       isFavourite: false,
-      quantity: 1
+      isPurchased: false,
+      quantity: 1,
+      owner: 3
     },
     {
       id: 12,
@@ -159,7 +180,9 @@ export const state = () => ({
       isAddedToCart: false,
       isAddedBtn: false,
       isFavourite: false,
-      quantity: 1
+      isPurchased: false,
+      quantity: 1,
+      owner: 3
     },
     {
       id: 13,
@@ -172,7 +195,9 @@ export const state = () => ({
       isAddedToCart: false,
       isAddedBtn: false,
       isFavourite: false,
-      quantity: 1
+      isPurchased: false,
+      quantity: 1,
+      owner: 2
     },
     
     {
@@ -186,7 +211,9 @@ export const state = () => ({
       isAddedToCart: false,
       isAddedBtn: false,
       isFavourite: false,
-      quantity: 1
+      isPurchased: false,
+      quantity: 1,
+      owner: 1
     },
     {
       id: 15,
@@ -199,7 +226,9 @@ export const state = () => ({
       isAddedToCart: false,
       isAddedBtn: false,
       isFavourite: false,
-      quantity: 1
+      isPurchased: false,
+      quantity: 1,
+      owner: 1
     },
     {
       id: 16,
@@ -212,15 +241,59 @@ export const state = () => ({
       isAddedToCart: false,
       isAddedBtn: false,
       isFavourite: false,
-      quantity: 1
+      isPurchased: false,
+      isBuyed:false,
+      quantity: 1,
+      owner: 2
+    }
+  ],
+  users: [
+    {
+      id: 1,
+      name: 'Kirito',
+      username: 'kirito',
+      email: 'gahlouzi.saif.93@gmail.com',
+      password: '123'
+    },
+    {
+      id: 2,
+      name: 'Walid',
+      username: 'walid',
+      email: 'walid@gmail.com',
+      password: '123'
+    },
+    {
+      id: 3,
+      name: 'Dhoha',
+      username: 'dhoha',
+      email: 'dhoha@gmail.com',
+      password: '123'
+    }
+  ],
+  achats: [
+    {
+      id: 1,
+      idUser: 1,
+      idImage: 2
+    },
+    {
+      id: 2,
+      idUser: 1,
+      idImage: 3
+    },
+    {
+      id: 3,
+      idUser: 2,
+      idImage: 2
     }
   ],
   userInfo: {
     isLoggedIn: false,
     isSignedUp: false,
     hasSearched: false,
-    name: '',
-    productTitleSearched: ''
+    name: 'walid',
+    productTitleSearched: '',
+    photo:'https://images.pexels.com/users/avatars/197616/javon-swaby-495.jpeg?w=256&h=256&fit=crop&crop=faces'
   },
   systemInfo: {
     openLoginModal: false,
@@ -235,10 +308,20 @@ export const getters = {
       return el.isAddedToCart;
     });
   },
+  productsPurchased: state => {
+    return state.products.filter(el => {
+      return el.isPurchased;
+    });
+  },
   productsAddedToFavourite: state => {
     return state.products.filter(el => {
       return el.isFavourite;
     });
+  },
+  productsBuyed: state =>{
+    return state.products.filter(el => {
+      return el.isBuyed;
+    })
   },
   getProductById: state => id => {
     return state.products.find(product => product.id == id);
@@ -267,6 +350,17 @@ export const getters = {
 }
 
 export const mutations = {
+  checkUser: (state, authUser) => {
+    state.users.forEach(el => {
+      if (authUser.email === el.email && authUser.password === el.password) {
+        var info ={name:el.name, id:el.id};
+        localStorage.setItem("info", JSON.stringify(info));
+        state.userInfo.isLoggedIn=true;
+        state.userInfo.name=el.name;
+        state.userInfo.id=el.id;
+      }
+    });
+  },
   addToCart: (state, id) => {
     state.products.forEach(el => {
       if (id === el.id) {
@@ -274,10 +368,17 @@ export const mutations = {
       }
     });
   },
+  purchase: (state, id) => {
+    state.products.forEach(el => {
+      if (id === el.id) {
+        el.isPurchased = true;
+      }
+    });
+  },
   addToShoppingList: (state, id) => {
     state.products.forEach(el => {
       if (id === el.id) {
-        el.addToShoppingList = true;
+        el.isBuyed = true;
       }
     });
   },
@@ -355,6 +456,10 @@ export const mutations = {
   },
   SET_USER(state, authUser) {
     state.authUser = authUser
+  },
+  setLoginDataFromLocalStorage: (state, authUser) => {
+    state.userInfo.isLoggedIn = true;
+    state.userInfo.name=authUser.name;
   }
 }
 /* 

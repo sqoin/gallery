@@ -22,7 +22,7 @@
 				</div> 
 			</section>
 			<footer class="modal-card-foot">
-				<button v-show="products.length > 0 && !isCheckoutSection" class="button is-success" @click="onNextBtn(),addToShoppingList(id)">{{ buyLabel }}</button>
+				<button v-show="products.length > 0 && !isCheckoutSection" class="button is-success" @click="onNextBtn()">{{ buyLabel }}</button>
 				<button v-if="isCheckoutSection" class="button is-success" @click="closeModal(true)">{{ closeLabel }}</button>
 			</footer>
 		</div>
@@ -42,7 +42,8 @@ export default {
 			removeLabel: 'Remove from cart',
 			cartEmptyLabel: 'Your cart is empty',
 			closeLabel: 'Close',
-			isCheckoutSection: false
+			isCheckoutSection: false,
+			
 		}
 	},
 
@@ -124,8 +125,8 @@ export default {
 	    this.isAddedToCart= false;
       
 		var successUrl =window.location;
-				
-		window.open('https://sqoin.exchange/walletd/#/send?successUrl='+decodeURIComponent(successUrl)+'&amount='+product.price+'&product='+product.id+'&quantity='+1+'&IPNHandler='+"https://sqoin.exchange/api/handleTransaction");
+		this.$store.commit('purchase', product.id);
+		window.open('https://sqoin.exchange/walletd/#/checkout?successUrl='+decodeURIComponent(successUrl)+'&amount='+product.price+'&product='+product.id+'&quantity='+1+'&IPNHandler='+"https://sqoin.exchange/api/handleTransaction");
 				
 			
 
