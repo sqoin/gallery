@@ -20,10 +20,10 @@ module.exports = {
       // Facebook open graph
       { property: 'og:type',  content: 'website' },
       { property: 'og:url',  content: 'https://example.com/page.html' },
-      { property: 'og:title',  content: 'Content Title' },
+      { property: 'og:title',  content: 'SQOIN GALLERY' },
       { property: 'og:image',  content: 'https://example.com/image.jpg' },
-      { property: 'og:description',  content: 'Description Here' },
-      { property: 'og:site_name',  content: 'Site Name' },
+      { property: 'og:description',  content: 'Votre galerie en LIGNE '},
+      { property: 'og:site_name',  content: 'Gallery' },
       { property: 'og:locale',  content: 'en_US' },
 
       // Twitter card
@@ -73,7 +73,9 @@ module.exports = {
     { src: 'font-awesome/scss/font-awesome.scss', lang: 'scss' },
     { src: "@/assets/custom-bootstrap", lang: "scss" },
     { src: 'vue-material/dist/vue-material.min.css', lang: 'css' },
-    { src: '@/assets/theme.scss', lang: 'scss' } 
+    { src: '@/assets/theme.scss', lang: 'scss' },
+    'bootstrap-css-only/css/bootstrap.min.css'
+ 
   ],
 
   /*

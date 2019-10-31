@@ -1,7 +1,7 @@
 <template>
 
 
-    <md-card md-with-hover >
+    <mdb-card wide>
     
 
  
@@ -93,13 +93,11 @@
     
   </div>
   <div class="tile is-parent">
-    <article class="tile is-child notification is-success">
+    <article class="tile is-child notification">
       <div class="content">
-        <p class="title">Tall tile</p>
-        <p class="subtitle">With even more content</p>
-        <div class="content">
-          <!-- Content -->
-        </div>
+        <figure class="image is-9by16">
+            <img src="https://images.pexels.com/photos/2866083/pexels-photo-2866083.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
+          </figure>
       </div>
     </article>
   </div>
@@ -178,7 +176,7 @@
 
 
       
- </div></md-card>
+ </div></mdb-card wide>
 
  
 
@@ -277,7 +275,9 @@ export default {
   z-index: 1;
 
   &:hover {
-   border: 1px solid ;
+   border-style: none;
+  // border: 0.1px solid red;
+  
      
    
   }
@@ -285,11 +285,14 @@ export default {
 
 .card-footer {
   position: absolute;
-    width: 80%;
+  width: 80%;
   height: 20%;
   left: 10%;
   top: 10%;
-
+ 
+ // background-color:#ccc;
+  border:none;
+ 
   //border-bottom: 1px solid #FFF;
   //border-top: 1px solid #FFF;
 
@@ -300,6 +303,7 @@ export default {
   -webkit-transform: scale(0,1);
   -ms-transform: scale(0,1);
   transform: scale(0,1);
+
 }
 
 .card:hover .card-footer {
