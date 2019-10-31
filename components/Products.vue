@@ -1,4 +1,5 @@
 <template>
+
   <md-card md-with-hover>
     <div class="card-image">
       <figure class="image is-3by2">
@@ -10,6 +11,7 @@
            :src="this.$store.state.userInfo.photo"
           alt="Image"
         />
+
       </figure>
 
       <md-dialog :md-active.sync="showDialog">
@@ -113,6 +115,7 @@
         </md-dialog-actions>
       </md-dialog>
     </div>
+
     <div class="card-footer is-centered">
       <md-button
         class="card-footer-item"
@@ -148,6 +151,7 @@
       >{{ removeFromCartLabel }}</md-button>
 
       <nuxt-link
+
         class="details"
         :to="{
         name: 'product_detail-id',
@@ -161,9 +165,13 @@
           isAddedBtn: product.isAddedBtn
         }
       }"
+
       ></nuxt-link>
     </div>
   </md-card>
+
+
+
 </template>
 <script>
 export default {
@@ -256,7 +264,14 @@ export default {
   z-index: 1;
 
   &:hover {
-    border: 1px solid;
+
+
+   border-style: none;
+  // border: 0.1px solid red;
+  
+     
+   
+
   }
 }
 
@@ -266,15 +281,20 @@ export default {
   height: 20%;
   left: 10%;
   top: 10%;
-
+ 
+ // background-color:#ccc;
+  border:none;
+ 
   //border-bottom: 1px solid #FFF;
   //border-top: 1px solid #FFF;
 
   -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
   transition: opacity 0.35s, transform 0.35s;
+
   -webkit-transform: scale(0, 1);
   -ms-transform: scale(0, 1);
   transform: scale(0, 1);
+
 }
 
 .card:hover .card-footer {

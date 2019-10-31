@@ -7,17 +7,17 @@
            </li>
          </ul>
        <el-button a href="#"  circle :title="facebookTooltip">
-          <i class="fa fa-facebook"></i>
+          <i class="fa fa-linkedin" style="font-size:16px;color:#2867B2"></i>
         </a></el-button>
         
         <el-button a href="#"   circle  :title="twitterTooltip">
-        <i class="fa fa-twitter"></i>
+        <i class="fa fa-twitter" style="font-size:26px;color:#1DA1F2"></i>
         </a></el-button>
         <el-button a href="#" circle :title="instagramTooltip">
-        <i class="fa fa-instagram"></i>
+        <i class="fa fa-instagram" style="font-size:36px;color:pink"></i>
          </a></el-button>
          <el-button a href="#" :title="linkedinTooltip">
-        <i class="fa fa-linkedin"></i>
+        <i class="fa fa-facebook" style="font-size:48px;color:blue"></i>
          </a></el-button>
      </div>
 </footer>
@@ -48,9 +48,10 @@ export default {
     padding: 0;
     list-style: none;
     margin-left: 25%;
-
+    
     li {
       display: inline-block;
+
 
       a {
         color: orange;

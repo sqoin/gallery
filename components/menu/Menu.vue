@@ -1,6 +1,8 @@
 <template>
 	<div>
 	<VmSearch></VmSearch>
+	
+<!--  end navbar -->
 		<div class="navbar-item">
 			<div class="field is-grouped">
 				<p class="control">
