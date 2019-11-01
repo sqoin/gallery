@@ -14,7 +14,7 @@
 					</a>
 				</p>
 				<p class="control">
-					<a v-if="!isUserLoggedIn" class="btn btn-outline-warning" @click="showLoginModal">
+					<a v-if="!isUserLoggedIn" class="btn btn-warning" @click="showLoginModal">
 						<span class="icon">
 							<i class="fa fa-user" ></i>
 						</span>
@@ -34,6 +34,10 @@
 				<nuxt-link class="navbar-item" :to="{ name: 'user-achats-achats' }">
 					{{ purchasedLabel }}
 				</nuxt-link>
+				<nuxt-link class="navbar-item" :to="{ name: 'user-ventes-ventes' }">
+					{{ soldLabel }}
+				</nuxt-link>
+				
               
 
 				<hr class="navbar-divider">
@@ -55,6 +59,7 @@ export default {
 			Shoppinglist: 'Shopping List',
 			wishlistLabel: 'Wishlist',
 			purchasedLabel: 'Purchased' ,
+			soldLabel: 'Sold' ,
 			logoutLabel: 'Log out',
 			loginLabel: 'Log in',
 			signupLabel: 'Sign up'
@@ -118,5 +123,14 @@ export default {
 }
 .btn{
 	border-radius: 10px;
+}
+@media (max-width:600px) {
+	.control{
+		margin:auto;
+	}
+}
+.navbar-link{
+	color: white !important;
+	background:transparent !important;
 }
 </style>

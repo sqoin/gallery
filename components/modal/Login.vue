@@ -52,7 +52,7 @@
           <div v-if="isUserLoggedIn" class="level">
             <div class="level-item has-text-centered">
               <div>
-                <p class="title">Welcome back!</p>
+                <p class="title">Welcome back {{ getUserName }} !</p>
                 <p class="heading">Now you are logged in Sqoin Gallery</p>
               </div>
             </div>
@@ -101,7 +101,16 @@ export default {
       } else {
         return false;
       }
-    }
+    },
+    getUserName () {
+			let name = this.$store.getters.getUserName;
+			
+			if (name === '') {
+				return 'user';
+			} else {
+				return name;
+			}
+		}
   },
 
   methods: {
@@ -110,12 +119,20 @@ export default {
     },
     checkForm (e) {
       e.preventDefault();
-
+      
       if (this.email && this.password) {
         this.highlightEmailWithError = false;
         this.highlightPasswordWithError = false;
+        /********/
+        this.$store.commit('checkUser',{
+          email:this.email,
+          password:this.password
+        });
+        setTimeout(function(){ this.closeModal (); }, 3000);
+        /****
         this.isFormSuccess = true;
         this.$store.commit('isUserLoggedIn', this.isFormSuccess);
+        ****/
       }
 
       if (!this.email) {
