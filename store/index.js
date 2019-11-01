@@ -244,7 +244,7 @@ export const state = () => ({
       isPurchased: false,
       isBuyed:false,
       quantity: 1,
-      owner: 2
+      owner: 1
     }
   ],
   users: [
@@ -253,21 +253,25 @@ export const state = () => ({
       name: 'Kirito',
       username: 'kirito',
       email: 'gahlouzi.saif.93@gmail.com',
-      password: '123'
+      password: '123',
+      photo:'https://images.pexels.com/users/avatars/197616/javon-swaby-495.jpeg?w=256&h=256&fit=crop&crop=faces'
+
     },
     {
       id: 2,
       name: 'Walid',
       username: 'walid',
       email: 'walid@gmail.com',
-      password: '123'
+      password: '123',
+      photo:'https://images.pexels.com/users/avatars/197616/javon-swaby-495.jpeg?w=256&h=256&fit=crop&crop=faces'
     },
     {
       id: 3,
       name: 'Dhoha',
       username: 'dhoha',
       email: 'dhoha@gmail.com',
-      password: '123'
+      password: '123',
+      photo:'https://images.pexels.com/users/avatars/197616/javon-swaby-495.jpeg?w=256&h=256&fit=crop&crop=faces'
     }
   ],
   achats: [
@@ -291,9 +295,10 @@ export const state = () => ({
     isLoggedIn: false,
     isSignedUp: false,
     hasSearched: false,
-    name: 'walid',
+    name: '',
+    id: null,
     productTitleSearched: '',
-    photo:'https://images.pexels.com/users/avatars/197616/javon-swaby-495.jpeg?w=256&h=256&fit=crop&crop=faces'
+    
   },
   systemInfo: {
     openLoginModal: false,
@@ -308,9 +313,14 @@ export const getters = {
       return el.isAddedToCart;
     });
   },
+  productsSold: state => {
+    return state.products.filter(function(element) {
+      return (element.owner === state.userInfo.id);
+    });
+  },
   productsPurchased: state => {
     return state.products.filter(el => {
-      return el.isPurchased;
+      return (el.isPurchased);
     });
   },
   productsAddedToFavourite: state => {
@@ -360,6 +370,12 @@ export const mutations = {
         state.userInfo.id=el.id;
       }
     });
+  },
+  logout(state) {
+    state.userInfo.isLoggedIn = false;
+    state.userInfo.name = '';
+    state.userInfo.id = null;
+    localStorage.removeItem("info");
   },
   addToCart: (state, id) => {
     state.products.forEach(el => {
@@ -460,6 +476,7 @@ export const mutations = {
   setLoginDataFromLocalStorage: (state, authUser) => {
     state.userInfo.isLoggedIn = true;
     state.userInfo.name=authUser.name;
+    state.userInfo.id=authUser.id;
   }
 }
 /* 

@@ -48,3 +48,11 @@ export default {
 }
 </script>
 
+<style scoped>
+input{
+	background: transparent !important;
+    color: white !important;
+}
+</style>
+
+
