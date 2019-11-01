@@ -253,21 +253,24 @@ export const state = () => ({
       name: 'Kirito',
       username: 'kirito',
       email: 'gahlouzi.saif.93@gmail.com',
-      password: '123'
+      password: '123',
+     
     },
     {
       id: 2,
       name: 'Walid',
       username: 'walid',
       email: 'walid@gmail.com',
-      password: '123'
+      password: '123',
+     
     },
     {
       id: 3,
       name: 'Dhoha',
       username: 'dhoha',
       email: 'dhoha@gmail.com',
-      password: '123'
+      password: '123',
+     
     }
   ],
   achats: [
@@ -291,9 +294,10 @@ export const state = () => ({
     isLoggedIn: false,
     isSignedUp: false,
     hasSearched: false,
-    name: 'walid',
+    name: '',
     productTitleSearched: '',
     photo:'https://images.pexels.com/users/avatars/197616/javon-swaby-495.jpeg?w=256&h=256&fit=crop&crop=faces'
+   
   },
   systemInfo: {
     openLoginModal: false,
@@ -335,6 +339,7 @@ export const getters = {
   getUserName: state => {
     return state.userInfo.name;
   },
+
   isLoginModalOpen: state => {
     return state.systemInfo.openLoginModal;
   },

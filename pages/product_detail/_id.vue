@@ -47,13 +47,13 @@
 
             <md-button
               class="card-footer-item btn btn-outline-warning"
-              v-if="!product.isAddedToCart"
+              v-if="!product.isPurchased"
               @click="showCheckoutModal(),addToCart(product.id)"
             >{{ addToCartLabel }}</md-button>
 
             <md-button
               class="btn btn-outline-success"
-              v-if="product.isAddedToCart"
+              v-if="product.isPurchased"
             >{{ removeFromCartLabel }}</md-button>
           </div>
         </div>
