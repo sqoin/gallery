@@ -1,13 +1,13 @@
 <template>
-  <div>
+ 
   
     <nav class="navbar is-transparent" role="navigation" aria-label="main navigation" >
       <div class="navbar-brand">
-        <nuxt-link :to="{ name: 'index' }" class="navbar-item">
+        <nuxt-link :to="{ name: 'index' }" class="navbar-item col-xs-8">
           <h1 class="title is-3 is-flex-mobile"></h1>
         </nuxt-link>
 
-        <a role="button" class="navbar-burger burger" @click="isMenuOpen = !isMenuOpen" aria-label="menu" aria-expanded="false">
+        <a role="button" class="navbar-burger burger col-xs-4" @click="isMenuOpen = !isMenuOpen" aria-label="menu" aria-expanded="false">
           <span aria-hidden="true" class="border-bottom"></span>
           <span aria-hidden="true" class="border-bottom"></span>
           <span aria-hidden="true" class="border-bottom"></span>
@@ -18,16 +18,6 @@
         <div class="navbar-start">
           <div class="navbar-item field">
           <VmSearch></VmSearch>
-          </div>
-        </div>
-        
-        <div class="navbar-end">
-        
-          <div class="navbar-item shopping-cart" @click="showCheckoutModal">
-            <span class="icon">
-              <i class="fa fa-shopping-cart"></i>
-            </span>
-            <span :class="[numProductsAdded > 0 ? 'tag is-warning' : '']">{{ numProductsAdded }}</span>
           </div>
         </div>
       </div>
@@ -42,7 +32,7 @@
         <VmMenu></VmMenu>
       </div>
     </nav>
-  </div>
+ 
 </template>
 
 <script>
@@ -83,7 +73,14 @@
 </script>
 
 <style lang="scss" scoped>
-.navbar{background: url('../../static/pexels-photo-1.jpg')}
+.navbar{
+background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(8,9,3,1) 43%, rgba(0,0,0,1) 45%, rgba(248,255,98,1) 100%);
+  position: fixed;
+    top: 0;
+    width: 100%;
+  
+
+}
   .title {
     background: url('../../static/vuemmerce-logo1.png') ;
     background-position: 70% 30%;
@@ -97,8 +94,27 @@
     cursor: pointer;
     
   }
-  a {
-    color: #fab915;
+ 
+  .navbar-menu.is-active{
+   background: transparent;
+   box-shadow: unset;
   }
-  
+  @media (max-width: 1000px) {
+    .navbar-brand{
+    width: 100%;
+    margin: 0;
+  }
+  .navbar-brand .navbar-item,.navbar-brand .navbar-burger{
+    display: inline-block;
+  }
+  .navbar-burger{
+   
+  }
+  }
+  @media (max-width: 600px) {
+    .navbar-menu,.navbar-end{
+        width: 100%;
+    }
+  }
+ 
 </style>

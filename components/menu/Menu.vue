@@ -1,6 +1,6 @@
 <template>
 	<div>
-	<VmSearch></VmSearch>
+
 	
 <!--  end navbar -->
 		<div class="navbar-item">
@@ -14,7 +14,7 @@
 					</a>
 				</p>
 				<p class="control">
-					<a v-if="!isUserLoggedIn" class="btn btn-outline-warning" @click="showLoginModal">
+					<a v-if="!isUserLoggedIn" class="btn btn-warning" @click="showLoginModal">
 						<span class="icon">
 							<i class="fa fa-user" ></i>
 						</span>
@@ -24,16 +24,21 @@
 			</div>
 		</div>
 		<div v-if="isUserLoggedIn" class="navbar-item has-dropdown is-hoverable">
-			<a class="navbar-link">
-			Welcome {{ getUserName }}
-			</a>
-			<div class="navbar-dropdown is-boxed">
+			
+		    	<div class="navbaruser is-boxed">
+				   <a class="navbar-item">
+			        <h2> Welcome {{ getUserName }} </h2>
+			      </a>
 				<nuxt-link class="navbar-item" :to="{ name: 'user-wishlist' }">
 					{{ wishlistLabel }}
 				</nuxt-link>
 				<nuxt-link class="navbar-item" :to="{ name: 'user-achats-achats' }">
 					{{ purchasedLabel }}
 				</nuxt-link>
+				<nuxt-link class="navbar-item" :to="{ name: 'user-ventes-ventes' }">
+					{{ soldLabel }}
+				</nuxt-link>
+				
               
 
 				<hr class="navbar-divider">
@@ -55,6 +60,7 @@ export default {
 			Shoppinglist: 'Shopping List',
 			wishlistLabel: 'Wishlist',
 			purchasedLabel: 'Purchased' ,
+			soldLabel: 'Sold' ,
 			logoutLabel: 'Log out',
 			loginLabel: 'Log in',
 			signupLabel: 'Sign up'
@@ -119,4 +125,25 @@ export default {
 .btn{
 	border-radius: 10px;
 }
+@media (max-width:600px) {
+	.control{
+		margin:auto;
+	}
+}
+.navbar-item{
+
+color: #448aff;
+}
+.navbar{
+background-color: black;
+font-size: 20px;
+font-style: oblique;
+opacity: 0.8;
+}
+.navbaruser{
+	  margin-bottom: 30px;
+	  display: flex;
+}
+
+
 </style>
