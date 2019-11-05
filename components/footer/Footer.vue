@@ -4,6 +4,7 @@
     
 <mdb-row class="py-4 d-flex align-items-center">
           <mdb-col md="4" lg="4" class="text-center text-md-left mb-4 mb-md-0">
+
              <div class="contact-details">
           <h6>Contact details</h6>
           <p><i class="fa fa-phone fa-lg" aria-hidden="true"></i> 216 71 877000</p>
@@ -15,10 +16,12 @@
 
           </mdb-col>
           <mdb-col md="4" lg="4" class="content has-text-centered has-text-grey-lighter">
+
          <ul>
            <li>
             <a href="#" class="has-text-warning is-size-4" style="font-size:50px"><strong> SQOIN</strong></a>  <i class="el-icon-camera "></i>
            </li>
+
          </ul></mdb-col>
           <mdb-col md="4" lg="4" class="medialink text-center text-md-right">
             <a href="#" class="fb-ic ml-0"><i class="fa fa-facebook" style="font-size:40px;color:blue"></i></a>
@@ -28,6 +31,7 @@
             <a class="ins-ic"><i class="fa fa-instagram" style="font-size:40px;color:pink"></i></a>
           </mdb-col>
         </mdb-row>
+
 
 </footer>
  
@@ -92,7 +96,9 @@ export default {
 
 .footer{
 
+
  background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(8,9,3,1) 43%, rgba(0,0,0,1) 45%, rgba(248,255,98,1) 100%);
+
 padding-bottom: 0px;
 }
 a {

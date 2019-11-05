@@ -1,4 +1,5 @@
 <template>
+
   <div>
     <!--  end navbar -->
     <div class="navbar-item">
@@ -29,6 +30,7 @@
       <nuxt-link class="navbar-item" :to="{ name: 'user-achats-achats' }">{{ purchasedLabel }}</nuxt-link>
       <nuxt-link class="navbar-item" :to="{ name: 'user-ventes-ventes' }">{{ soldLabel }}</nuxt-link>
 
+
       <hr class="navbar-divider" />
       <a class="navbar-item" @click="logout">{{ logoutLabel }}</a>
     </div>
@@ -37,18 +39,21 @@
 
 <script>
 export default {
-  name: "VmMenu",
-  data() {
-    return {
-      Shoppinglist: "Shopping List",
-      wishlistLabel: "Wishlist",
-      purchasedLabel: "Purchased",
-      soldLabel: "Sold",
-      logoutLabel: "Log out",
-      loginLabel: "Log in",
-      signupLabel: "Sign up"
-    };
-  },
+
+	
+	name: 'VmMenu',
+	data () {
+		return {
+			Shoppinglist: 'Shopping List',
+			wishlistLabel: 'Wishlist',
+			purchasedLabel: 'Purchased' ,
+			soldLabel: 'Sold' ,
+			logoutLabel: 'Log out',
+			loginLabel: 'Log in',
+			signupLabel: 'Sign up'
+		}
+	},
+
 
   computed: {
     isUserLoggedIn() {
@@ -90,6 +95,7 @@ export default {
 };
 </script>
 
+
 <style>
 .fa {
   color: orange;
@@ -102,6 +108,7 @@ export default {
 }
 .fa-star {
   color: yellow;
+
 }
 .btn {
   border-radius: 10px;
@@ -127,5 +134,14 @@ export default {
 .navbaruser {
   margin-bottom: 30px;
   display: flex;
+}
+@media (max-width:600px) {
+	.control{
+		margin:auto;
+	}
+}
+.navbar-link{
+	color: white !important;
+	background:transparent !important;
 }
 </style>

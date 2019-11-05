@@ -1,4 +1,5 @@
 <template>
+
   <nav class="navbar"  id ="navbar" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
       <nuxt-link :to="{ name: 'index' }" class="navbar-item col-xs-8">
@@ -8,10 +9,13 @@
      
     </div>
 
+
     <div class="navbar-menu is-active">
       <div class="navbar-start">
         <div class="navbar-item field">
           <VmSearch></VmSearch>
+
+
         </div>
       </div>
     </div>
@@ -34,8 +38,11 @@
 import VmMenu from "../menu/Menu";
 import VmSearch from "../search/Search";
 
+
+
 export default {
   name: "VmHeader",
+
 
   data() {
     return {
@@ -69,6 +76,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
 .navbar {
   background: linear-gradient(
     90deg,
@@ -110,6 +118,7 @@ export default {
   .navbar-brand .navbar-item,
   .navbar-brand .navbar-burger {
     display: inline-block;
+
   }
   .navbar-burger {
   }
@@ -118,6 +127,28 @@ export default {
   .navbar-menu,
   .navbar-end {
     width: 100%;
+  }
+
+  .navbar-menu.is-active{
+    background: transparent;
+    box-shadow: unset;
+  }
+  @media (max-width: 1000px) {
+    .navbar-brand{
+    width: 100%;
+    margin: 0;
+  }
+  .navbar-brand .navbar-item,.navbar-brand .navbar-burger{
+    display: inline-block;
+  }
+  .navbar-burger{
+    float: right;
+  }
+  }
+  @media (max-width: 600px) {
+    .navbar-menu,.navbar-end{
+        width: 100%;
+    }
   }
 }
 </style>

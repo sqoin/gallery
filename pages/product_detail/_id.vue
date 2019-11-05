@@ -9,11 +9,11 @@
       <div class="columns is-vcentered">
         <div class="column is-8">
           <span class="bd-notification is-primary">
-           <md-card md-with-hover>
-            <figure class="image is-4by3">
+           <div class="view overlay">
+            <figure class="image is-4by3 img-fluid rounded-0">
               <img slot="image" :src="product.image" alt="Card image cap" />
             </figure>
-            </md-card>
+            </div>
           </span>
         </div>
         <div class="column has-text-centered">

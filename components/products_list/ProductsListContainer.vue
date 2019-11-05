@@ -1,15 +1,17 @@
 <template>
-<div id="productlistcontainer">
+
+  <div class="container">
+  
+  <div class="row text-center text-lg-left">
    
-  <div class="columns is-gapless is-multiline is-centered"  >
-   
-    <div class="card column is-one-quarter " v-for="product in products" :key="product.id">
+     <div class="col-lg-4 col-md-4 col-6" v-for="product in products" :key="product.id">
       <VmProducts :product="product"></VmProducts>
+     
     </div>
-    <div class="section" v-if="products.length === 0">
-      <p>{{ noProductLabel }}</p>
-    </div>
-  </div></div>
+     
+
+  </div>
+</div>
 </template>
 
 <script>
@@ -51,9 +53,13 @@ export default {
   }
 
 };
+
 </script>
 
 <style lang="scss" scoped>
+.card{
+ margin :3px ;
+}
 
   
 </style>
