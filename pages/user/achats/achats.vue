@@ -1,8 +1,8 @@
 <template>
-  <div class="section">
+  <div class="container">
     <h3 class="title">{{ pageTitle }}</h3>
-    <div class="column is-centered is-multiline">
-      <div class="card  is-one-quarter" v-for="product in productsPurchased" :key="product.id">
+    <div class="row">
+      <div class="card  col-lg-4" v-for="product in productsPurchased" :key="product.id">
         <VmProductsList :product="product"></VmProductsList>
       </div>
       <div class="section" v-if="productsPurchased.length === 0">
@@ -50,9 +50,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  .card {
-    margin: 10px;
+  .title{
+    margin-top: 15%;
   }
+
+  
 </style>
 
 
