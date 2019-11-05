@@ -44,11 +44,7 @@
 
     data () {
       return {
-        linkedinTooltip: 'Follow us on Linkedin',
-        facebookTooltip: 'Follow us on Facebook',
-        twitterTooltip: 'Follow us on Twitter',
-        instagramTooltip: 'Follow us on Instagram',
-        isCheckoutActive: false,
+       isCheckoutActive: false,
         isMenuOpen: false
       }
     },
@@ -73,7 +69,7 @@
 </script>
 
 <style lang="scss" scoped>
-.navbar{background: url('../../static/pexels-photo-1.jpg')}
+//.navbar{background: url('../../static/pexels-photo-1.jpg')}
   .title {
     background: url('../../static/vuemmerce-logo1.png') ;
     background-position: 70% 30%;

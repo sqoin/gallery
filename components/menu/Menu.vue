@@ -108,10 +108,7 @@ export default {
 
 <style> 
 
-.fa 
-{
-	color:orange;
-}
+
 .fa-heart{
 	color:red;
 }
