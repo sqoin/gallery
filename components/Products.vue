@@ -1,10 +1,12 @@
 <template>
 
-  <md-card md-with-hover>
-    <div class="card-image">
-      <figure class="image is-3by2">
-        <img slot="image" :src="product.image" alt="Card image cap" />
-
+  <card class="col-lg-4 col-md-4 col-6 ">
+ 
+      <figure class="image is-3by2 ">
+        <img  class="animated flipInX" slot="image" :src="product.image" alt="Card image cap" 
+        />
+       
+		
         <img
           class="profil is-rounded md-raised"
           @click="showDialog = true"
@@ -12,8 +14,8 @@
           alt="Image"
         />
 
-      </figure>
-
+       </figure>
+       </div>
       <md-dialog :md-active.sync="showDialog">
         <md-dialog-title>
           Photographe Profil
@@ -114,9 +116,16 @@
           <md-button class="md-primary" @click="showDialog = false">Close</md-button>
         </md-dialog-actions>
       </md-dialog>
-    </div>
-
-    <div class="card-footer is-centered">
+      
+    <div class="flip-card">
+      <div class="flip-card-inner">
+         <div class="flip-card-front">
+           <p>{{ product.description }}</p>
+       </div>
+    
+    <div class="flip-card-back">
+    
+    
       <md-button
         class="card-footer-item"
         :title="removeFromFavouriteLabel"
@@ -150,7 +159,8 @@
         @click="removeFromCart(product.id, false)"
       >{{ removeFromCartLabel }}</md-button>
 
-      <nuxt-link
+    
+        <nuxt-link
 
         class="details"
         :to="{
@@ -164,13 +174,17 @@
           reviews: product.reviews,
           isAddedBtn: product.isAddedBtn
         }
-      }"
+       }"
 
-      ></nuxt-link>
+       ></nuxt-link>
+     
+     </div>
     </div>
-  </md-card>
+    </div>
+    
+  </card>
 
-
+ 
 
 </template>
 <script>
@@ -267,7 +281,7 @@ export default {
 
 
    border-style: none;
-  // border: 0.1px solid red;
+   //border: 0.1px solid red;
   
      
    
@@ -275,48 +289,7 @@ export default {
   }
 }
 
-.card-footer {
-  position: absolute;
-  width: 80%;
-  height: 20%;
-  left: 10%;
-  top: 10%;
- 
- // background-color:#ccc;
-  border:none;
- 
-  //border-bottom: 1px solid #FFF;
-  //border-top: 1px solid #FFF;
 
-  -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
-  transition: opacity 0.35s, transform 0.35s;
-
-  -webkit-transform: scale(0, 1);
-  -ms-transform: scale(0, 1);
-  transform: scale(0, 1);
-
-}
-
-.card:hover .card-footer {
-  opacity: 1;
-  filter: alpha(opacity=100);
-  -webkit-transform: scale(1);
-  -ms-transform: scale(1);
-  transform: scale(1);
-}
-
-.card image {
-  display: block;
-  position: relative;
-  -webkit-transition: all 0.35s;
-  transition: all 0.35s;
-}
-
-.card:hover image {
-  filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="linear" slope="0.6" /><feFuncG type="linear" slope="0.6" /><feFuncB type="linear" slope="0.6" /></feComponentTransfer></filter></svg>#filter');
-  filter: brightness(0.6);
-  -webkit-filter: brightness(0.6);
-}
 .profil {
   display: none;
   position: absolute;
@@ -333,6 +306,43 @@ export default {
 .md-dialog {
   max-width: 900px;
 }
+.flip-card {
+  background-color: transparent;
+  width: 100%;
+  height: 50px;
+  //border: 1px solid #f1f1f1;
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+    text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-card-front, .flip-card-back {
+  position: absolute;
+
+ 
+  backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+
+/* Style the back side */
+.flip-card-back {
+  //background-color: dodgerblue;
+  
+  transform: rotateY(180deg);
+}
+
 </style>
 
 

@@ -1,7 +1,7 @@
 <template>
 
-<div class="container mt-5">
 
+<div class="container-fluid">
 
   <!--Section: Content-->
   <section class="mx-md-5 ">
@@ -16,7 +16,7 @@
     
 
           <!-- Card image -->
-          <mdb-carousel :interval="5000" slide :items="items" indicators controlls></mdb-carousel>
+          <mdb-carousel :interval="3000" slide :items="items" indicators controlls></mdb-carousel>
 
           <!-- Card content -->
           <div class="card-body card-body-cascade text-center">
@@ -77,8 +77,8 @@
     -->
    
     
-  </section> </div>
-
+  </section> 
+</div>
 </template>
 
 

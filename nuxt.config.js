@@ -53,6 +53,13 @@ module.exports = {
         rel: 'stylesheet',
         href:
        '//fonts.googleapis.com/css?family=Roboto:100,200,300,400,500,700,400italic|Material+Icons'
+
+      },
+      {
+        rel: 'stylesheet',
+        href:
+       'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css'
+
       }
     ]
   },

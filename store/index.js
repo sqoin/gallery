@@ -5,7 +5,7 @@ export const state = () => ({
     {
       id: 1,
       title: 'Picture 1',
-      //description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
       image: 'https://cdn.pixabay.com/photo/2015/12/01/20/28/road-1072823_960_720.jpg',
       price: 1,
       ratings: 3,
@@ -21,7 +21,7 @@ export const state = () => ({
     {
       id: 2,
       title: 'Picture 2',
-      //description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
       image: 'https://images.pexels.com/photos/159823/kids-girl-pencil-drawing-159823.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
       price: 1,
       ratings: 5,
@@ -36,7 +36,7 @@ export const state = () => ({
     {
       id: 3,
       title: 'Picture 3',
-     // description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
      image: 'https://wallpaperhdzone.com/wp-content/uploads/2017/09/penguin-images-free-description-lovely-penguin-free-images-for-desktop-is-a-free-wallpaper-wp6808999-280x158.jpg',
       price: 1,
       ratings: 2,
@@ -51,7 +51,7 @@ export const state = () => ({
     {
       id: 4,
      title: 'Picture 4',
-     // description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
      image: 'https://wallpaperhdzone.com/wp-content/uploads/2016/02/wallpaper-installation-nyc5-280x158.jpg',
       price: 50,
       ratings: 1,
@@ -66,7 +66,7 @@ export const state = () => ({
     {
       id: 5,
       title: 'Picture 5',
-     // description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
      image: 'https://wallpaperhdzone.com/wp-content/uploads/2016/07/wallpaper-of-nature6-600x375.jpg',
       price: 1,
       ratings: 4,
@@ -81,7 +81,7 @@ export const state = () => ({
     {
       id: 6,
       title: 'Picture 6',
-      //description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
       image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxKsQnMxaD6oLNiFnOd4fpXJqbyhw_bcxjUqfDjHIZrJMCozwu&s',
       price: 1,
       ratings: 1,
@@ -96,7 +96,7 @@ export const state = () => ({
     {
       id: 7,
       title: 'Picture 7',
-      //description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
       image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRogSToK0JM9x-f0K-GD6qj3yBjQ8fIerlj2f7a-AuOLxfRM5Zd&s',
       price: 1,
       ratings: 5,
@@ -112,7 +112,7 @@ export const state = () => ({
     {
       id: 8,
       title: 'Picture 8',
-      //description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
       image: 'https://wallpaperhdzone.com/wp-content/uploads/2017/08/New-York-Manhattan-Night-City-new-york-manhattan-night-city-1080p-new-york-ma-wallpaper-wp6408176.jpg',
       price: 1,
       ratings: 3,
@@ -127,7 +127,7 @@ export const state = () => ({
     {
       id: 9,
       title: 'Picture 9',
-     // description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
       image: 'https://wallpaperhdzone.com/wp-content/uploads/2017/08/beautiful-nature-background-hd-HD-Nature-Beautiful-Nature-Free-Background-w-wallpaper-wp6602781.jpg',
       price: 110,
       ratings: 4,
@@ -142,7 +142,7 @@ export const state = () => ({
     {
       id: 10,
       title: 'Picture 10',
-      //description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
       image: 'https://wallpaperhdzone.com/wp-content/uploads/2016/02/cute-wallpapers-for-phones5-280x158.jpg',
       price: 1,
       ratings: 3,
@@ -157,7 +157,7 @@ export const state = () => ({
     {
       id: 11,
       title: 'Picture 11',
-      //description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
       image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJZuMk97I1f32MxU--VOzrqLYLrvHmqB9u45-LNrwMEZ8hFGyFkw&s',
       price: 1,
       ratings: 3,
@@ -172,7 +172,7 @@ export const state = () => ({
     {
       id: 12,
       title: 'Picture 12',
-      //description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
       image: 'http://www.designindaba.com/sites/default/files/vocab/topics/15/urban-landscape-design-Christo.jpg',
       price: 1,
       ratings: 3,
@@ -187,7 +187,7 @@ export const state = () => ({
     {
       id: 13,
       title: 'Picture 13',
-      //description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
       image: 'https://wallpaperhdzone.com/wp-content/uploads/2016/02/cavern-wallpaper5-280x158.jpg',
       price: 1,
       ratings: 3,
@@ -203,7 +203,7 @@ export const state = () => ({
     {
       id: 14,
       title: 'Picture 14',
-      //description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
       image: 'https://wallpaperhdzone.com/wp-content/uploads/2016/08/wallpaper-for-kids-HD7-300x169.jpg',
       price: 1,
       ratings: 3,
@@ -218,7 +218,7 @@ export const state = () => ({
     {
       id: 15,
       title: 'Picture 15',
-      //description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
       image: 'https://wallpaperhdzone.com/wp-content/uploads/2016/07/dogs-wallpaper5-600x375.jpg',
       price: 1,
       ratings: 3,
@@ -233,7 +233,7 @@ export const state = () => ({
     {
       id: 16,
       title: 'Picture 16',
-      //description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
       image: 'https://wallpaperhdzone.com/wp-content/uploads/2016/07/los-angeles-wallpaper5-600x375.jpg',
       price: 1,
       ratings: 3,
