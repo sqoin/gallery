@@ -4,42 +4,35 @@
     
 <mdb-row class="py-4 d-flex align-items-center">
           <mdb-col md="4" lg="4" class="text-center text-md-left mb-4 mb-md-0">
-            <h6 class="mb-0 ">Get connected with us on social networks!</h6>
+
+             <div class="contact-details">
+          <h6>Contact details</h6>
+          <p><i class="fa fa-phone fa-lg" aria-hidden="true"></i> 216 71 877000</p>
+          <p><i class="fa fa-envelope-o" aria-hidden="true"></i> admin@sqoin.us</p>
+          <p><i class="fa fa-map-marker fa-lg" aria-hidden="true"></i> Ghazela Centre,Cité Ghazela,Ariana 2083 TUNISIE</p>
+        </div>
+                
+
+
           </mdb-col>
           <mdb-col md="4" lg="4" class="content has-text-centered has-text-grey-lighter">
+
          <ul>
            <li>
-            <a href="#" class="has-text-warning is-size-4">SQOIN</a>  <i class="el-icon-camera "></i>
+            <a href="#" class="has-text-warning is-size-4" style="font-size:50px"><strong> SQOIN</strong></a>  <i class="el-icon-camera "></i>
            </li>
+
          </ul></mdb-col>
-          <mdb-col md="4" lg="4" class="text-center text-md-right">
-            <a class="fb-ic ml-0"><i class="fa fa-facebook" style="font-size:20px;color:blue"></i></a>
-            <a class="tw-ic"><i class="fa fa-twitter" style="font-size:20px;color:#1DA1F2"></i></a>
-            <a class="gplus-ic"><i class="fa fa-google-plus" style="font-size:20px;color:red"></i></a>
-            <a class="li-ic"><i class="fa fa-linkedin" style="font-size:20px;color:#2867B2"></i></a>
-            <a class="ins-ic"><i class="fa fa-instagram" style="font-size:20px;color:pink"></i></a>
+          <mdb-col md="4" lg="4" class="medialink text-center text-md-right">
+            <a href="#" class="fb-ic ml-0"><i class="fa fa-facebook" style="font-size:40px;color:blue"></i></a>
+            <a class="tw-ic"><i class="fa fa-twitter" style="font-size:40px;color:#1DA1F2"></i></a>
+            <a class="gplus-ic"><i class="fa fa-google-plus" style="font-size:40px;color:red"></i></a>
+            <a class="li-ic"><i class="fa fa-linkedin" style="font-size:40px;color:#2867B2"></i></a>
+            <a class="ins-ic"><i class="fa fa-instagram" style="font-size:40px;color:pink"></i></a>
           </mdb-col>
         </mdb-row>
-<!--  <div class="content has-text-centered has-text-grey-lighter">
-         <ul>
-           <li>
-            <a href="#" class="has-text-warning is-size-4">SQOIN</a>  <i class="el-icon-camera "></i>
-           </li>
-         </ul>
-       <el-button a href="#"  circle :title="linkedinTooltip">
-          <i class="fa fa-linkedin" style="font-size:16px;color:#2867B2"></i>
-        </a></el-button>
-        
-        <el-button a href="#"   circle  :title="twitterTooltip">
-        <i class="fa fa-twitter" style="font-size:26px;color:#1DA1F2"></i>
-        </a></el-button>
-        <el-button a href="#" circle :title="instagramTooltip">
-        <i class="fa fa-instagram" style="font-size:36px;color:pink"></i>
-         </a></el-button>
-         <el-button a href="#" :title="facebookTooltip">
-        <i class="fa fa-facebook" style="font-size:48px;color:blue"></i>
-         </a></el-button>
-     </div>-->
+
+
 </footer>
  
 </template>
@@ -103,8 +96,9 @@ export default {
 
 .footer{
 
- //background-image: url("../../static/footer.jpg");
- //background-repeat:no-repeat;
+
+ background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(8,9,3,1) 43%, rgba(0,0,0,1) 45%, rgba(248,255,98,1) 100%);
+
 padding-bottom: 0px;
 }
 a {
@@ -117,5 +111,16 @@ a {
           text-decoration: none;
         }
       }
+   
+   
+  .medialink{
+    padding: 20px;
+  } 
 
+  .contact-details{
+    color: white;
+  }
+ul{
+  list-style: none;
+}
 </style>
