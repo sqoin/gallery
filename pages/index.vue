@@ -1,6 +1,6 @@
 <template>
   <div>
-    <VmHero></VmHero>
+   <VmHero></VmHero>
    <VmProductsList></VmProductsList>
     
   </div>

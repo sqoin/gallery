@@ -15,40 +15,16 @@
         <!-- Card -->
     
 
-          <!-- Card image -->
+          <!-- Card image 
           <mdb-carousel :interval="3000" slide :items="items" indicators controlls></mdb-carousel>
 
-          <!-- Card content -->
+          Card content -->
           <div class="card-body card-body-cascade text-center">
 
             <!-- Title -->
             <h3 class="font-weight-bold"><a>Welcome in your GALLERY</a></h3>
            
-            <!-- Social shares -->
-            <div class="social-counters">
-              <!-- Facebook -->
-              <a class="btn ">
-                <i class="fa fa-facebook-f pr-2"></i>
-                <span class="clearfix d-none d-md-inline-block">Facebook</span>
-              </a>
-              <span class="counter">46</span>
-              <!-- Twitter -->
-              <a class="btn ">
-                <i class="fa fa-twitter pr-2"></i>
-                <span class="clearfix d-none d-md-inline-block">Twitter</span>
-              </a>
-              <span class="counter">22</span>
-              
-              <span class="counter">31</span>
-              <!-- Comments -->
-              <a class="btn ">
-                <i class="fa fa-comments pr-2"></i>
-                <span class="clearfix d-none d-md-inline-block">Comments</span>
-              </a>
-              
-            </div>
-            <!-- Social shares -->
-
+            
           </div>
           <!-- Card content -->
 </div>
@@ -56,26 +32,15 @@
 
     <hr class="mb-5 mt-4">
    
- <!--<mdb-carousel :interval="8000" slide :items="items" indicators controlls></mdb-carousel>-->
-<!--
-  <section class="hero is-info is-large has-text-centered">
+ <mdb-carousel :interval="8000" slide :items="items" indicators controlls></mdb-carousel>
 
-    <div class="hero-body"  >
-        <div class="container has-text-centered is-primary">
-           <p class="title"><strong> SQOIN</strong></p>
-           <p class="subtitle"> WELCOME TO YOUR GALLERY </p>
-         </div>
-  
        
-      <a href="#productlistcontainer" class="aa at-item is-size-4 
-  has-text-info has-text-centered is-family-sans-serif has-text-weight-semibold">
-        GET STARTED <br>
-         <i class="el-icon-arrow-down "></i>
-      </a>
+      
+         
 
     
-    -->
-   
+    
+   <br><br>
     
   </section> 
 </div>

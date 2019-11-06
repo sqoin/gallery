@@ -1,5 +1,5 @@
 <template>
-<footer class="footer font-small pt-0" color="peach">
+<footer class="footer font-small pt-0" >
 
     
 <mdb-row class="py-4 d-flex align-items-center">
@@ -61,50 +61,16 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
-.navbar {
-    ul {
-    margin-bottom: 0;
-    padding: 0;
-    list-style: none;
-    margin-left: 25%;
-    
-    li {
-      display: inline-block;
-
-
-      a {
-        color: orange;
-
-        text-transform: uppercase;
-        text-decoration: none;
-
-        &:hover {
-          text-decoration: none;
-        }
-      }
-    }
-  }
-
-  &:after {
-    display: table;
-    clear: both;
-    content: " ";
-  }
-}
-
-
 .footer{
 
 
- background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(8,9,3,1) 43%, rgba(0,0,0,1) 45%, rgba(248,255,98,1) 100%);
+width:100%;
+background: black;
 
-padding-bottom: 0px;
+
 }
 a {
-        color: orange;
-
-        text-transform: uppercase;
+        
         text-decoration: none;
 
         &:hover {

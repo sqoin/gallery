@@ -1,17 +1,15 @@
 <template>
-
-	<p class="control has-icons-left ">
+	<p class="control has-icons-left">
 		<input
-			class="btn btn-outline-light  input is-warning"
-			type="search"
+			class="input btn btn-outline-light"
+			type="text"
 			v-model="value"
-			:placeholder="Search"
+			:placeholder="placeholder"
 			@keyup="search(value)"
 		>
 		<span class="icon is-small is-left">
 			<i class="fa fa-search"></i>
 		</span>
-	
 	</p>
 </template>
 
@@ -23,7 +21,6 @@ export default {
 			value: ''
 		}
 	},
-
 	computed: {
 		placeholder () {
 			if (this.$route.path === '/wishlist') {
@@ -33,7 +30,6 @@ export default {
 			}
 		}
 	},
-
 	methods: {
 		search (value) {
 			if (value.length > 0) {
@@ -47,12 +43,3 @@ export default {
 	}
 }
 </script>
-
-<style scoped>
-input{
-	background: transparent !important;
-    color: white !important;
-}
-</style>
-
-
