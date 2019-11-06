@@ -86,12 +86,21 @@ export default {
   },
 
   mounted() {
+
     this.product = this.$store.getters.getProductById(this.$route.params.id);
     this.selected = this.product.quantity;
 
     for (let i = 1; i <= 20; i++) {
       this.quantityArray.push(i);
     }
+
+
+     if (window.location.href.indexOf("txid") > -1) {
+       
+       this.$store.commit('purchase', this.product.id);
+       //alert("paid "+ this.product.isPurchased)
+         //this.$store.commit(this.product.isPurchased, true);
+     }
   },
 
   computed: {
@@ -101,6 +110,16 @@ export default {
   },
 
   methods: {
+
+    purchasedProduct(){
+    if (product.isPurchased || (window.location.href.indexOf("txid") > -1) ){
+      return true;
+    }
+    else {
+      return false;
+    }
+
+    },
     addToCart(id) {
       let data = {
         id: id,
