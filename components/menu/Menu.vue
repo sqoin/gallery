@@ -1,12 +1,9 @@
 <template>
-
-  <div>
-    <!--  end navbar -->
-    <div class="navbar-item">
-      <div class="field is-grouped">
-        <p class="control">
-          <a v-if="!isUserLoggedIn" class="btn btn-warning" @click="showSignupModal">
-            <span class="icon">
+     <div class="navbar-item">
+       <div class="field is-grouped">
+         <p class="control">
+           <a v-if="!isUserLoggedIn" class="btn btn-warning" @click="showSignupModal">
+             <span class="icon">
               <i class="fa fa-user-plus"></i>
             </span>
             <span>{{ signupLabel }}</span>
@@ -21,19 +18,20 @@
           </a>
         </p>
       </div>
-    </div>
-    <div v-if="isUserLoggedIn" class="navbar-item navbaruser">
-      <a class="navbar-item">
-        <h2>Welcome {{ getUserName }}</h2>
+    
+     <div v-if="isUserLoggedIn" class="navbar-item navbaruser">
+      <a class="navbar-item is-size-4 has-text-warning">
+        Welcome {{ getUserName }}
       </a>
-      <nuxt-link class="navbar-item" :to="{ name: 'user-wishlist' }">{{ wishlistLabel }}</nuxt-link>
-      <nuxt-link class="navbar-item" :to="{ name: 'user-achats-achats' }">{{ purchasedLabel }}</nuxt-link>
-      <nuxt-link class="navbar-item" :to="{ name: 'user-ventes-ventes' }">{{ soldLabel }}</nuxt-link>
+      <nuxt-link class="navbar-item has-text-black-t" :to="{ name: 'user-wishlist' }">{{ wishlistLabel }}</nuxt-link>
+      <nuxt-link class="navbar-item has-text-black-t" :to="{ name: 'user-achats-achats' }">{{ purchasedLabel }}</nuxt-link>
+      <nuxt-link class="navbar-item has-text-black-t" :to="{ name: 'user-ventes-ventes' }">{{ soldLabel }}</nuxt-link>
 
 
       <hr class="navbar-divider" />
       <a class="navbar-item" @click="logout">{{ logoutLabel }}</a>
-    </div>
+     </div>
+    
   </div>
 </template>
 
@@ -106,42 +104,31 @@ export default {
 .fa-heart-o {
   color: red;
 }
-.fa-star {
-  color: yellow;
 
-}
 .btn {
   border-radius: 10px;
 }
-@media (max-width: 600px) {
-  .control {
-    margin: auto;
-  }
+.navbar{
+  position:fixed;
+  width:100%;
+  height:10%;
+  margin-bottom:15px;
+  background-color:white;
 }
-.navbar-item {
-  color: #448aff;
-  line-height: 1.5;
-  padding: 0.2rem 0.75rem;
-  position: relative;
-}
-
 .navbar-item:hover a {
   background-color: none;
 
   text-decoration: none;
 }
 
-.navbaruser {
-  margin-bottom: 30px;
-  display: flex;
-}
-@media (max-width:600px) {
+
+@media (max-width:960px) {
 	.control{
 		margin:auto;
 	}
 }
 .navbar-link{
-	color: white !important;
+	color: black !important;
 	background:transparent !important;
 }
 </style>

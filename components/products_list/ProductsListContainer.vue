@@ -2,9 +2,9 @@
 
   <div class="container">
   
-  <div class="row text-center text-lg-left">
+  <div class="row ">
    
-     <div class="col-lg-4 col-md-4 col-6" v-for="product in products" :key="product.id">
+     <div class="  aa  col-lg-4 col-md-6 col-xs-12" v-for="product in products" :key="product.id">
       <VmProducts :product="product"></VmProducts>
      
     </div>
@@ -58,8 +58,10 @@ export default {
 
 <style lang="scss" scoped>
 .card{
- margin :3px ;
+ margin :5px ;
 }
 
-  
+  .aa{
+    padding:10px;
+  }
 </style>

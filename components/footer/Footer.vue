@@ -1,4 +1,5 @@
 <template>
+
   <footer class="footer font-small pt-0" color="peach">
     <mdb-row class="row-header align-items-center">
       <mdb-col md="4" lg="4" class="text-center text-md-left mb-4 mb-md-0"><h6>Contact Us</h6></mdb-col>
@@ -7,6 +8,10 @@
 
     </mdb-row>
     <mdb-row class=" align-items-center">
+
+
+
+
     
       <mdb-col md="4" lg="4" class="text-center text-md-left mb-4 mb-md-0">
         <div class="contact-details">
@@ -89,6 +94,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
 .row-header{
   color: goldenrod;
   padding-left: 20px;
@@ -114,6 +120,8 @@ a {
 .logo-link{
   padding: 10px;
 }
+
+
 
 .logo-link a{
   padding: 15px;
