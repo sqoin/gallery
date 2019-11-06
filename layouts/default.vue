@@ -11,7 +11,7 @@
       
     </main>
      
-    <VmFooter></VmFooter>
+   <VmFooter></VmFooter>
   </div>
 </template>
 
