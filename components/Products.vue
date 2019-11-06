@@ -15,7 +15,7 @@
         />
 
        </figure>
-       </div>
+      
       <md-dialog :md-active.sync="showDialog">
         <md-dialog-title>
           Photographe Profil
@@ -159,6 +159,8 @@
         @click="removeFromCart(product.id, false)"
       >{{ removeFromCartLabel }}</md-button>
 
+     </div>
+    </div>
     
         <nuxt-link
 
@@ -178,10 +180,8 @@
 
        ></nuxt-link>
      
-     </div>
-    </div>
-    </div>
     
+    </div>
   </card>
 
  

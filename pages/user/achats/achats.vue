@@ -55,7 +55,9 @@ export default {
     margin-top: 15%;
   }
 
-  
+  * {
+  box-sizing: border-box;
+}
 </style>
 
 

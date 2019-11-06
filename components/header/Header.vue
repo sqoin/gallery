@@ -78,13 +78,14 @@ export default {
 <style lang="scss" scoped>
 
 .navbar {
-  background: linear-gradient(
+  background-color: black;
+  /* linear-gradient(
     90deg,
     rgba(0, 0, 0, 1) 0%,
     rgba(8, 9, 3, 1) 43%,
     rgba(0, 0, 0, 1) 45%,
     rgba(248, 255, 98, 1) 100%
-  );
+  ); */
   position: fixed;
   top: 0;
   font-style: oblique;
