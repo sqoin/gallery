@@ -66,12 +66,15 @@
 </script>
 
 <style lang="scss" scoped>
+
+
   .title {
     background: url('../../static/vuemmerce-logo1.png') no-repeat;
     background-position: 70% 30%;
     background-size: 175px;
     width: 165px;
     height: 50px;
+
   }
  
   a {
