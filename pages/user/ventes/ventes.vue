@@ -1,11 +1,11 @@
 <template>
-  <div class="container">
+  <div class="section">
     <h3 class="title">{{ pageTitle }}</h3>
-      <div class="row">
-      <div class="col-lg-4 col-md-4 col-6" v-for="product in productsInWishlist" :key="product.id">
+    <div class="row">
+      <div class="col-lg-4 col-md-4 col-6" v-for="product in productsSold" :key="product.id">
         <VmProductsList :product="product"></VmProductsList>
       </div>
-      <div class="section" v-if="productsInWishlist.length === 0">
+      <div class="section" v-if="productsSold.length === 0">
         <p>{{ noProductLabel }}</p>
       </div>
     </div>
@@ -17,23 +17,23 @@ import VmProductsList from '@/components/Products';
 import { getByTitle } from '@/assets/filters';
 
 export default {
-	name: 'user-wishlist',
+	name: 'user-ventes-ventes',
 
 	data () {
     return {
-      pageTitle: 'Your Wishlist',
-      noProductLabel: 'Your wishlist is empty'
+      pageTitle: 'Your Sold List',
+      noProductLabel: 'Your Sold List is empty'
     }
   },
 
   components: { VmProductsList },
 
   computed: {
-    productsInWishlist () {
+    productsSold () {
       if (this.$store.state.userInfo.hasSearched) {
         return this.getProductByTitle();
       } else {
-        return this.$store.getters.productsAddedToFavourite;
+        return this.$store.getters.productsSold;
       }
     }
   },
@@ -50,9 +50,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
- .title{
-   margin-top: 40px;
- }
+  .card {
+    margin: 10px;
+  }
+/*  .card .profil,
+.card .card-footer
+ {display: none !important;}*/
 </style>
 
 

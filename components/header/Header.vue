@@ -85,7 +85,7 @@ export default {
     rgba(0, 0, 0, 1) 45%,
     rgba(248, 255, 98, 1) 100%
   );
-  position: fixed;
+  position: sticky;
   top: 0;
   font-style: oblique;
   width: 100%; 
@@ -107,8 +107,7 @@ export default {
 }
 
 .navbar-menu.is-active {
- // background: transparent;
-//  box-shadow: unset;
+ background: transparent !important;
 }
 @media (max-width: 1000px) {
   .navbar-brand {
@@ -150,5 +149,12 @@ export default {
         width: 100%;
     }
   }
+}
+
+#navbar{
+  background: #f1f1f1;
+}
+#navbar *{
+  color: red !important;
 }
 </style>

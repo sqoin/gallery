@@ -97,7 +97,7 @@ export default {
 .footer{
 
 
- background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(8,9,3,1) 43%, rgba(0,0,0,1) 45%, rgba(248,255,98,1) 100%);
+ background: #eaf7e6;
 
 padding-bottom: 0px;
 }
@@ -118,9 +118,20 @@ a {
   } 
 
   .contact-details{
-    color: white;
+    color: #427fe2 !important;
   }
 ul{
   list-style: none;
 }
+footer{
+  height: 200px;
+    position: absolute;
+    width: 100vw;
+    bottom: 0;
+}
+a{
+  color: #427fe2 !important;
+}
+
+
 </style>

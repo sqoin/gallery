@@ -51,7 +51,7 @@ export default {
 <style scoped>
 input{
 	background: transparent !important;
-    color: white !important;
+    color: #4883e1 !important;
 }
 </style>
 
