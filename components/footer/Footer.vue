@@ -8,11 +8,6 @@
 
     </mdb-row>
     <mdb-row class=" align-items-center">
-
-
-
-
-    
       <mdb-col md="4" lg="4" class="text-center text-md-left mb-4 mb-md-0">
         <div class="contact-details">
           
@@ -101,10 +96,14 @@ export default {
 }
 .footer {
   background-color: currentColor;
-  bottom: 0%;
-  width: 100vw;
   padding: 0%;
-
+      background: black;
+    padding-top: 30px !important;
+    padding-bottom: 30px !important;
+    height: 200px;
+    position: absolute;
+    width: 100vw;
+    bottom: 0;
 
 }
 a {
@@ -152,8 +151,15 @@ ul {
    color: darkgrey;
 }
  .input-group{
-   
    width: 80%;
  }
-
+  @media (max-width: 767px) {
+    .input-group{
+       margin: auto;
+      }
+  }
+  .align-items-center{
+    background: black;
+    }
+  
 </style>

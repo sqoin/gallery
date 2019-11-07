@@ -21,8 +21,7 @@
           Card content -->
           <div class="card-body card-body-cascade text-center">
 
-            <!-- Title -->
-            <h3 class="font-weight-bold"><a>Welcome in your GALLERY</a></h3>
+            
            
             
           </div>
@@ -30,7 +29,6 @@
 </div>
 </div>
 
-    <hr class="mb-5 mt-4">
    
  <mdb-carousel :interval="8000" slide :items="items" indicators controlls></mdb-carousel>
 
@@ -41,7 +39,8 @@
     
     
    <br><br>
-    
+    <!-- Title -->
+            <h3 class="font-weight-bold"><a>Welcome in your GALLERY</a></h3>
   </section> 
 </div>
 </template>
@@ -94,5 +93,9 @@
     figure {
       cursor: pointer;
     }
+.font-weight-bold{
+  margin-bottom: 30px;
+}
+
 </style>
 
