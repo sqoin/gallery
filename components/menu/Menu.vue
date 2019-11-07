@@ -286,50 +286,6 @@ export default {
 	color: black !important;
 	background:transparent !important;
 }
-
-
-
-
-
-
-
-
-
- body {
-	 background: #3d566e;
-	 color: #ecf0f1;
-	 font-family: 'Montserrat', sans-serif;
-	 -webkit-font-smoothing: antialiased;
-	 text-align: center;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
  ul {
 	 list-style: none;
 	 margin: 0;

@@ -69,19 +69,13 @@
 
 
 .navbar {
-  background: linear-gradient(
-    90deg,
-    rgba(0, 0, 0, 1) 0%,
-    rgba(8, 9, 3, 1) 43%,
-    rgba(0, 0, 0, 1) 45%,
-    rgba(248, 255, 98, 1) 100%
-  );
+  
   position: sticky;
   top: 0;
-  font-style: oblique;
+ 
   width: 100%; 
-  opacity: 0.8;
-  height: 10%;
+ 
+  height: 5%;
   padding-top: 0%;
 }
 .title {
@@ -90,13 +84,9 @@
   background-repeat: no-repeat;
 
   background-size: 165px;
-  width: 200px;
+  width: 175px;
   height: 50px;
 }
-.shopping-cart {
-  cursor: pointer;
-}
-
 .navbar-menu.is-active {
  background: transparent !important;
 }
@@ -118,18 +108,11 @@
     height: 50px;
 
   }
- 
-  a {
-    color: grey;
-  }
+ }
 
-}
-
-#navbar{
+.navbar{
   background: #f1f1f1;
 }
-#navbar *{
-  color: red !important;
-}
+
 </style>
 

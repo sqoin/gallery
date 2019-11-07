@@ -47,8 +47,9 @@ export default {
 
 <style scoped>
 input{
+	border:1px solid orange;
 	background: transparent !important;
-    color: #4883e1 !important;
+    color: black !important;
 }
 </style>
 

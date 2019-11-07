@@ -3,7 +3,18 @@
 
 <div class="container-fluid">
 
-  <!--Section: Content-->
+  
+   
+ <mdb-carousel :interval="8000" slide :items="items" indicators controlls></mdb-carousel>
+
+       
+      
+         
+
+    
+    
+   <br><br>
+    <!--Section: Content-->
   <section class="mx-md-5 ">
 
   	<!-- Grid row -->
@@ -31,17 +42,6 @@
 </div>
 
     <hr class="mb-5 mt-4">
-   
- <mdb-carousel :interval="8000" slide :items="items" indicators controlls></mdb-carousel>
-
-       
-      
-         
-
-    
-    
-   <br><br>
-    
   </section> 
 </div>
 </template>
@@ -86,7 +86,8 @@
     .carousel-multi-item-2 .col-md-3 {
       float: left;
       width: 25%;
-      max-width: 100%; } }
+      max-width: 100%;
+      background:cover; } }
 
     .carousel-multi-item-2 .card img {
       border-radius: 2px; }

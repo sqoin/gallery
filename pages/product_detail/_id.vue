@@ -9,11 +9,14 @@
       <div class="columns is-vcentered">
         <div class="column is-8">
           <span class="bd-notification is-primary">
-           <div class="view overlay">
+        
+
+
             <figure class="image is-4by3 img-fluid rounded-0">
-              <img slot="image" :src="product.image" alt="Card image cap" />
+              <img slot="image" :src="product.image" alt="Card image cap"  />
             </figure>
-            </div>
+
+         
           </span>
         </div>
         <div class="column has-text-centered">
@@ -24,7 +27,7 @@
             </span>
           </div>
           <div class="card-content__btn">
-            <button
+            <md-button
               class="button is-small"
               :title="removeFromFavouriteLabel"
               v-show="product.isFavourite"
@@ -33,8 +36,8 @@
               <span class="icon is-small">
                 <i class="fa fa-heart"></i>
               </span>
-            </button>
-            <button
+            </md-button>
+            <md-button
               class="button is-small"
               :title="addToFavouriteLabel"
               v-show="!product.isFavourite"
@@ -43,7 +46,7 @@
               <span class="icon is-small">
                 <i class="fa fa-heart-o" style="color:red"></i>
               </span>
-            </button>
+            </md-button>
 
             <md-button
               class="card-footer-item btn btn-outline-warning"
@@ -74,6 +77,12 @@ export default {
   data() {
     return {
 
+        url: 'https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg',
+        srcList: [
+          'https://fuss10.elemecdn.com/8/27/f01c15bb73e1ef3793e64e6b7bbccjpeg.jpeg',
+          'https://fuss10.elemecdn.com/1/8e/aeffeb4de74e2fde4bd74fc7b4486jpeg.jpeg'
+        ],
+      
       addToCartLabel: "Buy",
       removeFromCartLabel: "paid",
       addToFavouriteLabel: "Add to favourite",
