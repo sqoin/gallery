@@ -104,6 +104,13 @@ export default {
     if (this.$props.product.quantity > 1) {
       this.selected = this.$props.product.quantity;
     }
+
+     if (window.location.href.indexOf("txid") > -1) {
+       const idProduct = Number(this.$route.query.productId)
+       
+       this.$store.commit('purchase', idProduct);
+      
+     }
   },
 
   computed: {

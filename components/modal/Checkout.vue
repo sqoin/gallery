@@ -126,10 +126,7 @@ export default {
       
 		var successUrl =window.location;
 		this.$store.commit('purchase', product.id);
-		window.open('https://sqoin.exchange/walletd/#/checkout?successUrl='+decodeURIComponent(successUrl)+'&amount='+product.price+'&product='+product.id+'&quantity='+1+'&IPNHandler='+"https://sqoin.exchange/api/handleTransaction");
-				
-			
-
+		window.location.href=('https://sqoin.exchange/walletd/#/checkout?successUrl='+decodeURIComponent(successUrl)+'&amount='+product.price+'&product='+product.id+'&quantity='+1+'&IPNHandler='+"https://sqoin.exchange/api/handleTransaction");
 		});		
 				
 
