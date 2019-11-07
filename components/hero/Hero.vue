@@ -2,16 +2,9 @@
 
 
 <div class="container-fluid">
-
-  
-   
- <mdb-carousel :interval="8000" slide :items="items" indicators controlls></mdb-carousel>
-
-       
-      
-         
-
     
+ <mdb-carousel :interval="8000" slide :items="items" indicators controlls></mdb-carousel>
+  
     
    <br><br>
     <!--Section: Content-->
@@ -23,25 +16,20 @@
       <!-- Grid column -->
       <div class="col-md-12">
 
-        <!-- Card -->
-    
+        
 
-          <!-- Card image 
-          <mdb-carousel :interval="3000" slide :items="items" indicators controlls></mdb-carousel>
+         
+          <div class="h2 font-weight-bold">
 
-          Card content -->
-          <div class="card-body card-body-cascade text-center">
-
-            <!-- Title -->
-            <h3 class="font-weight-bold"><a>Welcome in your GALLERY</a></h3>
+            Welcome in your GALLERY
            
             
           </div>
           <!-- Card content -->
-</div>
-</div>
+       </div>
+  </div>
 
-    <hr class="mb-5 mt-4">
+<br>
   </section> 
 </div>
 </template>
@@ -95,5 +83,10 @@
     figure {
       cursor: pointer;
     }
+.font-weight-bold{
+  margin-bottom: 30px;
+  text-align: center;
+}
+
 </style>
 

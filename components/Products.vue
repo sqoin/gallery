@@ -1,58 +1,46 @@
 <template>
+  <md-card md-with-hover>
+    <figure class="image is-3by2">
+      <img class="animated flipInX" slot="image" :src="product.image" alt="Card image cap" />
+    </figure>
 
+    <div class="card-footer">
+      <md-button
+        class="card-footer-item"
+        :title="removeFromFavouriteLabel"
+        v-show="product.isFavourite"
+        @click="removeFromFavourite(product.id)"
+      >
+        <span class="icon is-small">
+          <i class="fa fa-heart"></i>
+        </span>
+      </md-button>
+      <md-button class="card-footer-item is-size-4">{{product.price}} &dollar;</md-button>
+      <md-button
 
-  <md-card md-with-hover >
-
-    
-        <figure class="image is-3by2">
-            <img class="animated flipInX " slot="image" :src="product.image" alt="Card image cap" />
-           
-        </figure>
-
- 
-    <div class="card-footer ">
-    
-
-
-         <md-button
-          class="card-footer-item "
-           :title="removeFromFavouriteLabel"
-           v-show="product.isFavourite"
-           @click="removeFromFavourite(product.id)"
-       >
-         <span class="icon is-small">
-           <i class="fa fa-heart"></i>
-          </span>
-       </md-button>
-       <md-button class="card-footer-item is-size-4 ">{{product.price}} &dollar;</md-button>
-       <md-button
         :title="addToFavouriteLabel"
         v-show="!product.isFavourite"
         @click="saveToFavorite(product.id)"
-       >
-         <span class="icon is-small">
+      >
+        <span class="icon is-small">
           <i class="fa fa-heart-o"></i>
         </span>
       </md-button>
 
-       <md-button
+      <md-button
         class="card-footer-item btn btn-outline-warning"
         v-if="!product.isPurchased"
         @click="showCheckoutModal(),addToCart(product.id)"
-       >{{ addToCartLabel }}</md-button>
+      >{{ addToCartLabel }}</md-button>
 
-      <md-button disabled 
+      <md-button
+        disabled
         class="btn btn-outline-success"
         v-if="product.isPurchased"
         @click="removeFromCart(product.id, false)"
       >{{ removeFromCartLabel }}</md-button>
 
-
-
-
       <nuxt-link
-
-
         class="details"
         :to="{
         name: 'product_detail-id',
@@ -66,16 +54,9 @@
           isAddedBtn: product.isAddedBtn
         }
       }"
-
-
-
       ></nuxt-link>
     </div>
   </md-card>
-
-
-
-
 </template>
 <script>
 export default {
@@ -91,9 +72,8 @@ export default {
       removeFromFavouriteLabel: "Remove",
       selected: 1,
       showDialog: false,
-      name:'',
-      quantityArray: [],
-      
+      name: "",
+      quantityArray: []
     };
   },
 
@@ -106,12 +86,11 @@ export default {
       this.selected = this.$props.product.quantity;
     }
 
-     if (window.location.href.indexOf("txid") > -1) {
-       const idProduct = Number(this.$route.query.productId)
-       
-       this.$store.commit('purchase', idProduct);
-      
-     }
+    if (window.location.href.indexOf("txid") > -1) {
+      const idProduct = Number(this.$route.query.productId);
+
+      this.$store.commit("purchase", idProduct);
+    }
   },
 
   computed: {
@@ -175,28 +154,21 @@ export default {
   z-index: 1;
 
   &:hover {
-
-
-   border-style: none;
-   border: 2px solid orange;
-  
-     
-   
-
+    border-style: none;
+    border: 2px solid orange;
   }
 }
-figure{
-  margin:0px;
+figure {
+  margin: 0px;
 }
 .mdcard .card-footer {
   position: absolute;
   width: 100%;
   height: 30%;
-  
 
-  background-color:white;
-  border:none;
- 
+  background-color: white;
+  border: none;
+
   //border-bottom: 1px solid #FFF;
   //border-top: 1px solid #FFF;
 
@@ -206,7 +178,6 @@ figure{
   -webkit-transform: scale(0, 1);
   -ms-transform: scale(0, 1);
   transform: scale(0, 1);
-
 }
 
 .md-card:hover .mdcard .card-footer {
@@ -216,9 +187,6 @@ figure{
   -ms-transform: scale(1);
   transform: scale(1);
 }
-
-
-
 </style>
 
 
