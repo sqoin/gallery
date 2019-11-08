@@ -27,7 +27,7 @@
         
        <div class="parallax-div">
          <h1 class="parallax-text">
-            Welcome in your GALLERY
+            Welcome to your GALLERY
          </h1>
         </div>
        
@@ -77,7 +77,7 @@
 
 
 .parallax-div {
-    height: 100px;
+    height: 100%;
     background: url("http://res.cloudinary.com/tempest/image/upload/c_limit,cs_srgb,dpr_1.0,q_80,w_10000/MTMwOTgxMTI5NDk3OTA5NzI2.jpg");
     background-size: cover;
     background-attachement: fixed;
@@ -94,7 +94,7 @@
     text-transform: uppercase;
     mix-blend-mode: lighten;
     margin-top: 50px;
-    height: 500px;
+    height: 100%;
     font-family: "Gill Sans", sans-serif;
 }
 

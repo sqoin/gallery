@@ -17,8 +17,10 @@
                     type="email"
                     :placeholder="emailPlaceholder"
                     name="emailName"
+                    id="email"
                     v-model="email"
                     @keyup="checkEmailOnKeyUp(email)"
+                    value="dhoha@gmail.com"
                   >
                   <span class="icon is-small is-left">
                     <i class="fa fa-envelope"></i>
@@ -83,8 +85,8 @@ export default {
       emailNotValidLabel: 'Valid email required',
       btnLoggedInLabel: 'Close',
       emailPlaceholder: 'Your email',
-      email: '',
-      password: '',
+      email: 'walid@gmail.com',
+      password: '123',
       highlightEmailWithError: null,
       highlightPasswordWithError: null,
       isFormSuccess: false
@@ -112,7 +114,6 @@ export default {
 			}
 		}
   },
-
   methods: {
     closeModal () {
       this.$store.commit('showLoginModal', false);
