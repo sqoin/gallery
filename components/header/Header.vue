@@ -79,9 +79,9 @@ export default {
   
   position: sticky;
   top: 0;
- 
+ font-family: Georgia, serif;
   width: 100%; 
- 
+ color:black;
   height: 5%;
   padding-top: 0%;
 }

@@ -1,6 +1,6 @@
 
 <template>
-  <div class="container">
+  <div class="container aa">
     <h3 class="title">{{ pageTitle }}</h3>
     <div class="row">
       <div class="col-lg-4 col-md-4 col-6" v-for="product in productsPurchased" :key="product.id">

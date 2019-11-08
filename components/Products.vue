@@ -5,6 +5,7 @@
     </figure>
 
     <div class="card-footer">
+    <span class="is-size-4">{{product.price}} &dollar;</span>
       <md-button
         class="card-footer-item"
         :title="removeFromFavouriteLabel"
@@ -15,7 +16,7 @@
           <i class="fa fa-heart"></i>
         </span>
       </md-button>
-      <md-button class="card-footer-item is-size-4">{{product.price}} &dollar;</md-button>
+     
       <md-button
 
         :title="addToFavouriteLabel"
@@ -144,6 +145,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.aa{
+    padding:10px;
+  }
 .details {
   cursor: pointer;
   position: absolute;

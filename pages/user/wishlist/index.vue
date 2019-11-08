@@ -2,7 +2,7 @@
   <div class="container">
     <h3 class="title">{{ pageTitle }}</h3>
       <div class="row">
-      <div class="col-lg-4 col-md-4 col-6" v-for="product in productsInWishlist" :key="product.id">
+      <div class="aa col-lg-4 col-md-4 col-6" v-for="product in productsInWishlist" :key="product.id">
         <VmProductsList :product="product"></VmProductsList>
       </div>
       <div class="section" v-if="productsInWishlist.length === 0">
@@ -53,6 +53,9 @@ export default {
  .title{
    margin-top: 40px;
  }
+ .aa{
+    padding:10px;
+  }
 </style>
 
 

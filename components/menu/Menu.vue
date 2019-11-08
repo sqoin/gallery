@@ -293,45 +293,7 @@ export default {
 	color: white !important;
 	background:transparent !important;
 }
-<<<<<<< HEAD
-=======
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
->>>>>>> origin/saif
  ul {
 	 list-style: none;
 	 margin: 0;

@@ -4,23 +4,31 @@
 
   <div class ="container">
     <article class="tile is-child notification has-text-warning">
-      <h2 class="title is-4">{{ product.title }}</h2>
+        <h2 class="title is-4">{{ product.title }}</h2>
 
-      <div class="columns is-vcentered">
-        <div class="column is-8">
-          <span class="bd-notification is-primary">
+        <div class="columns is-vcentered">
         
-
-
-            <figure class="image is-4by3 img-fluid rounded-0">
-              <img slot="image" :src="product.image" alt="Card image cap"  />
-            </figure>
-
+        
+    
+           <div class="box16 ">
+ 
+                        <img class="image" :src="product.image">
+                         <div class="box-content">
+                            <h3 class="title">{{product.owner}}</h3>
+                            
+                            <ul class="social">
+                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                            </ul>
+                        </div>
+            </div>
          
-          </span>
-        </div>
-        <div class="column has-text-centered">
-          <p class="bd-notification is-primary"></p>
+          
+       
+           <div class="column has-text-centered">
+          
           <div class="card-content__price">
             <span class="title is-3">
               <strong>{{ product.price }}&dollar;</strong>
@@ -76,13 +84,7 @@ export default {
 
   data() {
     return {
-
-        url: 'https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg',
-        srcList: [
-          'https://fuss10.elemecdn.com/8/27/f01c15bb73e1ef3793e64e6b7bbccjpeg.jpeg',
-          'https://fuss10.elemecdn.com/1/8e/aeffeb4de74e2fde4bd74fc7b4486jpeg.jpeg'
-        ],
-      
+         
       addToCartLabel: "Buy",
       removeFromCartLabel: "paid",
       addToFavouriteLabel: "Add to favourite",
@@ -182,6 +184,33 @@ export default {
    
 
   }
+.box16
+{text-align:center;
+color:#fff;
+position:relative}
+.box16 .box-content,.box16:after{width:50%;position:absolute;left:0}
+.box16:after{content:"";height:100%;background:linear-gradient(to bottom,rgba(0,0,0,0) 0,rgba(0,0,0,.08) 69%,rgba(0,0,0,.76) 100%);top:0;transition:all .5s ease 0s}
+.box16 .post,.box16 .title{transform:translateY(145px);transition:all .4s cubic-bezier(.13,.62,.81,.91) 0s}
+.box16:hover:after{background:linear-gradient(to bottom,rgba(0,0,0,.01) 0,rgba(0,0,0,.09) 11%,rgba(0,0,0,.12) 13%,rgba(0,0,0,.19) 20%,rgba(0,0,0,.29) 28%,rgba(0,0,0,.29) 29%,rgba(0,0,0,.42) 38%,rgba(0,0,0,.46) 43%,rgba(0,0,0,.53) 47%,rgba(0,0,0,.75) 69%,rgba(0,0,0,.87) 84%,rgba(0,0,0,.98) 99%,rgba(0,0,0,.94) 100%)}
 
+.box16 .box-content{padding:20px;margin-bottom:20px;bottom:0;z-index:1}
+.box16 .title{font-size:22px;font-weight:700;text-transform:uppercase;margin:0 0 10px}
+
+.box16 .social li a,.box17 .icon li a{border-radius:50%;font-size:20px;color:#fff}
+.box16:hover .post,.box16:hover .title{transform:translateY(0)}
+.box16 .social{list-style:none;padding:0 0 5px;margin:40px 0 25px;opacity:0;position:relative;transform:perspective(500px) rotateX(-90deg) rotateY(0) rotateZ(0);transition:all .6s cubic-bezier(0,0,.58,1) 0s}
+.box16:hover .social{opacity:1;transform:perspective(500px) rotateX(0) rotateY(0) rotateZ(0)}
+.box16 .social:before{content:"";width:50px;height:2px;background:#fff;margin:0 auto;position:absolute;top:-23px;left:0;right:0}
+.box16 .social li{display:inline-block}
+.box16 .social li a{display:block;width:40px;height:40px;line-height:40px;background:#ffffff;margin-right:10px;transition:all .3s ease 0s}
+.box17 .icon li,.box17 .icon li a{display:inline-block}
+.box16 .social li a:hover{background:#bea041}
+.box16 .social li:last-child a{margin-right:0}
+.image{
+  width:460px;
+  height:500px;
+}
+@media only screen and (width:450px){.box16{margin-bottom:30px}
+}
 </style>
 

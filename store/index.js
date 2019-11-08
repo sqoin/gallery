@@ -15,8 +15,8 @@ export const state = () => ({
       isFavourite: false,
       quantity: 1,
       isPurchased: false,
-      owner: 1
-    
+      owner: 'David'
+      
     },
     {
       id: 2,
@@ -31,7 +31,8 @@ export const state = () => ({
       isFavourite: false,
       quantity: 1,
       isPurchased: false,
-      owner: 1
+      owner: 'David'
+
     },
     {
       id: 3,
@@ -46,7 +47,7 @@ export const state = () => ({
       isFavourite: false,
       isPurchased: false,
       quantity: 1,
-      owner: 2
+      owner: 'Lisa'
     },
     {
       id: 4,
@@ -61,7 +62,7 @@ export const state = () => ({
       isFavourite: false,
       isPurchased: false,
       quantity: 1,
-      owner: 3
+      owner: 'Marc'
     },
     {
       id: 5,
@@ -76,7 +77,7 @@ export const state = () => ({
       isFavourite: false,
       isPurchased: false,
       quantity: 1,
-      owner: 1
+      owner: 'David'
     },
     {
       id: 6,
@@ -91,7 +92,7 @@ export const state = () => ({
       isFavourite: false,
       isPurchased: false,
       quantity: 1,
-      owner: 1
+      owner: 'David'
     },
     {
       id: 7,
@@ -106,7 +107,7 @@ export const state = () => ({
       isFavourite: false,
       isPurchased: false,
       quantity: 1,
-      owner: 2
+      owner: 'Lisa'
     },
     
     {
@@ -122,7 +123,7 @@ export const state = () => ({
       isFavourite: false,
       isPurchased: false,
       quantity: 1,
-      owner: 3
+      owner: 'David'
     },
     {
       id: 9,
@@ -137,7 +138,7 @@ export const state = () => ({
       isFavourite: false,
       isPurchased: false,
       quantity: 1,
-      owner: 2
+      owner: 'David'
     },
     {
       id: 10,
@@ -152,7 +153,7 @@ export const state = () => ({
       isFavourite: false,
       isPurchased: false,
       quantity: 1,
-      owner: 1
+      owner: 'David'
     },
     {
       id: 11,
@@ -167,7 +168,7 @@ export const state = () => ({
       isFavourite: false,
       isPurchased: false,
       quantity: 1,
-      owner: 3
+      owner: 'Marc'
     },
     {
       id: 12,
@@ -182,7 +183,7 @@ export const state = () => ({
       isFavourite: false,
       isPurchased: false,
       quantity: 1,
-      owner: 3
+      owner: 'Marc'
     },
     {
       id: 13,
@@ -197,7 +198,7 @@ export const state = () => ({
       isFavourite: false,
       isPurchased: false,
       quantity: 1,
-      owner: 2
+      owner:'Lisa'
     },
     
     {
@@ -213,7 +214,7 @@ export const state = () => ({
       isFavourite: false,
       isPurchased: false,
       quantity: 1,
-      owner: 1
+      owner: 'David'
     },
     {
       id: 15,
@@ -228,7 +229,7 @@ export const state = () => ({
       isFavourite: false,
       isPurchased: false,
       quantity: 1,
-      owner: 1
+      owner: 'David'
     },
     {
       id: 16,
@@ -244,7 +245,7 @@ export const state = () => ({
       isPurchased: false,
       isBuyed:false,
       quantity: 1,
-      owner: 1
+      owner: 'David'
     },
     {
       id: 17,
@@ -260,7 +261,7 @@ export const state = () => ({
       isPurchased: false,
       isBuyed:false,
       quantity: 1,
-      owner: 1
+      owner: 'David'
     },
     {
       id: 18,
@@ -276,7 +277,7 @@ export const state = () => ({
       isPurchased: false,
       isBuyed:false,
       quantity: 1,
-      owner: 1
+      owner: 'David'
     }
   ],
   users: [

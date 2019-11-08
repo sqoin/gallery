@@ -38,5 +38,7 @@ export default {
 <style>
   main{
     padding-bottom: 200px;
+    font-family: roboto;
   }
+  
 </style>

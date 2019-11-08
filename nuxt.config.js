@@ -60,6 +60,12 @@ module.exports = {
         href:
        'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css'
 
+      },
+      {
+        rel: 'stylesheet',
+        href:
+       '/dist/ks-vue-fullpage.min.css'
+
       }
     ]
   },
@@ -77,11 +83,13 @@ module.exports = {
       src: 'bulma/bulma.sass',
       lang: 'sass'
     },
+    
     { src: 'font-awesome/scss/font-awesome.scss', lang: 'scss' },
     { src: "@/assets/custom-bootstrap", lang: "scss" },
     { src: 'vue-material/dist/vue-material.min.css', lang: 'css' },
     { src: '@/assets/theme.scss', lang: 'scss' },
-    'bootstrap-css-only/css/bootstrap.min.css'
+    'bootstrap-css-only/css/bootstrap.min.css',
+   
  
   ],
 
