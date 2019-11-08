@@ -29,7 +29,7 @@
 </div>
 </div>
 
-   
+   <h1>Buy Photos Using CryptoCurrency</h1>
  <mdb-carousel :interval="8000" slide :items="items" indicators controlls></mdb-carousel>
 
        

@@ -87,8 +87,8 @@ export default {
 
     if (window.location.href.indexOf("txid") > -1) {
       const idProduct = Number(this.$route.query.productId);
-
       this.$store.commit("purchase", idProduct);
+       
     }
   },
 
