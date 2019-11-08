@@ -2,10 +2,30 @@
 <template>
   <div class="container aa">
     <h3 class="title">{{ pageTitle }}</h3>
-    <div class="row">
-      <div class="col-lg-4 col-md-4 col-6" v-for="product in productsPurchased" :key="product.id">
-        <VmProductsList :product="product"></VmProductsList>
-      </div>
+    <div class="column">
+      <table  >
+  <tr>
+    <th>PHOTO</th>
+    <th>TITLE</th> 
+    <th>Description</th>
+    <th>PRICE</th>
+    <th>Action</th>
+  </tr>
+  <tr v-for="product in productsPurchased" :key="product.id">
+    <td>
+      <figure class="image is-96x96">
+              <img slot="image" :src="product.image" alt="Card image cap" />
+            </figure>
+      
+    <td>{{product.title}}</td>
+    <td>{{product.description}}</td>
+    <td>{{product.price}}$</td>
+    <td ><button class="btn"><i class="fa fa-download"></i> Download</button></td>
+  </tr>
+  
+</table>
+     
+     
       <div class="section" v-if="productsPurchased.length === 0">
         <p>{{ noProductLabel }}</p>
       </div>
@@ -54,6 +74,26 @@ export default {
   .title{
     margin-top: 40px;
   }
+
+  .purchasephoto{
+    width: 250px;
+  }
+  table{
+    width: 100%;
+  }
+
+  td, th {
+    padding: 10px;
+}
+
+.btn {
+  background-color: DodgerBlue;
+  border: none;
+  color: white;
+  padding: 12px 30px;
+  cursor: pointer;
+  font-size: 15px;
+}
 </style>
 
 

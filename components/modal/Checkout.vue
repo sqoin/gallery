@@ -17,13 +17,11 @@
 						<p>{{ cartEmptyLabel }}</p>
 					</div> 
 				</div>
-					<div v-if="isCheckoutSection">
-					<p>You bought it :)</p>
-				</div> 
+				
 			</section>
 			<footer class="modal-card-foot">
 				<button v-show="products.length > 0 && !isCheckoutSection" class="button is-success" @click="onNextBtn()">{{ buyLabel }}</button>
-				<button v-if="isCheckoutSection" class="button is-success" @click="closeModal(true)">{{ closeLabel }}</button>
+		
 			</footer>
 		</div>
 	</div>
@@ -117,8 +115,8 @@ export default {
 		onNextBtn () {
 			if (this.isUserLoggedIn) {
 
-				let totalProducts = this.products.length,
-						productsAdded = this.$store.getters.productsAdded;
+		let totalProducts = this.products.length,
+		productsAdded = this.$store.getters.productsAdded;
 		productsAdded.forEach(product => {
 		console.log("test "+product.price + product.id)
 		this.isCheckoutSection = true;
