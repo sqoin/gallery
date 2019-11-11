@@ -77,7 +77,7 @@
 
 
 .parallax-div {
-    height: 100px;
+    height: 100%;
     background: url("http://res.cloudinary.com/tempest/image/upload/c_limit,cs_srgb,dpr_1.0,q_80,w_10000/MTMwOTgxMTI5NDk3OTA5NzI2.jpg");
     background-size: cover;
     background-attachement: fixed;
@@ -88,13 +88,13 @@
     overflow: hidden;
     background: #fff;
     color: #3a3a3a;
-    font-size: 86px;
+    font-size: 50px;
     line-height: 86px;
-    font-weight: 700;
+    font-weight: 600;
     text-transform: uppercase;
     mix-blend-mode: lighten;
     margin-top: 50px;
-    height: 500px;
+    height: 100%;
     font-family: "Gill Sans", sans-serif;
 }
 
