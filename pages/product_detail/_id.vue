@@ -196,13 +196,13 @@ position:relative}
 .box16 .box-content{padding:20px;margin-bottom:20px;bottom:0;z-index:1}
 .box16 .title{font-size:22px;font-weight:700;text-transform:uppercase;margin:0 0 10px}
 
-.box16 .social li a,.box17 .icon li a{border-radius:50%;font-size:20px;color:#fff}
+.box16 .social li a,.box17 .icon li a{border-radius:20%;font-size:20px;}
 .box16:hover .post,.box16:hover .title{transform:translateY(0)}
 .box16 .social{list-style:none;padding:0 0 5px;margin:40px 0 25px;opacity:0;position:relative;transform:perspective(500px) rotateX(-90deg) rotateY(0) rotateZ(0);transition:all .6s cubic-bezier(0,0,.58,1) 0s}
 .box16:hover .social{opacity:1;transform:perspective(500px) rotateX(0) rotateY(0) rotateZ(0)}
 .box16 .social:before{content:"";width:50px;height:2px;background:#fff;margin:0 auto;position:absolute;top:-23px;left:0;right:0}
 .box16 .social li{display:inline-block}
-.box16 .social li a{display:block;width:40px;height:40px;line-height:40px;background:#ffffff;margin-right:10px;transition:all .3s ease 0s}
+.box16 .social li a{display:block;width:30px;height:30px;line-height:30px;background:#ffffff;margin-right:10px;transition:all .3s ease 0s}
 .box17 .icon li,.box17 .icon li a{display:inline-block}
 .box16 .social li a:hover{background:#bea041}
 .box16 .social li:last-child a{margin-right:0}
