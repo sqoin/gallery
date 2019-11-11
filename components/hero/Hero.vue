@@ -27,7 +27,7 @@
         
        <div class="parallax-div">
          <h1 class="parallax-text">
-            Welcome in your GALLERY
+            Welcome to your GALLERY
          </h1>
         </div>
        
