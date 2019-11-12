@@ -20,7 +20,7 @@
     <td>{{product.title}}</td>
     <td>{{product.description}}</td>
     <td>{{product.price}}$</td>
-    <td ><button class="btn"><i class="fa fa-download"></i> Download</button></td>
+    <td ><a class="download" :href="product.image" :download="product.image"><i class="fa fa-download"></i>Download</a></td>
   </tr>
   
 </table>
@@ -93,6 +93,10 @@ export default {
   padding: 12px 30px;
   cursor: pointer;
   font-size: 15px;
+}
+.download:hover{
+
+text-decoration: none;
 }
 </style>
 
