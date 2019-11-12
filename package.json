@@ -38,6 +38,7 @@
     "popper.js": "^1.15.0",
     "remove": "^0.1.5",
     "sass": "^1.23.3",
+    "vlightbox": "^2.0.2",
     "vue": "^2.6.10",
     "vue-cli-plugin-mdb": "^2.0.1",
     "vue-material": "^1.0.0-beta-11",

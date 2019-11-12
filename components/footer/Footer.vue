@@ -1,165 +1,137 @@
 <template>
 
-  <footer class="footer font-small pt-0" color="peach">
-    <mdb-row class="row-header align-items-center">
-      <mdb-col md="4" lg="4" class="text-center text-md-left mb-4 mb-md-0"><h6>Contact Us</h6></mdb-col>
-      <mdb-col md="4" lg="4" class="text-center text-md-left mb-4 mb-md-0"><h6>FOLLOW US</h6></mdb-col>
-      <mdb-col md="4" lg="4" class="text-center text-md-left mb-4 mb-md-0"><h6>Newsletter</h6></mdb-col>
-
-    </mdb-row>
-    <mdb-row class=" align-items-center">
-      <mdb-col md="4" lg="4" class="text-center text-md-left mb-4 mb-md-0">
-        <div class="contact-details">
-          
-          <p>
-            <i class="fa fa-phone fa-lg" aria-hidden="true"></i> 216 71 877000
-          </p>
-          <p>
-            <i class="fa fa-envelope-o" aria-hidden="true"></i> admin@sqoin.us
-          </p>
-          <p>
-            <i class="fa fa-map-marker fa-lg" aria-hidden="true"></i> Ghazela Centre,Cité Ghazela,Ariana 2083 TUNISIE
-          </p>
-        </div>
-      </mdb-col>
-
-     
-     
-      
-         
-      <mdb-col md="4" lg="4" class="medialink ">
-        
-        <div class="logo-link">
-        <a href="https://www.facebook.com/sqoin/" class="fb-ic ml-0">
-          <i class="fa fa-facebook" style="font-size:20px;color:blue"></i>
-        </a>
-         <a  href="https://fr.linkedin.com/company/sqoin" class="li-ic">
-          <i class="fa fa-linkedin" style="font-size:20px;color:#2867B2"></i>
-        </a>
-        <a class="tw-ic">
-          <i class="fa fa-twitter" style="font-size:20px;color:#1DA1F2"></i>
-        </a>
-        <a class="gplus-ic">
-          <i class="fa fa-google-plus" style="font-size:20px;color:red"></i>
-        </a>
-       
-        <a class="ins-ic">
-          <i class="fa fa-instagram" style="font-size:20px;color:pink"></i>
-        </a>
-        </div>
-      </mdb-col>
-
-      <mdb-col  md="4" lg="4"  class="text-center text-md-left mb-4 mb-md-0">
-     
-        <div class="input-group  ">
-                      <input type="text" class="form-control" placeholder="Search for...">
+  <section id="footer">
+		<div class="container">
+			<div class="row text-center text-xs-center text-sm-left text-md-left">
+				<div class="col-xs-12 col-sm-4 col-md-4">
+					<h5>Contact Us</h5>
+					<ul class="list-unstyled quick-links">
+						<li><a href="javascript:void();"><i class="fa fa-phone fa-lg"></i>+216.71.877.000</a></li>
+						<li><a href="javascript:void();"><i class="fa fa-envelope-o"></i>admin@sqoin.us</a></li>
+						<li><a href="javascript:void();"><i class="fa fa-map-marker"></i>Ghazela Centre,Cité Ghazela,Ariana 2083 TUNISIE</a></li>
+						
+					</ul>
+				</div>
+				<div class="col-xs-12 col-sm-4 col-md-4">
+					<h5>Follow Us</h5>
+					<ul class="list-unstyled list-inline social text-center">
+						<li class="list-inline-item"><a href="javascript:void();"><i class="fa fa-facebook" style="color:blue" ></i></a></li>
+						<li class="list-inline-item"><a href="javascript:void();"><i class="fa fa-twitter" style="color:#00acee"></i></a></li>
+						<li class="list-inline-item"><a href="javascript:void();"><i class="fa fa-instagram" style="color:pink"></i></a></li>
+						<li class="list-inline-item"><a href="javascript:void();"><i class="fa fa-google-plus" style="color:red"></i></a></li>
+						
+					</ul>
+				</div>
+				<div class="col-xs-12 col-sm-4 col-md-4">
+					<h5>Newsletter</h5>
+					<ul class="list-unstyled quick-links">
+						
+						 <div class="input-group  ">
+                      <input type="text" class="form-control">
                       <span class="input-group-btn">
-                        <button class="btn btn-default" type="button"><i class="fa  fa-envelope"></i></button>
+                        <button class="btn btn-default" type="button"><i class="fa  fa-envelope" style="color:white"></i></button>
                       </span>
                     </div>
-      </mdb-col>
-   
-    </mdb-row>
-
-    <div class="copyright">© COPYRIGHT SQOIN 2019 ALL RIGHTS RESERVED</div>
-  </footer>
+					</ul>
+				</div>
+			</div>
+		
+				</hr>
+			</div>	
+			<div class="row">
+				<div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center text-white">
+				
+					<p class="h6">&copy All right Reversed.<a class="ml-2" href="https://www.sunlimetech.com" target="_blank">SQOIN</a> 2019</p>
+				</div>
+				</hr>
+			</div>	
+		</div>
+	</section>
 </template>
 
 <script>
-import { mdbFooter, mdbContainer, mdbRow, mdbCol } from "mdbvue";
-
 export default {
-  name: "VmFooter",
-  components: {
-    mdbFooter,
-    mdbContainer,
-    mdbRow,
-    mdbCol
-  },
-  data() {
-    return {
-      year: new Date().getFullYear(),
-      linkedinTooltip: "Follow us on Linkedin",
-      facebookTooltip: "Follow us on Facebook",
-      twitterTooltip: "Follow us on Twitter",
-      instagramTooltip: "Follow us on Instagram"
-    };
-  }
+
+
+  
 };
 </script>
 
 <style lang="scss" scoped>
-
-.row-header{
-  color: goldenrod;
-  padding-left: 20px;
-}
-.footer {
-  background-color: currentColor;
-  padding: 0%;
-      background: black;
-    padding-top: 30px !important;
-    padding-bottom: 30px !important;
-    height: 200px;
-    position: absolute;
-    width: 100vw;
-    bottom: 0;
-
-}
-a {
-  color: orange;
-
-  text-transform: uppercase;
-  text-decoration: none;
-
-  &:hover {
-    text-decoration: none;
-  }
-}
-.logo-link{
-  padding: 10px;
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+section {
+    padding: 60px 0;
 }
 
+section .section-title {
+    text-align: center;
+    color: #007b5e;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+}
+#footer {
+    background: #000000 !important;
+}
+#footer h5{
+	padding-left: 10px;
+    border-left: 3px solid #eeeeee;
+    padding-bottom: 6px;
+    margin-bottom: 20px;
+    color:#ffffff;
+}
+#footer a {
+    color: #ffffff;
+    text-decoration: none !important;
+    background-color: transparent;
+    -webkit-text-decoration-skip: objects;
+}
+#footer ul.social li{
+	padding: 3px 0;
+}
+#footer ul.social li a i {
+    margin-right: 5px;
+	font-size:25px;
+	-webkit-transition: .5s all ease;
+	-moz-transition: .5s all ease;
+	transition: .5s all ease;
+}
+#footer ul.social li:hover a i {
+	font-size:30px;
+	margin-top:-10px;
+}
+#footer ul.social li a,
+#footer ul.quick-links li a{
+	color:#ffffff;
+}
+#footer ul.social li a:hover{
+	color:#eeeeee;
+}
+#footer ul.quick-links li{
+	padding: 3px 0;
+	-webkit-transition: .5s all ease;
+	-moz-transition: .5s all ease;
+	transition: .5s all ease;
+}
+#footer ul.quick-links li:hover{
+	padding: 3px 0;
+	margin-left:5px;
+	font-weight:700;
+}
+#footer ul.quick-links li a i{
+	margin-right: 5px;
+}
+#footer ul.quick-links li:hover a i {
+    font-weight: 700;
+}
 
-
-
-.logo-link a{
-  padding: 15px;
+@media (max-width:767px){
+	#footer h5 {
+    padding-left: 0;
+    border-left: transparent;
+    padding-bottom: 0px;
+    margin-bottom: 10px;
+}
 }
 
 
-.medialink {
-  padding: 10px;
-}
- .medialink h4{
- 
-   margin-left: 20px;
- }
-.contact-details {
-  color: white;
-  font-size: 0.8em;
-  margin-left: 25px;
-}
-ul {
-  list-style: none;
-}
-
-.copyright {
-      font-family: initial;
-  text-align: center;
-   font-size: 0.8em;
-   color: darkgrey;
-}
- .input-group{
-   width: 80%;
- }
-  @media (max-width: 767px) {
-    .input-group{
-       margin: auto;
-      }
-  }
-  .align-items-center{
-    background: black;
-    }
-  
 </style>
