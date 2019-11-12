@@ -1,21 +1,8 @@
 <template>
 
 <div class="container-fluid"> 
-   <!-- 
- <mdb-carousel :interval="8000" slide :items="items" indicators controlls></mdb-carousel>
-  
-    
-   <br><br>
    
-  <section class="mx-md-5 ">
-
-  
-    <div class="row">
-
-    
-      <div class="col-md-12">
-
-      -->  
+   
   
     <div class="parallax">
 
@@ -44,33 +31,8 @@
    
   
   export default {
-    name: 'CarouselPage',
-    components: {
-    
-      mdbContainer,
-      mdbCarousel,
-      mdbCard
-    },
-    data() {
-      return {
-        items: [
-          {
-                
-            img: true,
-            src: "https://mdbootstrap.com/img/Photos/Slides/img%20(130).jpg"
-          },
-          {
-            img: true,
-            src: "https://mdbootstrap.com/img/Photos/Slides/img%20(129).jpg"
-          },
-          {
-            img: true,
-            src: "https://mdbootstrap.com/img/Photos/Slides/img%20(70).jpg"
-          }
-        ]
-      }
+   
     }
-  }
 </script>
 
 <style lang="scss" scoped>
@@ -88,9 +50,9 @@
     overflow: hidden;
     background: #fff;
     color: #3a3a3a;
-    font-size: 86px;
+    font-size: 50px;
     line-height: 86px;
-    font-weight: 700;
+    font-weight: 600;
     text-transform: uppercase;
     mix-blend-mode: lighten;
     margin-top: 50px;

@@ -1,7 +1,7 @@
 <template>
   <md-card md-with-hover>
     <figure class="image is-3by2">
-      <img class="animated flipInX" slot="image" :src="product.image" alt="Card image cap" />
+      <img class="animated flipInX lightbox-overlay" slot="image" :src="product.image" alt="Card image cap" />
     </figure>
 
     <div class="card-footer">
