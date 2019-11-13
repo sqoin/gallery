@@ -73,19 +73,23 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  background-size: cover;
+  position: relative;
+ 
 }
 .textbuy{
-  color:black;
-  font-size:45px;
-  font-weight: 900;
-   top:40%;
-    height: 100px;
-    background-color: #e5eecc;
- 
-    text-align: center;
-   
-    opacity:0.9;
-    position: relative;
-  
+  background-color: white;
+  color: black;
+  font-size: 100px; 
+  font-weight: bold;
+  margin: 0 auto;
+  padding: 5px;
+  //width: 50%;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  mix-blend-mode: screen;
 }
 </style>
