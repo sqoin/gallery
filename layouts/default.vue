@@ -37,8 +37,9 @@ export default {
 
 <style>
   main{
+   font-family: Impact, Charcoal, sans-serif;
     padding-bottom: 200px;
-    font-family: roboto;
+   
   }
   
 </style>

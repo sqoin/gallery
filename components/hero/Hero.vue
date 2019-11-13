@@ -73,12 +73,12 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-size: cover;
+ 
   position: relative;
 
 }
 .textbuy{
-  background-color: #fcae1e;
+  background-color: #ffffff;
   color: black;
   font-size: 100px; 
   font-weight: bold;
