@@ -75,10 +75,10 @@
   background-size: cover;
   background-size: cover;
   position: relative;
- 
+
 }
 .textbuy{
-  background-color: white;
+  background-color: #fcae1e;
   color: black;
   font-size: 100px; 
   font-weight: bold;
