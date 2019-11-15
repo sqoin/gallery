@@ -129,7 +129,9 @@ export default {
           email:this.email,
           password:this.password
         });
-        setTimeout(function(){ this.closeModal (); }, 3000);
+
+        
+       setTimeout(function(){ this.closeModal ()});
         /****
         this.isFormSuccess = true;
         this.$store.commit('isUserLoggedIn', this.isFormSuccess);

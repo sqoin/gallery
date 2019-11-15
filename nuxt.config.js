@@ -60,13 +60,8 @@ module.exports = {
         href:
        'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css'
 
-      },
-      {
-        rel: 'stylesheet',
-        href:
-       '/dist/ks-vue-fullpage.min.css'
-
       }
+     
     ]
   },
 
