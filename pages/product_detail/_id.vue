@@ -2,7 +2,7 @@
 
 <template>
 
-  <div class ="container">
+  <div class ="container ">
     <article class="tile is-child notification has-text-warning">
         <h2 class="title is-4">{{ product.title }}</h2>
 
@@ -10,17 +10,17 @@
         
         
     
-           <div class="box16 ">
+           <div class="box16">
  
-                        <img class="image" :src="product.image">
+                        <img class="image " :src="product.image">
                          <div class="box-content">
                             <h3 class="title">{{product.owner}}</h3>
                             
                             <ul class="social">
-                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                                <li><a href="#"><i class="fa fa-facebook" style="color:blue"></i></a></li>
+                                <li><a href="#"><i class="fa fa-twitter" style="color:#00acee"></i></a></li>
+                                <li><a href="#"><i class="fa fa-instagram" style="color:pink"></i></a></li>
+                                <li><a href="#"><i class="fa fa-google-plus" style="color:red"></i></a></li>
                             </ul>
                         </div>
             </div>
@@ -209,6 +209,10 @@ position:relative}
 .image{
   width:460px;
   height:500px;
+}
+.tile{
+  margin:100px;
+  border:none;
 }
 @media only screen and (width:450px){.box16{margin-bottom:30px}
 }

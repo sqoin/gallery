@@ -1,7 +1,7 @@
 <template>
-  <md-card md-with-hover>
+  <md-card md-with-hover >
     <figure class="image is-3by2">
-      <img class="animated flipInX lightbox-overlay" slot="image" :src="product.image" alt="Card image cap" />
+      <img  slot="image" :src="product.image" alt="Card image cap" />
     </figure>
 
     <div class="card-footer">
@@ -106,7 +106,7 @@ export default {
         id: id,
         status: true
       };
-      //	window.open('https://sqoin.exchange/walletd/#/checkout');
+     
       this.$store.commit("addToCart", id);
       this.$store.commit("setAddedBtn", data);
     },
@@ -149,7 +149,7 @@ export default {
     padding:10px;
   }
 .details {
-  cursor: pointer;
+  cursor: zoom-in;
   position: absolute;
   top: 0;
   left: 0;
@@ -160,21 +160,23 @@ export default {
   &:hover {
     border-style: none;
     border: 2px solid orange;
+    
   }
 }
 figure {
   margin: 0px;
+  
 }
 .mdcard .card-footer {
   position: absolute;
   width: 100%;
-  height: 30%;
+  
 
   background-color: white;
   border: none;
 
-  //border-bottom: 1px solid #FFF;
-  //border-top: 1px solid #FFF;
+  border-bottom: 1px solid #FFF;
+  border-top: 1px solid #FFF;
 
   -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
   transition: opacity 0.35s, transform 0.35s;
@@ -182,14 +184,6 @@ figure {
   -webkit-transform: scale(0, 1);
   -ms-transform: scale(0, 1);
   transform: scale(0, 1);
-}
-
-.md-card:hover .mdcard .card-footer {
-  opacity: 1;
-  filter: alpha(opacity=100);
-  -webkit-transform: scale(1);
-  -ms-transform: scale(1);
-  transform: scale(1);
 }
 </style>
 
