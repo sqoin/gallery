@@ -1,5 +1,3 @@
-
-
 <template>
 
   <div class ="container ">
@@ -217,4 +215,3 @@ position:relative}
 @media only screen and (width:450px){.box16{margin-bottom:30px}
 }
 </style>
-
