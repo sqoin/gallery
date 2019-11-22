@@ -6,8 +6,8 @@
   
     <div class="parallax">
 
-       <div class="textbuy">
-       Buy Photos Using CryptoCurrency
+       <div class="textbuy col-md-12 col-sm-12">
+     <h1>  Buy Photos Using CryptoCurrency </h1>
          </div>
 
     </div>
@@ -77,19 +77,15 @@
   position: relative;
 
 }
-.textbuy{
-  background-color: #ffffff;
-  color: black;
-  font-size: 100px; 
-  font-weight: bold;
-  margin: 0 auto;
-  padding: 5px;
-  //width: 50%;
-  text-align: center;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  mix-blend-mode: screen;
+.textbuy {
+ 	color:white;
+	font-size: 90px;
+  font-weight:bold;
+	letter-spacing: 2px;
+	-webkit-transition: all 0.15s ease 0s;
+	position: relative;
+	z-index: 10;
+     padding: 30% 20%;
+  
 }
 </style>

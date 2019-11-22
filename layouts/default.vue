@@ -37,7 +37,7 @@ export default {
 
 <style>
   main{
-   font-family: Impact, Charcoal, sans-serif;
+   font-family:  Charcoal, sans-serif;
     padding-bottom: 200px;
    
   }

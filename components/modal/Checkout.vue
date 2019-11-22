@@ -11,7 +11,7 @@
 					<div class="box" v-for="product in products" :key="product.id">
 				<!--		<button class="is-pulled-right button is-warning is-inverted" @click="removeFromCart(product.id)">{{ removeLabel }}</button> -->
 						<p>{{ product.title }} </p>
-						<p>{{ product.price }} &euro;</p>
+						<p>{{ product.price }} $</p>
 					</div>
 				<div v-if="products.length === 0">
 						<p>{{ cartEmptyLabel }}</p>
@@ -81,7 +81,7 @@ export default {
 				} else {
 					productLabel = 'product';
 				}
-				return `Buy ${totalProducts} ${productLabel} at ${finalPrice}€`;
+				return `Buy ${totalProducts} Photo at ${finalPrice}$`;
 				
 		},
 		isUserLoggedIn () {
