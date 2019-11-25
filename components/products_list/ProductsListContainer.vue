@@ -1,9 +1,11 @@
 <template>
 
-  <div class="container">
-  
+  <div class="container" id="productlist">
+   <h1 class="parallax-text">
+            Welcome to your GALLERY
+         </h1>
   <div class="row ">
-   
+  
      <div class="  aa  col-lg-4 col-md-6 col-xs-12" v-for="product in products" :key="product.id">
       <VmProducts :product="product"></VmProducts>
      
@@ -64,4 +66,20 @@ export default {
   .aa{
     padding:10px;
   }
+
+  .parallax-text {
+    overflow: hidden;
+    background: #fff;
+    color: #3a3a3a;
+    font-size: 50px;
+    line-height: 86px;
+    font-weight: 600;
+    text-transform: uppercase;
+   // mix-blend-mode: lighten;
+    margin-top: 50px;
+    height: 100%;
+    font-family: "Gill Sans", sans-serif;
+    text-align: center;
+}
+
 </style>

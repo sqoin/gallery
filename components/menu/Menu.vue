@@ -31,7 +31,7 @@
       </a>
       <nuxt-link class="navbar-item" :to="{ name: 'user-wishlist' }">{{ wishlistLabel }}</nuxt-link>
       <nuxt-link class="navbar-item" :to="{ name: 'user-achats-achats' }">{{ purchasedLabel }}</nuxt-link>
-      <nuxt-link class="navbar-item" :to="{ name: 'user-ventes-ventes' }">{{ soldLabel }}</nuxt-link>
+   <!--   <nuxt-link class="navbar-item" :to="{ name: 'user-ventes-ventes' }">{{ soldLabel }}</nuxt-link> -->
 
 
       <hr class="navbar-divider" />
