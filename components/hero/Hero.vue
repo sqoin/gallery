@@ -3,7 +3,9 @@
     <div class="parallax">
       <div class="textbuy col-md-12 col-sm-12">
         <h1>
-          <a href="#productlist" class="slide-in">Buy Photos Using CryptoCurrency</a>
+		
+          <a href="#productlist" class="col-md-12 col-sm-12" >Buy Photos Using CryptoCurrency</a>
+		
         </h1>
       </div>
     </div>
@@ -63,16 +65,32 @@ export default {};
   font-size: 50px;
   font-weight: bold;
   letter-spacing: 2px;
-  transition: all 0.15s ease 0s;
+ // transition: all 0.15s ease 0s;
   position: relative;
   z-index: 10;
-    animation:  5s;
+   
 }
 .textbuy a:hover {
   color: rgb(0, 68, 255);
   text-decoration: none;
 }
-.slide-in-enter-active{
-  transition: all .4s ease;
+.slide{
+  transition: all 200ms ease-in;
 }
+
+@media (max-width:600px) {
+.textbuy a {
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 2px;
+ // transition: all 0.15s ease 0s;
+  position: relative;
+  z-index: 10;
+  color: rgb(0, 68, 255);
+   
+}
+
+}
+
 </style>

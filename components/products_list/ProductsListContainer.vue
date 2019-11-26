@@ -82,4 +82,24 @@ export default {
     text-align: center;
 }
 
+@media (max-width:600px) {
+.parallax-text {
+    overflow: hidden;
+    background: #fff;
+    color: #3a3a3a;
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 600;
+    text-transform: uppercase;
+   // mix-blend-mode: lighten;
+    margin-top: 50px;
+    height: 100%;
+    font-family: "Gill Sans", sans-serif;
+    text-align: center;
+}
+
+
+
+}
+
 </style>

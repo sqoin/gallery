@@ -31,7 +31,7 @@
       </a>
       <nuxt-link class="navbar-item" :to="{ name: 'user-wishlist' }">{{ wishlistLabel }}</nuxt-link>
       <nuxt-link class="navbar-item" :to="{ name: 'user-achats-achats' }">{{ purchasedLabel }}</nuxt-link>
-   <!--   <nuxt-link class="navbar-item" :to="{ name: 'user-ventes-ventes' }">{{ soldLabel }}</nuxt-link> -->
+      <nuxt-link class="navbar-item" :to="{ name: 'user-ventes-ventes' }">{{ soldLabel }}</nuxt-link>
 
 
       <hr class="navbar-divider" />
@@ -72,7 +72,7 @@
           <li><a class="navbar-item"><h2>Welcome {{ getUserName }}</h2></a></li>
           <li><nuxt-link class="navbar-item" :to="{ name: 'user-wishlist' }">{{ wishlistLabel }}</nuxt-link></li>
           <li><nuxt-link class="navbar-item" :to="{ name: 'user-achats-achats' }">{{ purchasedLabel }}</nuxt-link></li>
-          <li><nuxt-link class="navbar-item" :to="{ name: 'user-ventes-ventes' }">{{ soldLabel }}</nuxt-link></li>
+        <!--  <li><nuxt-link class="navbar-item" :to="{ name: 'user-ventes-ventes' }">{{ soldLabel }}</nuxt-link></li> -->
       </ul>
       <ul v-if="!isUserLoggedIn">
           <li>
@@ -293,6 +293,41 @@ export default {
 	color: white !important;
 	background:transparent !important;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
  ul {
 	 list-style: none;
@@ -572,6 +607,7 @@ export default {
 	 display: block;
 	 height: 50px;
 	 width: 50px;
+	 background-color: #ffff00c7;
 }
  label.hamburger:hover {
 	 cursor: pointer;
@@ -600,6 +636,7 @@ export default {
 	 width: 100%;
 	 height: 2px;
 	 top: 50%;
+	
 	 background-color: #fefefe;
 	 pointer-events: auto;
 	 transition-duration: 0.35s;
