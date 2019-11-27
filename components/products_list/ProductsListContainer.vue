@@ -1,9 +1,10 @@
 <template>
 
   <div class="container" id="productlist">
+    
    <h1 class="parallax-text">
             Welcome to your GALLERY
-         </h1>
+         </h1>  
   <div class="row ">
   
      <div class="  aa  col-lg-4 col-md-6 col-xs-12" v-for="product in products" :key="product.id">
@@ -13,6 +14,7 @@
      
 
   </div>
+    
 </div>
 </template>
 
@@ -59,6 +61,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
+
 .card{
  margin :5px ;
 }
@@ -69,8 +73,8 @@ export default {
 
   .parallax-text {
     overflow: hidden;
-    background: #fff;
-    color: #3a3a3a;
+   background-color: rgb(156, 210, 214);
+    color: white;
     font-size: 50px;
     line-height: 86px;
     font-weight: 600;
@@ -85,20 +89,19 @@ export default {
 @media (max-width:600px) {
 .parallax-text {
     overflow: hidden;
-    background: #fff;
-    color: #3a3a3a;
+    background-color: rgb(156, 210, 214);
+    color: white;
     font-size: 20px;
     line-height: 30px;
     font-weight: 600;
     text-transform: uppercase;
    // mix-blend-mode: lighten;
     margin-top: 50px;
-    height: 100%;
+    height: 80px;
     font-family: "Gill Sans", sans-serif;
     text-align: center;
+    padding: 20px;
 }
-
-
 
 }
 
