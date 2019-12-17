@@ -1,8 +1,9 @@
 <template>
   <div>
    <VmHero></VmHero>
+   
    <VmProductsList></VmProductsList>
- 
+  
   </div>
 </template>
 
@@ -12,7 +13,7 @@ import VmHero from '@/components/hero/Hero';
 import VmProductsList from '@/components/products_list/ProductsListContainer';
 export default {
   name: 'index',
-  transition: "bounce",
+ 
   components: {
 
     VmProductsList,
@@ -25,4 +26,6 @@ export default {
 * {
   box-sizing: border-box;
 }
+
+
  </style>

@@ -607,7 +607,7 @@ export default {
 	 display: block;
 	 height: 50px;
 	 width: 50px;
-	 background-color: #ffff00c7;
+	 background-color: #fab915;
 }
  label.hamburger:hover {
 	 cursor: pointer;

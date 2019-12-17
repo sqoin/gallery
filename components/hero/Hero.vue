@@ -4,8 +4,8 @@
       <div class="textbuy col-md-12 col-sm-12">
         <h1>
 		 
-          <a href="#productlist" class="test col-md-12 col-sm-12"  >Buy Photos Using CryptoCurrency</a>
-
+          <a href="#productlist" class="test col-md-12 col-sm-12" >Buy Photos Using CryptoCurrency</a>
+          
         </h1>
       </div>
     </div>

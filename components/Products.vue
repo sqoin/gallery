@@ -1,11 +1,14 @@
 <template>
-  <md-card md-with-hover >
-    <figure class="image is-3by2">
-      <img  slot="image" :src="product.image" alt="Card image cap" />
+
+  <md-card class="cart"  md-with-hover>
+    <figure class="image  is-3by2"  >
+      
+  
+      <img class="animated  flipInX " slot="image"  v-img :src="product.image" alt="Card image cap" />
     </figure>
 
+
     <div class="card-footer">
-    <span class="is-size-4">{{product.price}} &dollar;</span>
       <md-button
         class="card-footer-item"
         :title="removeFromFavouriteLabel"
@@ -16,9 +19,8 @@
           <i class="fa fa-heart"></i>
         </span>
       </md-button>
-     
+      <md-button class="card-footer-item is-size-4">{{product.price}} &dollar;</md-button>
       <md-button
-
         :title="addToFavouriteLabel"
         v-show="!product.isFavourite"
         @click="saveToFavorite(product.id)"
@@ -41,7 +43,7 @@
         @click="removeFromCart(product.id, false)"
       >{{ removeFromCartLabel }}</md-button>
 
-      <nuxt-link
+      <router-link
         class="details"
         :to="{
         name: 'product_detail-id',
@@ -55,11 +57,16 @@
           isAddedBtn: product.isAddedBtn
         }
       }"
-      ></nuxt-link>
+      ></router-link>
     </div>
   </md-card>
-</template>
+
+  </template>
 <script>
+import Vue from 'vue';
+import VueImg from 'v-img';
+Vue.use(VueImg);
+
 export default {
   name: "products",
   props: ["product"],
@@ -74,9 +81,12 @@ export default {
       selected: 1,
       showDialog: false,
       name: "",
-      quantityArray: []
+      quantityArray: [],
+       index: null
     };
   },
+  
+  
 
   mounted() {
     for (let i = 1; i <= 20; i++) {
@@ -91,13 +101,17 @@ export default {
       const idProduct = Number(this.$route.query.productId);
       this.$store.commit("purchase", idProduct);
        
-    }
+    };
+   
+   
   },
 
   computed: {
     isUserLogged() {
       return this.$store.getters.isUserLoggedIn;
-    }
+    },
+  
+    
   },
 
   methods: {
@@ -106,30 +120,26 @@ export default {
         id: id,
         status: true
       };
-
-      
-     let isUserLogged = this.$store.state.userInfo.isLoggedIn;
-     if (isUserLogged){
-
+      //	window.open('https://sqoin.exchange/walletd/#/checkout');
       this.$store.commit("addToCart", id);
-      this.$store.commit("setAddedBtn", data);}
+      this.$store.commit("setAddedBtn", data);
     },
     removeFromCart(id) {
       let data = {
         id: id,
         status: false
       };
-       
       this.$store.commit("removeFromCart", id);
       this.$store.commit("setAddedBtn", data);
-     
-      
     },
     saveToFavorite(id) {
+     
       let isUserLogged = this.$store.state.userInfo.isLoggedIn;
 
       if (isUserLogged) {
         this.$store.commit("addToFavourite", id);
+    // localStorage.setItem("test", id)  ;
+        
       } else {
         this.$store.commit("showLoginModal", true);
       }
@@ -145,23 +155,17 @@ export default {
       this.$store.commit("quantity", data);
     },
     showCheckoutModal() {
-        let isUserLogged = this.$store.state.userInfo.isLoggedIn;
-        if (isUserLogged) {
-         this.$store.commit("showCheckoutModal", true);}
-         else {
-            this.$store.commit("showLoginModal", true);
-         }
+      this.$store.commit("showCheckoutModal", true);
     }
   }
 };
 </script>
 
 <style lang="scss" scoped>
-.aa{
-    padding:10px;
-  }
+
+
 .details {
-  cursor: zoom-in;
+  cursor: pointer;
   position: absolute;
   top: 0;
   left: 0;
@@ -171,24 +175,23 @@ export default {
 
   &:hover {
     border-style: none;
-    border: 2px solid orange;
-    
-  }
+   // border: 2px solid orange;
+  } 
+  
 }
 figure {
   margin: 0px;
-  
 }
 .mdcard .card-footer {
-  position: absolute;
+ // position: absolute;
   width: 100%;
-  
-
+  height: 30%;
+ 
   background-color: white;
   border: none;
 
-  border-bottom: 1px solid #FFF;
-  border-top: 1px solid #FFF;
+  //border-bottom: 1px solid #FFF;
+  //border-top: 1px solid #FFF;
 
   -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
   transition: opacity 0.35s, transform 0.35s;
@@ -196,7 +199,31 @@ figure {
   -webkit-transform: scale(0, 1);
   -ms-transform: scale(0, 1);
   transform: scale(0, 1);
+  
 }
+
+.md-card:hover .mdcard .card-footer {
+  opacity: 1;
+  filter: alpha(opacity=100);
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  
+   
+}
+
+.card-footer{
+  
+    opacity: 0;
+    position: absolute;
+
+}
+
+.card-footer:hover{
+  position: relative;
+  opacity: 1;
+}
+
 </style>
 
 

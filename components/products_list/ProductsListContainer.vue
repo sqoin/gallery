@@ -1,44 +1,34 @@
 <template>
+  <div class=" test2" id="productlist">
+    <h1 class="parallax-text">Welcome to your GALLERY</h1>
 
-  <div class="container" id="productlist">
-    
-   <h1 class="parallax-text">
-            Welcome to your GALLERY
-         </h1>  
-  <div class="row ">
-  
-     <div class="  aa  col-lg-4 col-md-6 col-xs-12" v-for="product in products" :key="product.id">
-      <VmProducts :product="product"></VmProducts>
-     
+    <div class="row">
+      <div class="aa col-lg-3 col-md-6 col-xs-12" v-for="product in products" :key="product.id">
+        <VmProducts :product="product"></VmProducts>
+      </div>
     </div>
-     
-
   </div>
-    
-</div>
 </template>
 
 <script>
-import VmProducts from '../Products';
-import { getByTitle } from '@/assets/filters';
+import VmProducts from "../Products";
+import { getByTitle } from "@/assets/filters";
 
 export default {
-  name: 'productsList',
-  
-  
+  name: "productsList",
 
   components: { VmProducts },
-  
-  data () {
+
+  data() {
     return {
-      id: '',
-      noProductLabel: 'No Image found',
+      id: "",
+      noProductLabel: "No Image found",
       productsFiltered: []
     };
   },
 
   computed: {
-    products () {
+    products() {
       if (this.$store.state.userInfo.hasSearched) {
         return this.getProductByTitle();
       } else {
@@ -48,46 +38,70 @@ export default {
   },
 
   methods: {
-    getProductByTitle () {
+    getProductByTitle() {
       let listOfProducts = this.$store.state.products,
-          titleSearched = this.$store.state.userInfo.productTitleSearched;
-      
-      return this.productsFiltered = getByTitle(listOfProducts, titleSearched);
+        titleSearched = this.$store.state.userInfo.productTitleSearched;
+
+      return (this.productsFiltered = getByTitle(
+        listOfProducts,
+        titleSearched
+      ));
     }
   }
-
 };
-
 </script>
 
 <style lang="scss" scoped>
-
-
-.card{
- margin :5px ;
+.bounce-enter-active {
+  animation: bounce-in 0.5s;
 }
-
-  .aa{
-    padding:10px;
+.bounce-leave-active {
+  animation: bounce-in 0.5s reverse;
+}
+@keyframes bounce-in {
+  0% {
+    transform: scale(0);
   }
-
-  .parallax-text {
-    overflow: hidden;
-   background-color: rgb(156, 210, 214);
-    color: white;
-    font-size: 50px;
-    line-height: 86px;
-    font-weight: 600;
-    text-transform: uppercase;
-   // mix-blend-mode: lighten;
-    margin-top: 50px;
-    height: 100%;
-    font-family: "Gill Sans", sans-serif;
-    text-align: center;
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
-@media (max-width:600px) {
+.card {
+  margin: 5px;
+  
+}
+
+.aa {
+  padding: 10px;
+ 
+}
+
 .parallax-text {
+  overflow: hidden;
+  background-color: rgb(156, 210, 214);
+  color: white;
+  font-size: 50px;
+  line-height: 86px;
+  font-weight: 600;
+  text-transform: uppercase;
+  // mix-blend-mode: lighten;
+  margin-top: 50px;
+  height: 100%;
+  font-family: "Gill Sans", sans-serif;
+  text-align: center;
+}
+
+.test2{
+margin: 5rem;
+}
+
+
+@media (max-width: 600px) {
+  .parallax-text {
     overflow: hidden;
     background-color: rgb(156, 210, 214);
     color: white;
@@ -95,14 +109,12 @@ export default {
     line-height: 30px;
     font-weight: 600;
     text-transform: uppercase;
-   // mix-blend-mode: lighten;
+    // mix-blend-mode: lighten;
     margin-top: 50px;
     height: 80px;
     font-family: "Gill Sans", sans-serif;
     text-align: center;
     padding: 20px;
+  }
 }
-
-}
-
 </style>
