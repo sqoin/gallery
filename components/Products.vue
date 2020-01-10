@@ -222,7 +222,11 @@ figure {
 .card-footer:hover{
   position: relative;
   opacity: 1;
+  
 }
+.md-button{
+  min-width:50px; 
+  }
 
 </style>
 
