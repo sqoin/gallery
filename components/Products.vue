@@ -212,12 +212,7 @@ figure {
    
 }
 
-.card-footer{
-  
-    opacity: 0;
-    position: absolute;
 
-}
 
 .card-footer:hover{
   position: relative;
