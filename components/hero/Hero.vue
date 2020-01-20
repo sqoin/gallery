@@ -1,111 +1,154 @@
 <template>
-  <div class="container-fluid">
-    <div class="parallax">
-      <div class="textbuy col-md-12 col-sm-12">
-        <h1>
-		 
-          <a href="#productlist" class="test col-md-12 col-sm-12" >Buy Photos Using CryptoCurrency</a>
-          
-        </h1>
-      </div>
-    </div>
+  <div class="contenant " >
+
+ <mdb-carousel :items="items" :interval="5000" controlls>
+
+
+ </mdb-carousel>
+ <h1 class="parallax-text">Buy Photos Using CryptoCurrency</h1>
+ <div class="heroo">
+   <h1>WELCOME TO YOUR SQOIN GALLERY</h1>
   </div>
+ 
+
+  </div>
+  
 </template>
 
 
  <script>
+
 import { mdbContainer, mdbCarousel, mdbCard } from "mdbvue";
-export default {};
+export default {
+    name: 'CarouselPage',
+    components: {
+      mdbCarousel
+    },
+    data() {
+      return {
+        items: [
+          {
+            img: true,
+            src: "https://mdbootstrap.com/img/Photos/Slides/img%20(15).jpg",
+
+          },
+          {
+            img: true,
+            src: "https://mdbootstrap.com/img/Photos/Slides/img%20(16).jpg",
+
+          },
+          {
+            img: true,
+            src: "https://mdbootstrap.com/img/Photos/Slides/img%20(17).jpg",
+
+          },
+           {
+            img: true,
+           src: "https://mdbootstrap.com/img/Photos/Slides/img%20(6).jpg",
+
+          },
+           {
+            img: true,
+           src: "https://mdbootstrap.com/img/Photos/Slides/img%20(9).jpg",
+
+          },
+           {
+            img: true,
+           src: "https://mdbootstrap.com/img/Photos/Slides/img%20(5).jpg",
+
+          },
+           {
+            img: true,
+           src: "https://mdbootstrap.com/img/Photos/Slides/img%20(8).jpg",
+
+          },{
+            img: true,
+           src: "https://mdbootstrap.com/img/Photos/Slides/img%20(22).jpg",
+
+          },{
+            img: true,
+           src: "https://mdbootstrap.com/img/Photos/Slides/img%20(20).jpg",
+
+          }
+        ]
+      }
+    }
+  }
 </script>
 
 <style lang="scss" scoped>
-
-
-
-.parallax-div {
-  height: 100%;
-  background: url("http://res.cloudinary.com/tempest/image/upload/c_limit,cs_srgb,dpr_1.0,q_80,w_10000/MTMwOTgxMTI5NDk3OTA5NzI2.jpg");
-  background-size: cover;
-  background-attachement: fixed;
-  text-align: center;
-  width: 150%;
-}
-
 .parallax-text {
   overflow: hidden;
-  background: #fff;
-  color: #3a3a3a;
+  background-color: black;
+  color: white;
   font-size: 50px;
   line-height: 86px;
   font-weight: 600;
   text-transform: uppercase;
-  mix-blend-mode: lighten;
-  margin-top: 50px;
-  height: 100%;
-  font-family: "Gill Sans", sans-serif;
-}
-
-.parallax {
-  /* The image used */
-  background-image: url("../../static/pexels-photo-2275911.jpeg");
-
-  /* Full height */
-  height: 60vw;
-
-  /* Create the parallax scrolling effect */
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-
-  position: relative;
-}
-.textbuy {
-  text-align: center;
-  top: 30%;
+  // mix-blend-mode: lighten;
   
+  height: 100%;
+  font-family: "cursive";
+  text-align: center;
+  height: 100px;
 }
-.textbuy a {
-  color: rgb(85, 212, 221);
-  font-family: "Comic Sans MS", cursive, sans-serif;
-  font-size: 60px;
-  font-weight: bold;
-  letter-spacing: 2px;
-  word-spacing: 1.6px;
- transition: all 2s ease 2s;
-  position: relative;
-  z-index: 10;
-  font-style: italic;
 
-   
+
+.heroo h1{
+  text-align: center;
+  color: white;
+  text-shadow: 6px 5px 6px #000000;
+  font-family: serif;
+  font-size: 3rem;
 }
-.textbuy a:hover {
-  color: rgb(13, 138, 196);
-  text-decoration: none;
-}
-.test{
+.heroo h2{
+  color: black;
+  text-align: center;
+    font-size: 40px;
+    font-family: cursive;
 
 }
-.page-enter-active,
-.page-leave-active {
-  transition-property: opacity;
-  transition-timing-function: ease-in-out;
-  transition-duration: 5000ms;
+
+.heroo{
+  position: absolute;
+  top: 10%;
+  left: 30%;
+  z-index: 999;
+ 
+  width:40%;
+  height: 5%;
+
+    opacity: 0.5;
+        
 }
+
+
+
 
 @media (max-width:600px) {
-.textbuy a {
- color: rgb(30, 126, 133);
-  font-size: 40px;
-  font-weight: bold;
-  letter-spacing: 2px;
- // transition: all 0.15s ease 0s;
-  position: relative;
-  z-index: 10;
-  
+
+  .heroo h1{
+  text-align: center;
+  color: red;
+  text-shadow: 6px 5px 6px #000000;
+  font-family: serif;
+  font-size: 1rem;
+}
+
+  .heroo{
+  position: absolute;
+  top: 10%;
+  left: 30%;
+  z-index: 999;
+ 
+  width:40%;
+  height: 5%;
+
+    opacity: 0.5;
    
-}
+   
+
 
 }
-
+}
 </style>

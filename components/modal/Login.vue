@@ -3,7 +3,7 @@
     <div class="modal-background"></div>
     <div class="modal-card">
       <header class="modal-card-head">
-          <p v-if="!isUserLoggedIn" class="modal-card-title">{{ modalTitle }}</p>
+          <p v-if="!isUserLoggedIn" class="modal-card-title"><i class="fa fa-lock" aria-hidden="true"></i> {{ modalTitle }}</p>
           <p v-if="isUserLoggedIn" class="modal-card-title">{{ modalTitleLoggedIn }}</p>
           <button class="delete" aria-label="close" @click="closeModal"></button>
       </header>
@@ -12,6 +12,7 @@
           <div v-if="!isUserLoggedIn">
             <div class="field">
               <p class="control has-icons-left has-icons-right">
+               
                   <input
                     :class="[highlightEmailWithError ? 'input is-danger' : 'input']"
                     type="email"
@@ -31,6 +32,8 @@
                 </p>
                 <p v-if="highlightEmailWithError" class="help is-danger">{{ emailRequiredLabel }}</p>
             </div>
+
+
             <div class="field">
               <p class="control has-icons-left has-icons-right">
                 <input 
@@ -51,6 +54,8 @@
               <p v-if="highlightPasswordWithError" class="help is-danger">{{ passwordRequiredLabel }}</p>
             </div>
           </div>
+
+
           <div v-if="isUserLoggedIn" class="level">
             <div class="level-item has-text-centered">
               <div>
@@ -62,6 +67,7 @@
         </section>
         <footer class="modal-card-foot">
           <button v-if="!isUserLoggedIn" type="submit" class="button is-warning">{{ primaryBtnLabel }}</button>
+         
           <button v-if="isUserLoggedIn" type="button" class="button is-warning" @click="closeModal">{{ btnLoggedInLabel }}</button>
         </footer>
       </form>
@@ -184,6 +190,7 @@ export default {
 .fa-check {
   color:#00FF00;
 }
+
 </style>
 
 

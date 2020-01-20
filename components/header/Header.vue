@@ -1,149 +1,265 @@
+
 <template>
+  <nav class="navbar custom-nav fixed-top navbar-expand-lg navbar-light">
+    <div class="container">
+      <router-link class="navbar-brand" to="/">
+        <img src="../../static/vuemmerce-logo1.png" />
+      </router-link>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-  <nav class="navbar"  id ="navbar" role="navigation" aria-label="main navigation">
-    <div class="navbar-brand">
-      <nuxt-link :to="{ name: 'index' }" class="navbar-item col-xs-8">
-        <h1 class="title  is-flex-mobile"></h1>
-      </nuxt-link>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <router-link to="/#" class="nav-link">
+              <strong>Home |</strong>
+            </router-link>
+          </li>
+          <li class="nav-item">
+            <router-link to="/#productlist" class="nav-link">
+              <strong>Our Gallery |</strong>
+            </router-link>
+          </li>
 
-     
-    </div>
+          <li class="nav-item">
+            <router-link to="/#footer" class="nav-link">
+              <strong>Contact Us</strong>
+            </router-link>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <div v-if="!isLoggedIn">
+            <a
+              class="btn btn-outline-warning my-2 my-sm-0"
+              v-if="!isUserLoggedIn"
+              @click="showLoginModal"
+            >Login</a>
+            <a
+              class="btn btn-outline-warning my-2 my-sm-0"
+              v-if="!isUserLoggedIn"
+              @click="showSignupModal"
+            >Sign up</a>
+          </div>
+        </form>
 
-
-    <div class="navbar-menu is-active">
-      <div class="navbar-start">
-        <div class="navbar-item field">
-          <VmSearch></VmSearch>
+        <div v-if="isUserLoggedIn" class="navbar-item">
+          <ul class="nav-log navbar-nav-log">
+            <li class="dropdown">
+              <a
+                href="#"
+                class="dropdown-toggle log"
+                data-toggle="dropdown"
+              >Welcome {{ getUserName }}</a>
+              <ul class="dropdown-menu">
+                <li>
+                  <nuxt-link class="navbar-item" :to="{ name: 'user-wishlist' }">{{ wishlistLabel }}</nuxt-link>
+                </li>
+                <li>
+                  <nuxt-link
+                    class="navbar-item"
+                    :to="{ name: 'user-achats-achats' }"
+                  >{{ purchasedLabel }}</nuxt-link>
+                </li>
+                <li>
+                  <nuxt-link
+                    class="navbar-item"
+                    :to="{ name: 'user-ventes-ventes' }"
+                  >{{ soldLabel }}</nuxt-link>
+                </li>
+                <li>
+                  <hr class="navbar-divider" />
+                  <a class="navbar-item" @click="logout">{{ logoutLabel }}</a>
+                  <span class="glyphicon glyphicon-log-out pull-right"></span>
+                </li>
+              </ul>
+            </li>
+          </ul>
         </div>
       </div>
     </div>
-
-    <!-- For mobile and tablet -->
-    <div class="navbar-end">
-      <VmMenu></VmMenu>
-    </div>
-
-    <!-- For desktop -->
-    <div v-show="isMenuOpen" class="navbar-end is-hidden-mobile">
-      <VmMenu></VmMenu>
-    </div>
-  </nav> 
-
-
+  </nav>
 </template>
 
 <script>
-import VmMenu from "../menu/Menu";
-import VmSearch from "../search/Search";
-
-
-
+import VmProducts from "../Products";
+import { getByTitle } from "@/assets/filters";
 export default {
-  name: "VmHeader",
-
+  name: "Vmheader",
 
   data() {
     return {
-      linkedinTooltip: "Follow us on Linkedin",
-      facebookTooltip: "Follow us on Facebook",
-      twitterTooltip: "Follow us on Twitter",
-      instagramTooltip: "Follow us on Instagram",
-      isCheckoutActive: false,
-      isMenuOpen: false,
-     
+      isActive: false,
+      Shoppinglist: "Shopping List",
+      wishlistLabel: "Wishlist",
+      purchasedLabel: "Purchased",
+      soldLabel: "Sold",
+      logoutLabel: "Log out",
+      loginLabel: "Log in",
+      signupLabel: "Sign up"
     };
   },
 
-  components: {
-    VmSearch,
-    VmMenu
-  },
-
   computed: {
-    numProductsAdded() {
-      return this.$store.getters.productsAdded.length;
+    isUserLoggedIn() {
+      return this.$store.getters.isUserLoggedIn;
+    },
+    getUserName() {
+      let name = this.$store.getters.getUserName;
+
+      if (name === "") {
+        return "user";
+      } else {
+        return name;
+      }
     }
   },
 
   methods: {
-    showCheckoutModal() {
-      this.$store.commit("showCheckoutModal", true);
+    logout() {
+      this.$store.commit("isUserLoggedIn", false);
+      this.$store.commit("isUserSignedUp", false);
+      this.$store.commit("removeProductsFromFavourite");
+      this.$store.commit("logout");
+      // redirect to homepage
+      this.$router.push({ name: "index" });
     },
+    showLoginModal() {
+      this.$store.commit("showLoginModal", true);
+    },
+    showSignupModal() {
+      this.$store.commit("showSignupModal", true);
+    },
+    togglehamburger() {
+      this.isActive = !this.isActive;
+    },
+    myFunction() {
+      var x = document.getElementById("myTopnav");
+      if (x.className === "topnav") {
+        x.className += " responsive";
+      } else {
+        x.className = "topnav";
+      }
+    }
+  },
+  mounted() {
+    if (localStorage.getItem("info")) {
+      var localData = JSON.parse(localStorage.getItem("info"));
+      this.$store.commit("setLoginDataFromLocalStorage", localData);
+    }
   }
 };
 </script>
 
-<style lang="scss" scoped>
+
+<style scoped lang="scss">
 
 .navbar {
-  
-  position: sticky;
-  top: 0;
- font-family: Georgia, serif;
-  width: 100%; 
- color:black;
-  height: 5%;
-  padding-top: 0%;
+  height: 10%;
 }
-.title {
-  background: url("../../static/vuemmerce-logo1.png");
-  background-position: 70% 30%;
-  background-repeat: no-repeat;
+.navbar-light .navbar-nav .nav-link:hover {
+  color: black;
+}
+.navbar-brand img {
+  width: 30%;
+}
 
-  background-size: 165px;
-  width: 175px;
-  height: 50px;
+.navbar-login {
+  width: 305px;
+  padding: 10px;
+  padding-bottom: 0px;
 }
-.navbar-menu.is-active {
-  background: transparent !important;
+
+.navbar-login-session {
+  padding: 10px;
+  padding-bottom: 0px;
+  padding-top: 0px;
+}
+
+.icon-size {
+  font-size: 87px;
+}
+.image_outer_container {
+  margin-top: auto;
+  margin-bottom: auto;
+  border-radius: 50%;
+  position: relative;
+}
+
+.image_inner_container {
+  border-radius: 50%;
+  padding: 2px;
+  background: green;
+  background: -webkit-linear-gradient(to bottom, #fcb045, #fd1d1d, #833ab4);
+  background: linear-gradient(to bottom, #fcb045, #fd1d1d, #833ab4);
+}
+.image_inner_container img {
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  border: 1px solid white;
+}
+
+.image_outer_container .green_icon {
+  background-color: #4cd137;
+  position: absolute;
+  left: 25px;
+  bottom: 10px;
+  height: 10px;
+  width: 10px;
+  border: 2px solid white;
+  border-radius: 50%;
+}
+
+@media (min-width: 992px) {
+  .navbar.custom-nav {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: #fff !important;
+  }
+}
+
+.dropdown {
+  background: #fff;
+
+  border-radius: 10px;
+  width: 100px;
+}
+.dropdown-menu > li > a {
+  color: black;
+}
+.dropdown ul.dropdown-menu {
+  border-radius: 4px;
   box-shadow: none;
+  margin-top: 20px;
+  width: 100px;
 }
-@media (max-width: 1000px) {
-  .navbar-brand {
-    width: 100%;
-    margin: 0;
-  }
-  .navbar-brand .navbar-item,
-  .navbar-brand .navbar-burger {
-    display: inline-block;
-
-  }
-
-  .navbar-burger {
-  }
+.dropdown ul.dropdown-menu:before {
+  content: "";
+  border-bottom: 10px solid #fff;
+  border-right: 10px solid transparent;
+  border-left: 10px solid transparent;
+  position: absolute;
+  top: -10px;
+  right: 16px;
+  z-index: 10;
 }
-@media (max-width: 600px) {
-  .navbar-menu,
-  .navbar-end {
-    width: 100%;
-  }
-
-  .navbar-menu.is-active{
-    background: transparent;
-    box-shadow: unset;
-  }
-  @media (max-width: 1000px) {
-    .navbar-brand{
-    width: 100%;
-    margin: 0;
-  }
-  .navbar-brand .navbar-item,.navbar-brand .navbar-burger{
-    display: inline-block;
-  }
-  .navbar-burger{
-    float: right;
-  }
-  }
-  @media (max-width: 600px) {
-    .navbar-menu,.navbar-end{
-        width: 100%;
-    }
-  }
+.dropdown ul.dropdown-menu:after {
+  content: "";
+  border-bottom: 12px solid #ccc;
+  border-right: 12px solid transparent;
+  border-left: 12px solid transparent;
+  position: absolute;
+  top: -12px;
+  right: 14px;
+  z-index: 9;
 }
-
-
-.navbar{
-  background: #f1f1f1;
-}
-
 </style>

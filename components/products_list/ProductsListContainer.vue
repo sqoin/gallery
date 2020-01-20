@@ -1,6 +1,6 @@
 <template>
   <div class=" test2" id="productlist">
-    <h1 class="parallax-text">Welcome to your GALLERY</h1>
+   
 
     <div class="row">
       <div class="aa col-lg-3 col-md-6 col-xs-12" v-for="product in products" :key="product.id">

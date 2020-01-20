@@ -8,7 +8,7 @@
 					<ul class="list-unstyled quick-links">
 						<li><a href="javascript:void();"><i class="fa fa-phone fa-lg"></i>+216.71.877.000</a></li>
 						<li><a href="javascript:void();"><i class="fa fa-envelope-o"></i>admin@sqoin.us</a></li>
-						<li><a href="javascript:void();"><i class="fa fa-map-marker"></i>Ghazela Centre,Cité Ghazela,Ariana 2083 TUNISIE</a></li>
+						<li><a href="javascript:void();"><i class="fa fa-map-marker"></i>Ghazal Center, Ghazala City Ariana 2083 - Tunisia</a></li>
 						
 					</ul>
 				</div>
@@ -70,17 +70,21 @@ section .section-title {
     text-transform: uppercase;
 }
 #footer {
-    background: #000000 !important;
+   background-image: url('https://pngimage.net/wp-content/uploads/2018/06/footer-background-png-6.png');
+   
+}
+ .h6{
+	color: #000000;
 }
 #footer h5{
 	padding-left: 10px;
-    border-left: 3px solid #eeeeee;
+    border-left: 3px solid black;
     padding-bottom: 6px;
     margin-bottom: 20px;
-    color:#ffffff;
+    color:black;
 }
 #footer a {
-    color: #ffffff;
+    color: black;
     text-decoration: none !important;
     background-color: transparent;
     -webkit-text-decoration-skip: objects;
@@ -101,10 +105,10 @@ section .section-title {
 }
 #footer ul.social li a,
 #footer ul.quick-links li a{
-	color:#ffffff;
+	color:#000000;
 }
 #footer ul.social li a:hover{
-	color:#eeeeee;
+	color:#000000;
 }
 #footer ul.quick-links li{
 	padding: 3px 0;
