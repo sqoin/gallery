@@ -1,6 +1,6 @@
 <template>
   <div class=" test2" id="productlist">
-   
+    
 
     <div class="row">
       <div class="aa col-lg-3 col-md-6 col-xs-12" v-for="product in products" :key="product.id">
@@ -80,20 +80,7 @@ export default {
  
 }
 
-.parallax-text {
-  overflow: hidden;
-  background-color: rgb(156, 210, 214);
-  color: white;
-  font-size: 50px;
-  line-height: 86px;
-  font-weight: 600;
-  text-transform: uppercase;
-  // mix-blend-mode: lighten;
-  margin-top: 50px;
-  height: 100%;
-  font-family: "Gill Sans", sans-serif;
-  text-align: center;
-}
+
 
 .test2{
 margin: 5rem;

@@ -161,7 +161,13 @@ export default {
 
 
 <style scoped lang="scss">
+.btn{
+  
+      color: black;
+    text-decoration: blink;
+    font-family: cursive;
 
+}
 .navbar {
   height: 10%;
 }

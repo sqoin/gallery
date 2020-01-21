@@ -1,12 +1,8 @@
 <template>
-
-  <md-card class="cart"  md-with-hover>
-    <figure class="image  is-3by2"  >
-      
-  
-      <img class="animated  flipInX " slot="image"  v-img :src="product.image" alt="Card image cap" />
+  <md-card class="cart" md-with-hover>
+    <figure class="image is-3by2">
+      <img class="animated flipInX" slot="image" v-img :src="product.image" alt="Card image cap" />
     </figure>
-
 
     <div class="card-footer">
       <md-button
@@ -15,8 +11,8 @@
         v-show="product.isFavourite"
         @click="removeFromFavourite(product.id)"
       >
-        <span class="icon is-small">
-          <i class="fa fa-heart"></i>
+        <span class="icon is-small ">
+          <i class="fa fa-heart card-footer-item"></i>
         </span>
       </md-button>
       <md-button class="card-footer-item is-size-4">{{product.price}} &dollar;</md-button>
@@ -43,7 +39,7 @@
         @click="removeFromCart(product.id, false)"
       >{{ removeFromCartLabel }}</md-button>
 
-      <router-link
+      <!--  <router-link
         class="details"
         :to="{
         name: 'product_detail-id',
@@ -57,14 +53,13 @@
           isAddedBtn: product.isAddedBtn
         }
       }"
-      ></router-link>
+      ></router-link>-->
     </div>
   </md-card>
-
-  </template>
+</template>
 <script>
-import Vue from 'vue';
-import VueImg from 'v-img';
+import Vue from "vue";
+import VueImg from "v-img";
 Vue.use(VueImg);
 
 export default {
@@ -82,11 +77,9 @@ export default {
       showDialog: false,
       name: "",
       quantityArray: [],
-       index: null
+      index: null
     };
   },
-  
-  
 
   mounted() {
     for (let i = 1; i <= 20; i++) {
@@ -100,18 +93,13 @@ export default {
     if (window.location.href.indexOf("txid") > -1) {
       const idProduct = Number(this.$route.query.productId);
       this.$store.commit("purchase", idProduct);
-       
-    };
-   
-   
+    }
   },
 
   computed: {
     isUserLogged() {
       return this.$store.getters.isUserLoggedIn;
-    },
-  
-    
+    }
   },
 
   methods: {
@@ -133,13 +121,11 @@ export default {
       this.$store.commit("setAddedBtn", data);
     },
     saveToFavorite(id) {
-     
       let isUserLogged = this.$store.state.userInfo.isLoggedIn;
 
       if (isUserLogged) {
         this.$store.commit("addToFavourite", id);
-    // localStorage.setItem("test", id)  ;
-        
+        // localStorage.setItem("test", id)  ;
       } else {
         this.$store.commit("showLoginModal", true);
       }
@@ -162,8 +148,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
-
 .details {
   cursor: pointer;
   position: absolute;
@@ -175,52 +159,38 @@ export default {
 
   &:hover {
     border-style: none;
-   // border: 2px solid orange;
-  } 
-  
+    // border: 2px solid orange;
+  }
 }
 figure {
   margin: 0px;
 }
-.mdcard .card-footer {
- // position: absolute;
-  width: 100%;
-  height: 30%;
- 
-  background-color: white;
-  border: none;
 
-  //border-bottom: 1px solid #FFF;
-  //border-top: 1px solid #FFF;
-
-  -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
-  transition: opacity 0.35s, transform 0.35s;
-
-  -webkit-transform: scale(0, 1);
-  -ms-transform: scale(0, 1);
-  transform: scale(0, 1);
-  
-}
-
-.md-card:hover .mdcard .card-footer {
-  opacity: 1;
-  filter: alpha(opacity=100);
-  -webkit-transform: scale(1);
-  -ms-transform: scale(1);
-  transform: scale(1);
-  
-   
-}
-
-
-
-.card-footer:hover{
+.md-card .card-footer {
   position: relative;
-  opacity: 1;
+  display: none;
+}
+
+.card-footer-item{
+  color: white;
+}
+
+.md-card:hover .card-footer {
+  position: absolute;
+  display: inline;
+ 
+  color: white;
+  /* bottom: 30%; */
+  top: 75%;
+ // border: 2px solid red;
+width: 100%;
+ padding: 0.75rem 1.25rem;
+  background-color: rgba(59, 59, 59, 0.336);
   
 }
-.md-button{min-width:50px; }
-
+.md-button {
+  
+}
 </style>
 
 
