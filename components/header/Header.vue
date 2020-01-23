@@ -1,4 +1,3 @@
-
 <template>
   <nav class="navbar custom-nav fixed-top navbar-expand-lg navbar-light">
     <div class="container">
@@ -37,7 +36,7 @@
           </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">
-          <div v-if="!isLoggedIn">
+          <div v-if="!isUserLoggedIn">
             <a
               class="btn btn-outline-warning my-2 my-sm-0"
               v-if="!isUserLoggedIn"
@@ -85,6 +84,12 @@
           </ul>
         </div>
       </div>
+
+      
+
+
+
+      
     </div>
   </nav>
 </template>
@@ -161,6 +166,20 @@ export default {
 
 
 <style scoped lang="scss">
+.dropdown a{
+     color: #020202;
+    font-size: 20px;
+   
+}
+
+.dropdown a:hover{
+  text-decoration: none;
+}
+
+.nav-log{
+  margin: 0;
+}
+
 .btn{
   
       color: black;
@@ -175,7 +194,7 @@ export default {
   color: black;
 }
 .navbar-brand img {
-  width: 30%;
+  width: 19%;
 }
 
 .navbar-login {
@@ -267,5 +286,47 @@ export default {
   top: -12px;
   right: 14px;
   z-index: 9;
+}
+
+@media (max-width: 600px){
+  .navbar-brand img {
+  width: 14%;
+}
+
+.navbar-collapse{
+ background-color: #c3c2c299;
+}
+.dropdown{
+  background-color:transparent;
+  
+  color: rgb(112, 95, 51);
+  
+}
+
+
+
+}
+
+@media (min-width: 601px) and (max-width: 767px){
+   .navbar-brand img {
+  width: 20%;
+}
+.navbar-collapse{
+ background-color: #c3c2c299;
+}
+
+.dropdown{
+  background-color:transparent;
+  
+  color: rgb(112, 95, 51);
+  
+}
+}
+
+@media (max-width: 434px) {
+  .navbar-brand{
+       display: contents;
+  }
+  
 }
 </style>

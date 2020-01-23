@@ -6,16 +6,16 @@
 
     <div class="card-footer">
       <md-button
-        class="card-footer-item"
+        class="card-footer-item col-md-4"
         :title="removeFromFavouriteLabel"
         v-show="product.isFavourite"
         @click="removeFromFavourite(product.id)"
       >
-        <span class="icon is-small ">
-          <i class="fa fa-heart card-footer-item"></i>
+        <span class="icon is-small">
+          <i class="fa fa-heart"></i>
         </span>
       </md-button>
-      <md-button class="card-footer-item is-size-4">{{product.price}} &dollar;</md-button>
+      <md-button class="card-footer-item is-size-4 col-md-4">{{product.price}} &dollar;</md-button>
       <md-button
         :title="addToFavouriteLabel"
         v-show="!product.isFavourite"
@@ -27,14 +27,14 @@
       </md-button>
 
       <md-button
-        class="card-footer-item btn btn-outline-warning"
+        class="card-footer-item btn btn-info col-md-2"
         v-if="!product.isPurchased"
         @click="showCheckoutModal(),addToCart(product.id)"
       >{{ addToCartLabel }}</md-button>
 
       <md-button
         disabled
-        class="btn btn-outline-success"
+        class="btn btn-outline-success col-sm-4"
         v-if="product.isPurchased"
         @click="removeFromCart(product.id, false)"
       >{{ removeFromCartLabel }}</md-button>
@@ -171,25 +171,60 @@ figure {
   display: none;
 }
 
-.card-footer-item{
+.card-footer-item {
   color: white;
 }
 
 .md-card:hover .card-footer {
   position: absolute;
   display: inline;
- 
+
   color: white;
   /* bottom: 30%; */
   top: 75%;
- // border: 2px solid red;
-width: 100%;
- padding: 0.75rem 1.25rem;
-  background-color: rgba(59, 59, 59, 0.336);
-  
+  // border: 2px solid red;
+  width: 100%;
+  padding: 0.75rem 1.25rem;
+ // background-color: rgba(59, 59, 59, 0.336);
 }
 .md-button {
-  
+  min-width: 50px;
+}
+
+@media (max-width: 600px) {
+  .md-card:hover .card-footer {
+   
+    position: absolute;
+    display: flex;
+    color: white;
+    /* bottom: 30%; */
+    top: 75%;
+    // border: 2px solid red;
+    width: 100%;
+    padding: 0.75rem 1.25rem;
+    background-color: rgba(59, 59, 59, 0.336);
+  }
+
+  .md-button {
+    min-width: 30px;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 767px){
+
+.md-card:hover .card-footer {
+   
+    position: absolute;
+    display: flex;
+    color: white;
+    /* bottom: 30%; */
+    top: 75%;
+    // border: 2px solid red;
+    width: 100%;
+    padding: 0.75rem 1.25rem;
+    background-color: rgba(59, 59, 59, 0.336);
+  }
+
 }
 </style>
 

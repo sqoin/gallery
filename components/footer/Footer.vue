@@ -15,7 +15,7 @@
 				<div class="col-xs-12 col-sm-4 col-md-4">
 					<h5>Follow Us</h5>
 					<ul class="list-unstyled list-inline social text-center">
-						<li class="list-inline-item"><a href="javascript:void();"><i class="fa fa-facebook" style="color:blue" ></i></a></li>
+						<li class="list-inline-item"><a href="https://www.facebook.com/sqoin/"  target="_blank"><i class="fa fa-facebook" style="color:blue" ></i></a></li>
 						<li class="list-inline-item"><a href="javascript:void();"><i class="fa fa-twitter" style="color:#00acee"></i></a></li>
 						<li class="list-inline-item"><a href="javascript:void();"><i class="fa fa-instagram" style="color:pink"></i></a></li>
 						<li class="list-inline-item"><a href="javascript:void();"><i class="fa fa-google-plus" style="color:red"></i></a></li>
