@@ -173,6 +173,8 @@ figure {
 
 .card-footer-item {
   color: white;
+      font-size: 10px;
+    font-family: cursive;
 }
 
 .md-card:hover .card-footer {
@@ -190,6 +192,13 @@ figure {
 .md-button {
   min-width: 50px;
 }
+
+.md-button .md-ripple {
+    padding: 0 8px;
+    display: contents;
+    justify-content: center;
+    align-items: center; }
+
 
 @media (max-width: 600px) {
   .md-card:hover .card-footer {
@@ -225,7 +234,53 @@ figure {
     background-color: rgba(59, 59, 59, 0.336);
   }
 
+  .card-footer-item {
+  color: white;
+      font-size: 10px;
+    font-family: cursive;
 }
+
+
+}
+
+@media (min-width: 992px) and (max-width: 1169.98px) { 
+  .md-card:hover .card-footer {
+   
+    position: absolute;
+    display: flex;
+    color: white;
+    /* bottom: 30%; */
+    top: 60%;
+    // border: 2px solid red;
+    width: 100%;
+    padding: 0.75rem 1.25rem;
+    background-color: rgba(59, 59, 59, 0.336);
+  }
+
+  .card-footer-item {
+  color: white;
+     font-size: 0.8em;
+    font-family: cursive;
+        padding: 0;
+}
+
+.md-button-content {
+    position: relative;
+    z-index: 2;
+    font-size: 5px;
+    
+    padding: 7px; }
+
+    
+.md-button .md-ripple {
+    padding: 0 8px;
+    display: contents;
+    justify-content: center;
+    align-items: center; }
+
+
+
+ }
 </style>
 
 
