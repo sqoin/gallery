@@ -57,7 +57,7 @@
                 href="#"
                 class="dropdown-toggle log"
                 data-toggle="dropdown"
-              >Welcome {{ getUserName }}</a>
+              > Welcome {{ getUserName }}</a>
               <ul class="dropdown-menu">
                 <li>
                   <nuxt-link class="navbar-item" :to="{ name: 'user-wishlist' }">{{ wishlistLabel }}</nuxt-link>
@@ -169,11 +169,12 @@ export default {
 .dropdown a{
      color: #020202;
     font-size: 20px;
-   
+   font-family: serif;
 }
 
 .dropdown a:hover{
   text-decoration: none;
+  color: #fcb045;
 }
 
 .nav-log{
@@ -186,6 +187,10 @@ export default {
     text-decoration: blink;
     font-family: cursive;
 
+}
+
+.nav-link{
+  font-family: serif;
 }
 .navbar {
   height: 10%;

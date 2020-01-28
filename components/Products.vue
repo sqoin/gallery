@@ -1,6 +1,6 @@
 <template>
   <md-card class="cart" md-with-hover>
-    <figure class="image is-3by2">
+    <figure class="image is-4by3 ">
       <img class="animated flipInX" slot="image" v-img :src="product.image" alt="Card image cap" />
     </figure>
 
@@ -15,7 +15,9 @@
           <i class="fa fa-heart"></i>
         </span>
       </md-button>
+
       <md-button class="card-footer-item is-size-4 col-md-4">{{product.price}} &dollar;</md-button>
+
       <md-button
         :title="addToFavouriteLabel"
         v-show="!product.isFavourite"
@@ -164,8 +166,16 @@ export default {
 }
 figure {
   margin: 0px;
+      border-radius: 20px;
 }
+  img{
+     border-radius: 20px;
 
+  }
+
+  .cart{
+     border-radius: 20px;
+  }
 .md-card .card-footer {
   position: relative;
   display: none;
@@ -183,7 +193,7 @@ figure {
 
   color: white;
   /* bottom: 30%; */
-  top: 75%;
+  top: 80%;
   // border: 2px solid red;
   width: 100%;
   padding: 0.75rem 1.25rem;
@@ -207,7 +217,7 @@ figure {
     display: flex;
     color: white;
     /* bottom: 30%; */
-    top: 75%;
+    top: 70%;
     // border: 2px solid red;
     width: 100%;
     padding: 0.75rem 1.25rem;
@@ -243,7 +253,7 @@ figure {
 
 }
 
-@media (min-width: 992px) and (max-width: 1169.98px) { 
+@media (min-width: 992px) and (max-width: 1200px) { 
   .md-card:hover .card-footer {
    
     position: absolute;

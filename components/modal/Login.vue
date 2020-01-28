@@ -3,58 +3,65 @@
     <div class="modal-background"></div>
     <div class="modal-card">
       <header class="modal-card-head">
-          <p v-if="!isUserLoggedIn" class="modal-card-title"><i class="fa fa-lock" aria-hidden="true"></i> {{ modalTitle }}</p>
-          <p v-if="isUserLoggedIn" class="modal-card-title">{{ modalTitleLoggedIn }}</p>
-          <button class="delete" aria-label="close" @click="closeModal"></button>
+        <p v-if="!isUserLoggedIn" class="modal-card-title">
+          <i class="fa fa-lock" aria-hidden="true"></i>
+          {{ modalTitle }}
+        </p>
+        <p v-if="isUserLoggedIn" class="modal-card-title">{{ modalTitleLoggedIn }}</p>
+        <button class="delete" aria-label="close" @click="closeModal"></button>
       </header>
       <form @submit="checkForm" action="#" method="post">
         <section class="modal-card-body">
           <div v-if="!isUserLoggedIn">
             <div class="field">
               <p class="control has-icons-left has-icons-right">
-               
-                  <input
-                    :class="[highlightEmailWithError ? 'input is-danger' : 'input']"
-                    type="email"
-                    :placeholder="emailPlaceholder"
-                    name="emailName"
-                    id="email"
-                    v-model="email"
-                    @keyup="checkEmailOnKeyUp(email)"
-                    value="dhoha@gmail.com"
-                  >
-                  <span class="icon is-small is-left">
-                    <i class="fa fa-envelope"></i>
-                  </span>
-                  <span v-if="highlightEmailWithError !== null" class="icon is-small is-right">
-                    <i :class="[highlightEmailWithError ? 'fa fa-exclamation-circle' : 'fa fa-check']"></i>
-                  </span>
-                </p>
-                <p v-if="highlightEmailWithError" class="help is-danger">{{ emailRequiredLabel }}</p>
+                <input
+                  :class="[highlightEmailWithError ? 'input is-danger' : 'input']"
+                  type="email"
+                  :placeholder="emailPlaceholder"
+                  name="emailName"
+                  id="email"
+                  v-model="email"
+                  @keyup="checkEmailOnKeyUp(email)"
+                  value="dhoha@gmail.com"
+                />
+                <span class="icon is-small is-left">
+                  <i class="fa fa-envelope"></i>
+                </span>
+                <span v-if="highlightEmailWithError !== null" class="icon is-small is-right">
+                  <i
+                    :class="[highlightEmailWithError ? 'fa fa-exclamation-circle' : 'fa fa-check']"
+                  ></i>
+                </span>
+              </p>
+              <p v-if="highlightEmailWithError" class="help is-danger">{{ emailRequiredLabel }}</p>
             </div>
-
 
             <div class="field">
               <p class="control has-icons-left has-icons-right">
-                <input 
+                <input
                   :class="[highlightPasswordWithError ? 'input is-danger' : 'input']"
                   type="password"
                   placeholder="Your password"
                   name="passwordName"
                   v-model="password"
                   @keyup="checkPasswordOnKeyUp(password)"
-                >
+                />
                 <span class="icon is-small is-left">
                   <i class="fa fa-lock"></i>
                 </span>
                 <span v-if="highlightPasswordWithError !== null" class="icon is-small is-right">
-                  <i :class="[highlightPasswordWithError ? 'fa fa-exclamation-circle' : 'fa fa-check']"></i>
+                  <i
+                    :class="[highlightPasswordWithError ? 'fa fa-exclamation-circle' : 'fa fa-check']"
+                  ></i>
                 </span>
               </p>
-              <p v-if="highlightPasswordWithError" class="help is-danger">{{ passwordRequiredLabel }}</p>
+              <p
+                v-if="highlightPasswordWithError"
+                class="help is-danger"
+              >{{ passwordRequiredLabel }}</p>
             </div>
           </div>
-
 
           <div v-if="isUserLoggedIn" class="level">
             <div class="level-item has-text-centered">
@@ -66,9 +73,18 @@
           </div>
         </section>
         <footer class="modal-card-foot">
-          <button v-if="!isUserLoggedIn" type="submit" class="button is-warning">{{ primaryBtnLabel }}</button>
-         
-          <button v-if="isUserLoggedIn" type="button" class="button is-warning" @click="closeModal">{{ btnLoggedInLabel }}</button>
+          <button
+            v-if="!isUserLoggedIn"
+            type="submit"
+            class="button is-warning"
+          >{{ primaryBtnLabel }}</button>
+
+          <button
+            v-if="isUserLoggedIn"
+            type="button"
+            class="button is-warning"
+            @click="closeModal"
+          >{{ btnLoggedInLabel }}</button>
         </footer>
       </form>
     </div>
@@ -76,23 +92,23 @@
 </template>
 
 <script>
-import { isValidEmail } from '@/assets/validators';
+import { isValidEmail } from "@/assets/validators";
 
 export default {
-  name: 'login',
+  name: "login",
 
-  data () {
+  data() {
     return {
-      modalTitle: 'Log in',
-      modalTitleLoggedIn: 'Welcome!',
-      primaryBtnLabel: 'Log in',
-      emailRequiredLabel: 'Email required',
-      passwordRequiredLabel: 'Password required',
-      emailNotValidLabel: 'Valid email required',
-      btnLoggedInLabel: 'Close',
-      emailPlaceholder: 'Your email',
-      email: 'walid@gmail.com',
-      password: '123',
+      modalTitle: "Log in",
+      modalTitleLoggedIn: "Welcome!",
+      primaryBtnLabel: "Log in",
+      emailRequiredLabel: "Email required",
+      passwordRequiredLabel: "Password required",
+      emailNotValidLabel: "Valid email required",
+      btnLoggedInLabel: "Close",
+      emailPlaceholder: "Your email",
+      email: "walid@gmail.com",
+      password: "123",
       highlightEmailWithError: null,
       highlightPasswordWithError: null,
       isFormSuccess: false
@@ -100,44 +116,43 @@ export default {
   },
 
   computed: {
-    isUserLoggedIn () {
+    isUserLoggedIn() {
       return this.$store.getters.isUserLoggedIn;
     },
-    openModal () {
+    openModal() {
       if (this.$store.getters.isLoginModalOpen) {
         return true;
       } else {
         return false;
       }
     },
-    getUserName () {
-			let name = this.$store.getters.getUserName;
-			
-			if (name === '') {
-				return 'user';
-			} else {
-				return name;
-			}
-		}
+    getUserName() {
+      let name = this.$store.getters.getUserName;
+
+      if (name === "") {
+        return "user";
+      } else {
+        return name;
+      }
+    }
   },
   methods: {
-    closeModal () {
-      this.$store.commit('showLoginModal', false);
+    closeModal() {
+      this.$store.commit("showLoginModal", false);
     },
-    checkForm (e) {
+    checkForm(e) {
       e.preventDefault();
-      
+
       if (this.email && this.password) {
         this.highlightEmailWithError = false;
         this.highlightPasswordWithError = false;
         /********/
-        this.$store.commit('checkUser',{
-          email:this.email,
-          password:this.password
+        this.$store.commit("checkUser", {
+          email: this.email,
+          password: this.password
         });
 
-        
-       //setTimeout(function(){ this.closeModal ()});
+        //setTimeout(function(){ this.closeModal ()});
         /****
         this.isFormSuccess = true;
         this.$store.commit('isUserLoggedIn', this.isFormSuccess);
@@ -160,7 +175,7 @@ export default {
         this.highlightPasswordWithError = false;
       }
     },
-    checkEmailOnKeyUp (emailValue) {
+    checkEmailOnKeyUp(emailValue) {
       if (emailValue && isValidEmail(emailValue)) {
         this.highlightEmailWithError = false;
       } else {
@@ -171,7 +186,7 @@ export default {
         }
       }
     },
-    checkPasswordOnKeyUp (passwordValue) {
+    checkPasswordOnKeyUp(passwordValue) {
       if (passwordValue) {
         this.highlightPasswordWithError = false;
       } else {
@@ -185,12 +200,43 @@ export default {
 <style lang="scss">
 .fa-exclamation-circle {
   color: red;
-  
 }
 .fa-check {
-  color:#00FF00;
+  color: #00ff00;
+}
+ 
+ 
+.modal-card {
+  width: 24%;
+  
 }
 
+
+.modal-card-title {
+  text-align: center;
+}
+
+.button.is-warning {
+  margin-left: 30%;
+  background-color: #0d89ffe6;
+  border-color: #82828200;
+  color: rgba(255, 255, 255, 0.7);
+  width: 40%;
+  font-family: cursive;
+}
+
+@media (max-width: 600px) {
+.modal-card {
+  width: 60%;
+  
+}
+
+
+.modal-card-title {
+  text-align: center;
+}
+
+}
 </style>
 
 

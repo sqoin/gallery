@@ -212,15 +212,13 @@ export default {
     background-color: black;
     color: white;
     font-size: 17px;
-    line-height: 86px;
+    line-height: 27px;
     font-weight: 30;
     text-transform: uppercase;
     // mix-blend-mode: lighten;
-
-    
     font-family: "cursive";
     text-align: center;
-    height: 46%;
+    height: 30%;
   }
 }
 @media (min-width: 601px) and (max-width: 767px){
